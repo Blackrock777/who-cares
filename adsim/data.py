@@ -72,7 +72,8 @@ def flag_anomalies(h):
     expected = h["impressions"] * h["ad_id"].map(rate).fillna(0)
     h.loc[(h["quality"] == "") & (h["clicks"] == 0) & (np.exp(-expected) < 1e-3), "quality"] = "suspicious_zero_clicks"
     if "budget" in h and (h["budget"] != 1.0).any():
-        spent = h.groupby(["date", "audience_id"])["spend"].transform("sum")
+        keys = ["date", "audience_id"] + (["advertiser_id"] if "advertiser_id" in h else [])   # an audience name can recur across advertisers
+        spent = h.groupby(keys)["spend"].transform("sum")
         h.loc[(spent > 1.5 * h["budget"]) & (h["quality"] == ""), "quality"] = "suspicious_spend_over_budget"
     return h
 
