@@ -1,0 +1,1 @@
+fastembed>=0.7   # optional: multilingual creative encoder for adsim (falls back to TF-IDF without it)

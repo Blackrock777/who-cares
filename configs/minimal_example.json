@@ -1,0 +1,7 @@
+{
+  "name": "minimal_history_only",
+  "root": "data/raw",
+  "history": {"file": "storico_giornaliero.csv", "columns": {
+    "date": "data", "ad_id": "ad_id", "audience_id": "adset_id", "creative_id": "asset_id",
+    "impressions": "impression", "clicks": "click", "spend": "spesa", "budget": "budget_giornaliero_adset"}}
+}
