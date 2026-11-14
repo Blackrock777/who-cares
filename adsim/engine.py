@@ -109,11 +109,13 @@ class Engine:
             order = np.argsort(np.argsort(km.cluster_centers_[:, 0]))
             g["archetype"] = ["A%d" % order[c] for c in km.labels_]
         self.fingerprint = g.join(z.add_prefix("z_"))
-        return dict(zip(g["audience_id"], g["archetype"]))
+        # Keyed by advertiser AND audience: the same audience name in two accounts is two audiences.
+        return dict(zip(g["advertiser_id"].astype(str) + "\x1f" + g["audience_id"].astype(str), g["archetype"]))
 
     def _design(self, df):
         d = df.copy()
-        d["archetype"] = d["audience_id"].map(self.arch).fillna("A?")
+        d["adv_aud"] = d["advertiser_id"].astype(str) + "\x1f" + d["audience_id"].astype(str)
+        d["archetype"] = d["adv_aud"].map(self.arch).fillna("A?")
         d["weeks"] = d["age_days"] / 7.0
         d["log_age"] = np.log1p(d["age_days"])
         d["wk0"] = (d["age_days"] < 7).astype(float)
@@ -133,7 +135,11 @@ class Engine:
         return d
 
     def _blocks(self, with_budget):
-        b = [("cat", "audience_id", 3.0), ("cat", "creative_id", 1.0), ("cat", "ad_id", 0.7), ("cat", "weekday", 0.5)]
+        b = [("cat", "advertiser_id", 3.0), ("cat", "audience_id", 3.0), ("cat", "creative_id", 1.0), ("cat", "ad_id", 0.7), ("cat", "weekday", 0.5)]
+        if self.shared_audiences:
+            # The same audience definition is used by several advertisers: each advertiser keeps its
+            # own level and its own deviation from the shared audience effect.
+            b += [("cat", "adv_aud", 1.5)]
         for c in self.creative_cats:
             b += [("cat", "c_" + c, 1.0), ("cat", "ax_" + c, 0.7), ("cat", "vx_" + c, 0.7)]
         if len(self.cfeat.columns):
@@ -158,6 +164,7 @@ class Engine:
         if self.ctr_mode == "lognormal" and zero:
             h = h[h["clicks"] > 0]                      # only reachable when the config forces log-normal
         self.trained_through = h["date"].max()
+        self.shared_audiences = bool((h.groupby("audience_id")["advertiser_id"].nunique() > 1).any())
         self.arch = self._archetypes(h)
         self.arch_levels = sorted(set(self.arch.values()))
         creatives = creatives.assign(creative_id=creatives["creative_id"].astype(str))

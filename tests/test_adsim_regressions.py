@@ -174,3 +174,20 @@ class ValidationBoundaries(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class SharedAudiencesAcrossAdvertisers(unittest.TestCase):
+    """Found by adversarial review on the Kaggle file: with no advertiser level, two campaigns that
+    share audience names got identical predicted rates and the smaller ones were biased by -19% to -38%."""
+
+    def test_each_advertiser_keeps_its_own_level(self):
+        a = H[(H.quality == "") & (H.advertiser_id == "NDL-C1")].copy()
+        b = a.copy()
+        b["advertiser_id"] = "TWIN"
+        b["ad_id"] = "T-" + b["ad_id"]
+        b["clicks"] = (b["clicks"] * 0.5).round()                       # same audiences and creatives, half the response
+        e = Engine(CFG).fit(pd.concat([a, b]), C)
+        self.assertTrue(e.shared_audiences)
+        pa, pb = e.predict(a.tail(200))["ctr"].values, e.predict(b.tail(200))["ctr"].values
+        self.assertLess(abs(np.median(pb / pa) - 0.5), 0.08)
+        self.assertEqual(len(e.arch), 2 * a["audience_id"].nunique())   # archetypes not overwritten across advertisers

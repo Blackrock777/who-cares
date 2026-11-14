@@ -143,26 +143,37 @@ Unresolved, stated plainly:
 - The Poisson path is validated only on thinned copies of this dataset, not on a genuinely low-volume account.
 - 2-15 November has been inspected many times and is a regression benchmark, not an untouched test.
 
-## Second dataset: real campaign data from Kaggle
+## Second dataset: a public Kaggle campaign file, and what an independent review did to our first claim
 
-`configs/kaggle_sales_conversion.json` runs the engine, unchanged, on the public "Sales Conversion Optimization" dataset: 1,143 real, anonymised Facebook ads from three campaigns, one row per campaign x age band x gender x interest, with impressions, clicks and spend. It has no dates, creative text or budgets, 18% of rows have zero clicks, and the account is billed per click. Fetch it with `scripts/fetch_kaggle_sales_conversion.sh`; the file is not committed.
+`configs/kaggle_sales_conversion.json` runs the engine on the public "Sales Conversion Optimization" file: 1,143 rows described by its uploader as anonymised Facebook ads from three campaigns, with age band, gender, interest code, impressions, clicks and spend. Fetch it with `scripts/fetch_kaggle_sales_conversion.sh`; it is not committed.
 
-Protocol: 40% of rows train, 60% test, stratified by campaign, repeated over 8 random splits (the data has no time order). Task: predict clicks for unseen age x gender x interest cells.
+**Provenance is unverified.** Nothing in the file authenticates it, and it shows selection and post-processing: 204 of 207 zero-click rows still carry a conversion, only 8 rows have no conversion, click counts are less dispersed than Poisson, and one campaign holds 96% of impressions. Treat it as a public test file, not as ground truth about audiences.
 
-| Model | Click error (WAPE) | Pooled bias | Poisson deviance | Error per age-gender audience |
-|---|---:|---:|---:|---:|
-| Campaign average rate | 0.243 | -1% | 2.97 | 19% |
-| Campaign x age x gender average | 0.143 | -1% | 1.25 | 4.0% |
-| Campaign x age x gender x interest average | 0.167 | -5% | 3.22 | 6.1% |
-| **adsim** | **0.101** | **0%** | **0.81** | **2.6%** |
+**Our first write-up was wrong and has been withdrawn.** It said the engine beat "the strongest baseline in 8 of 8 splits". An independent adversarial review, asked to reject the result, found that:
 
-adsim was better than the strongest baseline in 8 of 8 splits. This is the first check of the zero-click path and of partial pooling on real low-volume data. What it does not test: forecasting over time, creative text, budget response or season, none of which this dataset contains.
+1. The baselines were weak. A main-effects Poisson regression on campaign + age x gender + interest, about 15 lines of scikit-learn, beat the engine in every split.
+2. The engine had no advertiser-level term, so the same audience and interest got the same predicted rate in all three campaigns. Clicks were under-predicted by 19% and 38% in the two small campaigns, hidden by a pooled figure dominated by the large one.
+3. "0% bias" was an averaging artefact, "8 of 8" was eight reshuffles of the same rows, 63% of test rows had their exact cell in training, and the audience statements did not hold as written.
 
-What the data says about audiences (real, not inferred): click rate rises with age in every campaign and women click more than men in every age band (0.025% vs 0.017% at 45-49), while men convert more per click (65 vs 42 per thousand clicks at 45-49). The engine's archetypes separate women 35+ from the rest without being given age or gender as fields.
+The missing advertiser level was a real defect and is fixed (an advertiser block, an advertiser x audience block when audiences are shared across advertisers, and archetypes keyed by advertiser and audience). Same 40/60 splits, 8 seeds:
 
-A defect this dataset exposed: with per-click billing, spend is zero whenever clicks are zero, and the log price model cannot take those rows. They are now left out of the price fit and counted in the output rather than crashing; a price model for click-billed accounts is not built.
+| Model | Deviance | Click error | Bias, large campaign | Bias, two small campaigns | Click error, campaigns weighted equally |
+|---|---:|---:|---:|---:|---:|
+| Campaign x age x gender average | n/a | 0.146 | -1% | -13%, -2% | 0.282 |
+| adsim before the fix | 0.814 | 0.102 | +1% | -38%, -19% | 0.275 |
+| adsim after the fix | 0.736 | 0.099 | -1% | -5%, -3% | 0.198 |
+| Main-effects Poisson regression | 0.711 | 0.096 | 0% | -9%, -2% | 0.193 |
 
-Three other Kaggle datasets were downloaded and rejected as synthetic: uniform category counts, invented company names, identical click and impression values across rows.
+**What can be said now:** on this file the engine is about as good as a plain Poisson regression and slightly behind it in all 8 splits. That is the expected outcome, because with no dates, text or budgets every other component of the engine is inert here. The file therefore tested one thing, the pooled click-rate model, and exposed a real bug in it.
+
+**What still fails, from the review, not yet addressed:**
+- Rows with few impressions click far less than their cell's rate implies (bottom decile: about 71 clicks predicted, 1 observed). Click rate depends on delivery volume, which the engine treats as a known input.
+- Nobody forecasts an unseen campaign: leaving one campaign out gives biases from -38% to +54% for every model tried.
+- The price model does not suit click-billed accounts: zero-spend rows are left out of the fit and price is biased by -15% and -27% in the small campaigns. Modelling cost per click and deriving spend from predicted clicks would be the right design.
+
+**Audience observations, corrected:** women click more than men in all 12 campaign x age cells (clear in the two larger campaigns, noise in the 54-row one). Click rate rises with age in two of three campaigns. "Men convert more per click" is withdrawn: conversions in this file are not tied to clicks, and per impression the difference is 6% with an interval that includes zero. The archetype claim is withdrawn: the clustering reproduced "women 35+" in 0 of 8 splits for the largest campaign.
+
+Three other Kaggle files were rejected as synthetic (fixed counts per category level, large shares of duplicated click and impression pairs, near-uniform categories).
 
 ## What is not solved
 
