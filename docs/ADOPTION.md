@@ -143,6 +143,27 @@ Unresolved, stated plainly:
 - The Poisson path is validated only on thinned copies of this dataset, not on a genuinely low-volume account.
 - 2-15 November has been inspected many times and is a regression benchmark, not an untouched test.
 
+## Second dataset: real campaign data from Kaggle
+
+`configs/kaggle_sales_conversion.json` runs the engine, unchanged, on the public "Sales Conversion Optimization" dataset: 1,143 real, anonymised Facebook ads from three campaigns, one row per campaign x age band x gender x interest, with impressions, clicks and spend. It has no dates, creative text or budgets, 18% of rows have zero clicks, and the account is billed per click. Fetch it with `scripts/fetch_kaggle_sales_conversion.sh`; the file is not committed.
+
+Protocol: 40% of rows train, 60% test, stratified by campaign, repeated over 8 random splits (the data has no time order). Task: predict clicks for unseen age x gender x interest cells.
+
+| Model | Click error (WAPE) | Pooled bias | Poisson deviance | Error per age-gender audience |
+|---|---:|---:|---:|---:|
+| Campaign average rate | 0.243 | -1% | 2.97 | 19% |
+| Campaign x age x gender average | 0.143 | -1% | 1.25 | 4.0% |
+| Campaign x age x gender x interest average | 0.167 | -5% | 3.22 | 6.1% |
+| **adsim** | **0.101** | **0%** | **0.81** | **2.6%** |
+
+adsim was better than the strongest baseline in 8 of 8 splits. This is the first check of the zero-click path and of partial pooling on real low-volume data. What it does not test: forecasting over time, creative text, budget response or season, none of which this dataset contains.
+
+What the data says about audiences (real, not inferred): click rate rises with age in every campaign and women click more than men in every age band (0.025% vs 0.017% at 45-49), while men convert more per click (65 vs 42 per thousand clicks at 45-49). The engine's archetypes separate women 35+ from the rest without being given age or gender as fields.
+
+A defect this dataset exposed: with per-click billing, spend is zero whenever clicks are zero, and the log price model cannot take those rows. They are now left out of the price fit and counted in the output rather than crashing; a price model for click-billed accounts is not built.
+
+Three other Kaggle datasets were downloaded and rejected as synthetic: uniform category counts, invented company names, identical click and impression values across rows.
+
 ## What is not solved
 
 - No conversions, revenue or ROAS: the reference data has none, and the engine predicts none.

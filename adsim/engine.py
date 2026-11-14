@@ -91,7 +91,8 @@ class Engine:
         a = h.groupby(["advertiser_id", "audience_id"]).agg(clicks=("clicks", "sum"), impressions=("impressions", "sum"),
                                                             spend=("spend", "sum")).reset_index()
         a["ctr"] = np.log((a["clicks"] + 0.5) / a["impressions"] * 100)           # +0.5 only to describe audiences
-        a["cpm"] = np.log(a["spend"].clip(lower=1e-9) / a["impressions"] * 1000)
+        a["cpm"] = np.log((a["spend"] / a["impressions"] * 1000).where(a["spend"] > 0))     # no spend recorded -> unknown price
+        a["cpm"] = a["cpm"].fillna(a.groupby("advertiser_id")["cpm"].transform("mean")).fillna(0.0)
         cols = ["ctr", "cpm"]
         if "reach" in h and h["reach"].notna().all() and (h["reach"] > 0).all():
             r = h.groupby("audience_id").agg(i=("impressions", "sum"), r=("reach", "sum"))
@@ -167,7 +168,7 @@ class Engine:
         self.ccat = creatives.set_index("creative_id")[self.creative_cats] if self.creative_cats else pd.DataFrame(index=creatives["creative_id"])
         self.cfeat = self.cfeat.reindex(self.cfeat.index.union(h["creative_id"].unique()))
         d = self._design(h)
-        self.k, self.m, self.level = {}, {}, {}
+        self.k, self.m, self.level, self.nonpositive_rows = {}, {}, {}, {}
         tcat = ["advertiser_id", "audience_id", "creative_id", "archetype"] + ["c_" + c for c in self.creative_cats]
         # IDs with more levels than a histogram tree can take are left to the partially pooled linear
         # model, which holds them sparsely with shrinkage; the tree still sees their features.
@@ -195,16 +196,23 @@ class Engine:
                 lv = lambda key: np.log((last.groupby(key)["clicks"].sum() / last.groupby(key)["ex"].sum()).replace(0, np.nan)).to_dict()
                 self.level[kpi] = (lv("ad_id"), lv("audience_id"))
             else:
-                y = np.log(d[kpi].values) - season
-                s1 = _Hier(self._blocks(True)).fit(d, y - self.k0[kpi] * d["lbr"].values)
+                # A log-normal rate needs a positive value. Zero-spend rows occur when the account
+                # is billed per click; they cannot enter a log price model and are counted, not hidden.
+                pos = d[kpi].values > 0
+                self.nonpositive_rows[kpi] = int((~pos).sum())
+                if not pos.any():
+                    raise ValueError(f"No rows with a positive {kpi.upper()} to fit on.")
+                dk, sk = d[pos], season[pos]
+                y = np.log(dk[kpi].values) - sk
+                s1 = _Hier(self._blocks(True)).fit(dk, y - self.k0[kpi] * dk["lbr"].values)
                 self.k[kpi] = float(self.k0[kpi] + s1.model.coef_[-1] * scale)
-                yn = y - self.k[kpi] * d["lbr"].values
-                hier = _Hier(self._blocks(False)).fit(d, yn)
+                yn = y - self.k[kpi] * dk["lbr"].values
+                hier = _Hier(self._blocks(False)).fit(dk, yn)
                 tree = None
                 if "tree" in self.blend[kpi]:
                     tree = HistGradientBoostingRegressor(max_iter=400, learning_rate=0.04, max_leaf_nodes=15, min_samples_leaf=15,
-                                                         l2_regularization=1.0, categorical_features="from_dtype", random_state=0).fit(self._tx(d), yn)
-                last = d.assign(yn=yn)[recent.values]
+                                                         l2_regularization=1.0, categorical_features="from_dtype", random_state=0).fit(self._tx(dk), yn)
+                last = dk.assign(yn=yn)[recent.values[pos]]
                 self.level[kpi] = (last.groupby("ad_id")["yn"].mean().to_dict(), last.groupby("audience_id")["yn"].mean().to_dict())
             self.m[kpi] = (hier, tree)
         self.seen_ads, self.seen_creatives = set(d["ad_id"]), set(d["creative_id"])

@@ -6,3 +6,4 @@ out/model.pkl
 out/adsim/
 .env.tabpfn
 .venv312/
+data/external/
