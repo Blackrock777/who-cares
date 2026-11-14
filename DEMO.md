@@ -16,7 +16,7 @@ Point at 699 forecasts, twelve segments and the held-out metrics.
 
 **0:20–0:50 · Evidence — Validation & exports**
 
-“We trained only through November first and predicted the next two weeks. Against the last-seven-days baseline, CTR error fell from 33.3 to 25.6 percent, and we selected the highest-CTR ad in eleven of twelve sets. CPM error was 7.2 percent. We also report weak segments and new ads, where errors are larger. Black Friday results are still hidden.”
+“We trained only through November first and predicted the next two weeks. Against the last-seven-days baseline, CTR error fell from 33.3 to 25.6 percent, and we selected the highest-CTR ad in eleven of twelve sets. CPM error was 6.3 percent, down from 8.6 for the baseline. We also report weak segments and new ads, where errors are larger. Black Friday results are still hidden.”
 
 Show baseline versus blend. Do not call global correlation within-audience accuracy.
 
@@ -62,7 +62,7 @@ End on the download button and validation evidence.
 
 Who Cares is an AI-assisted campaign rehearsal tool for the Wevion challenge. It forecasts daily CTR and CPM for all 699 required ad-days, compares creative performance across twelve audience segments and proposes bounded budget-allocation scenarios.
 
-The forecasting engine blends gradient-boosted trees and regularized regression, using creative-description tags, segment identity, ad age, planned budgets and the supplied market/calendar benchmarks. On the specified 2–15 November validation window, trained through 1 November, CTR MAPE is 25.6% versus 33.3% for the naive baseline, CPM MAPE is 7.2%, and the predicted highest-CTR ad matches the observed winner in 11 of 12 sets. Full subgroup, cold-start and earlier-window results are included.
+The CTR engine blends gradient-boosted trees and regularized regression; CPM uses a budget-aware ensemble on a de-noised seasonal index. Both use creative-description tags, segment identity, ad age, planned budgets and the supplied market/calendar benchmarks. On the specified 2–15 November validation window, trained through 1 November, CTR MAPE is 25.6% versus 33.3% for the naive baseline, CPM MAPE is 6.3% versus 8.6%, and the predicted highest-CTR ad matches the observed winner in 11 of 12 sets. Full subgroup, cold-start and earlier-window results are included.
 
 Audience hypotheses come from measured behaviour, with confidence and alternative explanations. The creative lab scores a new concept across audiences and offers a hypothetical viewer panel calibrated to the statistical forecast. Ages, habits and needs are assumptions, not recovered demographics. Budget scenarios preserve daily totals, cap segment changes and expose downside sensitivity. Intervals are empirical and do not guarantee 80% coverage; Black Friday transfer remains untested on hidden outcomes.
 

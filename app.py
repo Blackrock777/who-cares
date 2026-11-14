@@ -74,7 +74,11 @@ with tab_compare:
                                            tooltip=["data:T", "ad_id:N", alt.Tooltip(f"{metric}_pred:Q", format=".3f")])
     chart = line if metric == "cpc" else base.mark_area(opacity=.12).encode(y=f"{metric}_lo:Q", y2=f"{metric}_hi:Q") + line
     rule = alt.Chart(pd.DataFrame({"event":pd.to_datetime(["2026-11-27"])})).mark_rule(strokeDash=[4,4], color="#666").encode(x="event:T")
-    st.altair_chart((chart+rule).properties(height=310), width="stretch")
+    _chart = (chart+rule).properties(height=310)
+    try:
+        st.altair_chart(_chart, width="stretch")
+    except TypeError:  # Streamlit before the width= API
+        st.altair_chart(_chart, use_container_width=True)
     st.caption("Shading: empirical daily 80% intervals; dashed line: Black Friday. CTR coverage was below 80% in the later validation week. "
                "The 2025 seasonal pattern is transferred to 2026; that transfer has not been tested on Black Friday outcomes.")
     dates = sub.data.between(rec["comparison_start"], rec["comparison_end"])

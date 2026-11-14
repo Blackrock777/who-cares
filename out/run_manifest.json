@@ -1,5 +1,5 @@
 {
-  "input_sha256": "67f97858fe8a3d77278943b8c2801451bfb3f73f993ed98795a7a1f50e5a4799",
+  "input_sha256": "8a4775f1bdcd525f531f8f28e57f549dc75c92287648a3dc1383644f6c650928",
   "training_rows": 1869,
   "raw_history_rows": 1879,
   "flagged_rows": 10,
@@ -15,12 +15,12 @@
   },
   "intervals": {
     "ctr": {
-      "warm": 0.3113091502602093,
-      "cold": 0.3458210312355927
+      "warm": 0.3113091502602089,
+      "cold": 0.34582103123559127
     },
     "cpm": {
-      "warm": 0.11503138103415322,
-      "cold": 0.17778073108778125
+      "warm": 0.09703390042067861,
+      "cold": 0.11556086883193029
     }
   },
   "output_checks": {
@@ -30,10 +30,10 @@
     "metadata_matches": true,
     "finite_ordered_intervals": true
   },
-  "sklearn_version": "1.8.0",
-  "python_version": "3.12.14",
-  "numpy_version": "2.3.5",
-  "pandas_version": "2.2.3",
+  "sklearn_version": "1.6.1",
+  "python_version": "3.9.6",
+  "numpy_version": "2.0.2",
+  "pandas_version": "2.3.3",
   "new_ad_ids": [
     "CDF-AD06",
     "CDF-AD11",
@@ -56,6 +56,15 @@
     "NDL-B3",
     "NDL-B4"
   ],
-  "model": "50/50 log-space tree/ridge; supported by pre-November rolling comparison",
+  "model": "CTR: 50/50 log-space tree/ridge on index-detrended target. CPM: mean of hierarchical ridge, boosted trees and last-7-day level on a de-noised index, with one constant budget elasticity (src/cpm.py)",
+  "cpm_budget_elasticity": 0.31021996740107044,
+  "budget_ratio_seen_in_history": [
+    1.0,
+    2.0
+  ],
+  "budget_ratio_in_forecast": [
+    1.0,
+    2.5
+  ],
   "seasonality": "2025 benchmark aligned 364 days back; Black Friday transfer is untested"
 }

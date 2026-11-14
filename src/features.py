@@ -70,6 +70,23 @@ def _benchmark() -> pd.DataFrame:
     return b[["settimana_dal", "vertical", "indice_cpm", "indice_ctr"]]
 
 
+def _benchmark_cpm_smooth() -> pd.DataFrame:
+    """De-noised 2025 CPM index, used only by the CPM model.
+
+    The three verticals' CPM indices trace the same curve (81 -> 157 -> 95), and week-over-week
+    wiggles in 2025 are not repeated by 2026 CPM (same-ad weekly changes follow them with slope
+    0.21 +/- 0.07, while the trend is followed one-for-one). So: average the verticals, then fit
+    a curve that only rises to the Black Friday peak and only falls after it. The peak is kept.
+    """
+    from sklearn.isotonic import IsotonicRegression
+    b = _benchmark()
+    curve = b.groupby("settimana_dal")["indice_cpm"].mean().sort_index()
+    y, x, peak = curve.values.astype(float), np.arange(len(curve)), int(curve.values.argmax())
+    up = IsotonicRegression(increasing=True).fit_transform(x[:peak + 1], y[:peak + 1])
+    down = IsotonicRegression(increasing=False).fit_transform(x[peak:], y[peak:])
+    return pd.DataFrame({"settimana_dal": curve.index, "idx_cpm_s": np.concatenate([up, down[1:]])})
+
+
 def _cpm_prior(as_of=None) -> dict:
     c = pd.read_csv(RAW / "cpm_storici.csv")
     c = c[(c.piattaforma == "meta") & (c.paese == "IT") & (c.obiettivo == "vendite")]
@@ -142,7 +159,9 @@ def build(df: pd.DataFrame, extra_assets: pd.DataFrame = None, extra_ads: pd.Dat
     key = key.merge(bench, on=["settimana_dal", "vertical"], how="left", validate="many_to_one")
     df["idx_cpm"] = key["indice_cpm"].values
     df["idx_ctr"] = key["indice_ctr"].values
-    if df[["idx_cpm", "idx_ctr"]].isna().any().any():
+    smooth = pd.DataFrame({"settimana_dal": week_start}).merge(_benchmark_cpm_smooth(), on="settimana_dal", how="left")
+    df["idx_cpm_s"] = smooth["idx_cpm_s"].values
+    if df[["idx_cpm", "idx_ctr", "idx_cpm_s"]].isna().any().any():
         raise ValueError("Missing 2025 benchmark for requested week/vertical.")
 
     prior = _cpm_prior()

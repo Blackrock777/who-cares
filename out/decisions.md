@@ -6,18 +6,18 @@ Click allocation scenarios, not causal or sales predictions. Future ad delivery 
 
 | campaign_id   | adset_id   |   budget |    ctr |     cpm |    cpc |   clicks_per_day |   budget_proposed |   clicks_per_day_proposed |   campaign_gain_clicks_per_day |   gain_elasticity_min |   gain_elasticity_max |   gain_adverse_kpi_min | note                                                                           |
 |:--------------|:-----------|---------:|-------:|--------:|-------:|-----------------:|------------------:|--------------------------:|-------------------------------:|----------------------:|----------------------:|-----------------------:|:-------------------------------------------------------------------------------|
-| CDF-C1        | CDF-AS1    |      135 | 0.7727 |  7.9213 | 1.0274 |         131.845  |          116.545  |                  123.986  |                         2.2962 |                1.1858 |                7.9679 |               -14.701  | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| CDF-C1        | CDF-AS2    |       50 | 1.1163 |  8.533  | 0.758  |          66.1119 |           60      |                   71.3733 |                         2.2962 |                1.1858 |                7.9679 |               -14.701  | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| CDF-C1        | CDF-AS3    |       50 | 0.8922 |  8.8487 | 0.9908 |          50.6752 |           46.4553 |                   49.1671 |                         2.2962 |                1.1858 |                7.9679 |               -14.701  | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| CDF-C1        | CDF-AS4    |       60 | 2.032  | 15.3065 | 0.7502 |          80.4433 |           72      |                   86.8452 |                         2.2962 |                1.1858 |                7.9679 |               -14.701  | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| FGR-C1        | FGR-AS1    |      160 | 0.7997 |  8.3417 | 1.0415 |         153.973  |          134.999  |                  143.374  |                         2.8479 |                1.4375 |               10.3071 |               -20.7106 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| FGR-C1        | FGR-AS2    |       60 | 1.1301 |  9.8916 | 0.8675 |          69.3553 |           69.0973 |                   73.6044 |                         2.8479 |                1.4375 |               10.3071 |               -20.7106 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| FGR-C1        | FGR-AS3    |       40 | 0.9804 | 14.2234 | 1.4439 |          27.8735 |           32      |                   25.3799 |                         2.8479 |                1.4375 |               10.3071 |               -20.7106 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| FGR-C1        | FGR-AS4    |      125 | 2.1208 | 17.421  | 0.82   |         152.912  |          148.904  |                  164.604  |                         2.8479 |                1.4375 |               10.3071 |               -20.7106 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| NDL-C1        | NDL-AS1    |      150 | 0.7064 | 10.547  | 1.498  |         100.631  |          128.367  |                   94.276  |                         2.6547 |                1.3622 |                9.327  |               -17.2712 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| NDL-C1        | NDL-AS2    |       80 | 1.0638 | 11.4706 | 1.0743 |          74.624  |           96      |                   80.5628 |                         2.6547 |                1.3622 |                9.327  |               -17.2712 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| NDL-C1        | NDL-AS3    |      110 | 0.9621 | 14.7118 | 1.5264 |          72.4173 |           93.6333 |                   67.7091 |                         2.6547 |                1.3622 |                9.327  |               -17.2712 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
-| NDL-C1        | NDL-AS4    |      110 | 1.8288 | 20.7836 | 1.1289 |          97.7527 |          132      |                  105.532  |                         2.6547 |                1.3622 |                9.327  |               -17.2712 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| CDF-C1        | CDF-AS1    |      135 | 0.7727 |  9.4995 | 1.231  |         110.1    |          111.669  |                  101.735  |                         2.3251 |                1.201  |                8.0398 |               -11.8958 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| CDF-C1        | CDF-AS2    |       50 | 1.1163 |  9.3428 | 0.8321 |          60.1999 |           60      |                   64.9908 |                         2.3251 |                1.201  |                8.0398 |               -11.8958 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| CDF-C1        | CDF-AS3    |       50 | 0.8922 |  9.6675 | 1.0852 |          46.1205 |           51.3307 |                   46.6151 |                         2.3251 |                1.201  |                8.0398 |               -11.8958 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| CDF-C1        | CDF-AS4    |       60 | 2.032  | 18.2071 | 0.8902 |          67.9137 |           72      |                   73.3185 |                         2.3251 |                1.201  |                8.0398 |               -11.8958 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| FGR-C1        | FGR-AS1    |      160 | 0.7997 | 10.1375 | 1.2629 |         126.897  |          131.985  |                  117.031  |                         2.6126 |                1.2997 |                9.7117 |               -17.1554 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| FGR-C1        | FGR-AS2    |       60 | 1.1301 | 10.8991 | 0.9595 |          62.621  |           71.9493 |                   67.5839 |                         2.6126 |                1.2997 |                9.7117 |               -17.1554 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| FGR-C1        | FGR-AS3    |       40 | 0.9804 | 15.5759 | 1.5781 |          25.3967 |           32      |                   23.1246 |                         2.6126 |                1.2997 |                9.7117 |               -17.1554 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| FGR-C1        | FGR-AS4    |      125 | 2.1208 | 21.0063 | 0.9875 |         127.152  |          149.066  |                  136.941  |                         2.6126 |                1.2997 |                9.7117 |               -17.1554 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| NDL-C1        | NDL-AS1    |      150 | 0.7064 | 12.445  | 1.7639 |          85.3811 |          131.691  |                   80.8537 |                         2.5325 |                1.322  |                8.5861 |               -12.3793 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| NDL-C1        | NDL-AS2    |       80 | 1.0638 | 12.7768 | 1.202  |          66.6239 |           96      |                   71.926  |                         2.5325 |                1.322  |                8.5861 |               -12.3793 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| NDL-C1        | NDL-AS3    |      110 | 0.9621 | 18.0852 | 1.8727 |          58.8071 |           90.3087 |                   54.1348 |                         2.5325 |                1.322  |                8.5861 |               -12.3793 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
+| NDL-C1        | NDL-AS4    |      110 | 1.8288 | 25.2358 | 1.3684 |          80.7969 |          132      |                   87.227  |                         2.5325 |                1.322  |                8.5861 |               -12.3793 | Daily scenario averaged here; equal spend across active ads; not sales uplift. |
 
 ## Creative comparisons on common dates
 
@@ -52,18 +52,18 @@ Click allocation scenarios, not causal or sales predictions. Future ad delivery 
 
 | data                |   ctr |    cpm |   cpc |   cpm_vs_first_day |
 |:--------------------|------:|-------:|------:|-------------------:|
-| 2026-11-16 00:00:00 | 1.108 | 12.109 | 1.226 |               1    |
-| 2026-11-17 00:00:00 | 1.109 | 12.064 | 1.215 |               1    |
-| 2026-11-18 00:00:00 | 1.108 | 11.954 | 1.205 |               0.99 |
-| 2026-11-19 00:00:00 | 1.115 | 11.821 | 1.169 |               0.98 |
-| 2026-11-20 00:00:00 | 1.233 | 11.931 | 1.089 |               0.99 |
-| 2026-11-21 00:00:00 | 1.164 | 11.914 | 1.144 |               0.98 |
-| 2026-11-22 00:00:00 | 1.174 | 11.827 | 1.138 |               0.98 |
-| 2026-11-23 00:00:00 | 1.243 | 13.111 | 1.164 |               1.08 |
-| 2026-11-24 00:00:00 | 1.244 | 13.08  | 1.151 |               1.08 |
-| 2026-11-25 00:00:00 | 1.242 | 12.94  | 1.14  |               1.07 |
-| 2026-11-26 00:00:00 | 1.28  | 12.766 | 1.097 |               1.05 |
-| 2026-11-27 00:00:00 | 1.295 | 12.651 | 1.077 |               1.04 |
-| 2026-11-28 00:00:00 | 1.235 | 12.587 | 1.118 |               1.04 |
-| 2026-11-29 00:00:00 | 1.244 | 12.529 | 1.12  |               1.03 |
-| 2026-11-30 00:00:00 | 1.056 | 12.381 | 1.276 |               1.02 |
+| 2026-11-16 00:00:00 | 1.108 | 13.511 | 1.361 |               1    |
+| 2026-11-17 00:00:00 | 1.109 | 13.575 | 1.362 |               1    |
+| 2026-11-18 00:00:00 | 1.108 | 13.468 | 1.351 |               1    |
+| 2026-11-19 00:00:00 | 1.115 | 13.267 | 1.306 |               0.98 |
+| 2026-11-20 00:00:00 | 1.233 | 13.53  | 1.228 |               1    |
+| 2026-11-21 00:00:00 | 1.164 | 13.465 | 1.285 |               1    |
+| 2026-11-22 00:00:00 | 1.174 | 13.412 | 1.282 |               0.99 |
+| 2026-11-23 00:00:00 | 1.243 | 15.707 | 1.386 |               1.16 |
+| 2026-11-24 00:00:00 | 1.244 | 15.848 | 1.387 |               1.17 |
+| 2026-11-25 00:00:00 | 1.242 | 15.729 | 1.377 |               1.16 |
+| 2026-11-26 00:00:00 | 1.28  | 15.385 | 1.315 |               1.14 |
+| 2026-11-27 00:00:00 | 1.295 | 15.324 | 1.296 |               1.13 |
+| 2026-11-28 00:00:00 | 1.235 | 15.193 | 1.341 |               1.12 |
+| 2026-11-29 00:00:00 | 1.244 | 15.193 | 1.349 |               1.12 |
+| 2026-11-30 00:00:00 | 1.056 | 14.17  | 1.452 |               1.05 |

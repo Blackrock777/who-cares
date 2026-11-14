@@ -27,6 +27,7 @@ from sklearn.linear_model import Ridge
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
+from cpm import CpmModel
 from features import CAT_COLS, NUM_COLS, RAW, _cpm_prior, history_rows, load_history, load_test
 
 OUT = Path(__file__).resolve().parents[1] / "out"
@@ -75,7 +76,8 @@ def _frame_for_tree(df):
 
 
 class Forecaster:
-    def __init__(self, detrend=True, w_tree=0.5):
+    def __init__(self, detrend=True, w_tree=0.5, use_cpm_model=True):
+        self.use_cpm_model = use_cpm_model
         self.detrend = detrend
         self.w_tree = w_tree
         self.models = {}
@@ -90,6 +92,9 @@ class Forecaster:
             tree = _tree().fit(_frame_for_tree(df), y)
             ridge = _ridge().fit(df[CAT_COLS + NUM_COLS], y)
             self.models[metric] = (tree, ridge)
+        # CPM is forecast by its own budget-aware model (src/cpm.py). The tree/ridge pair above
+        # is kept for CPM only as the previous method, exported as cpm_previous for comparison.
+        self.cpm_model = CpmModel().fit(df)
         self.seen_ads = set(df["ad_id"])
         self.seen_assets = set(df["asset_id"])
         return self
@@ -129,13 +134,20 @@ class Forecaster:
             p_tree = tree.predict(Xt)
             p_ridge = ridge.predict(df[CAT_COLS + NUM_COLS])
             blend = self.w_tree * p_tree + (1 - self.w_tree) * p_ridge
-            out[f"{metric}_pred"] = _untrend(df, blend, metric, self.detrend)
-            out[f"{metric}_tree"] = _untrend(df, p_tree, metric, self.detrend)
-            out[f"{metric}_ridge"] = _untrend(df, p_ridge, metric, self.detrend)
+            point = _untrend(df, blend, metric, self.detrend)
+            if metric == "cpm" and getattr(self, "cpm_model", None) is not None and self.use_cpm_model:
+                parts = self.cpm_model.components(df)
+                out["cpm_previous"] = point
+                point = parts["pred"]
+                out["cpm_tree"], out["cpm_ridge"], out["cpm_level"] = parts["tree"], parts["hier"], parts["level"]
+            else:
+                out[f"{metric}_tree"] = _untrend(df, p_tree, metric, self.detrend)
+                out[f"{metric}_ridge"] = _untrend(df, p_ridge, metric, self.detrend)
+            out[f"{metric}_pred"] = point
             if calibrated and getattr(self, "q", None):
                 q = np.where(cold, self.q[metric]["cold"], self.q[metric]["warm"])
-                out[f"{metric}_lo"] = _untrend(df, blend - q, metric, self.detrend)
-                out[f"{metric}_hi"] = _untrend(df, blend + q, metric, self.detrend)
+                out[f"{metric}_lo"] = point * np.exp(-q)
+                out[f"{metric}_hi"] = point * np.exp(q)
             if metric == "ctr":
                 for col in [c for c in out if c.startswith("ctr_")]:
                     out[col] = out[col].clip(upper=100)
@@ -175,7 +187,7 @@ def earlier_cold_errors(cutoff):
 
 def input_fingerprint():
     digest = hashlib.sha256()
-    paths = sorted(RAW.rglob("*.csv")) + [Path(__file__), Path(__file__).with_name("features.py")]
+    paths = sorted(RAW.rglob("*.csv")) + [Path(__file__), Path(__file__).with_name("features.py"), Path(__file__).with_name("cpm.py")]
     for path in paths:
         digest.update(path.name.encode())
         digest.update(path.read_bytes())
@@ -244,15 +256,17 @@ def validate():
     rows += score(val, naive_baseline(train, val), "naive last-7d")
     for detrend in (False, True):
         for w in (1.0, 0.0, 0.5):
-            f = Forecaster(detrend=detrend, w_tree=w).fit(train)
+            # Ablation rows use the previous tree/ridge method for BOTH metrics.
+            f = Forecaster(detrend=detrend, w_tree=w, use_cpm_model=False).fit(train)
             name = {1.0: "tree", 0.0: "ridge", 0.5: "blend"}[w] + (" +index" if detrend else "")
             rows += score(val, f.predict(val), name)
+    rows += score(val, Forecaster().fit(train).predict(val), "PRODUCTION: CTR blend +index; CPM budget/season ensemble")
     # honest coverage check: calibrate bands on 2-8 Nov, score coverage on 9-15 Nov
     mid = pd.Timestamp("2026-11-09")
     f = Forecaster(detrend=True, w_tree=0.5).fit(train).calibrate(val[val["data"] < mid])
     later = val[val["data"] >= mid]
     later_predictions = f.predict(later)
-    rows += score(later, later_predictions, "blend +index, empirical intervals (9-15 Nov)")
+    rows += score(later, later_predictions, "PRODUCTION, empirical intervals (9-15 Nov)")
     interval_report = {"calibration": f.calibration, "log_widths": f.q, "coverage": {}}
     for label, mask in [("all", np.ones(len(later), dtype=bool)),
                         ("known_ads", later.ad_id.isin(f.seen_ads).values),
@@ -308,8 +322,9 @@ def rolling_validate():
         train = h[h["data"] < start]
         val = h[(h["data"] >= start) & (h["data"] < end)]
         f = Forecaster().fit(train)
-        for weight, name in [(0.0, "ridge +index"), (0.5, "blend +index"), (1.0, "tree +index")]:
+        for weight, name in [(0.0, "ridge +index"), (0.5, "blend +index"), (1.0, "tree +index"), (0.5, "PRODUCTION")]:
             f.w_tree = weight
+            f.use_cpm_model = name == "PRODUCTION"
             p = f.predict(val)
             for row in score(val, p, name):
                 m = row["metric"]
@@ -347,7 +362,9 @@ def predict():
                 "intervals": f.q, "output_checks": checks, "sklearn_version": sklearn.__version__,
                 "python_version": sys.version.split()[0], "numpy_version": np.__version__, "pandas_version": pd.__version__,
                 "new_ad_ids": sorted(set(t.ad_id) - f.seen_ads), "new_asset_ids": sorted(set(t.asset_id) - f.seen_assets),
-                "model": "50/50 log-space tree/ridge; supported by pre-November rolling comparison",
+                "model": "CTR: 50/50 log-space tree/ridge on index-detrended target. CPM: mean of hierarchical ridge, boosted trees and last-7-day level on a de-noised index, with one constant budget elasticity (src/cpm.py)",
+                "cpm_budget_elasticity": f.cpm_model.k, "budget_ratio_seen_in_history": f.cpm_model.budget_ratio_seen,
+                "budget_ratio_in_forecast": [float(t.budget_ratio.min()), float(t.budget_ratio.max())],
                 "seasonality": "2025 benchmark aligned 364 days back; Black Friday transfer is untested"}
     (OUT / "run_manifest.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     seasonal = t[["data", "vertical", "idx_ctr", "idx_cpm", "cpm_prior"]].drop_duplicates().copy()

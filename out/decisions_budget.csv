@@ -1,13 +1,13 @@
 campaign_id,adset_id,budget,ctr,cpm,cpc,clicks_per_day,budget_proposed,clicks_per_day_proposed,campaign_gain_clicks_per_day,gain_elasticity_min,gain_elasticity_max,gain_adverse_kpi_min,note
-CDF-C1,CDF-AS1,135.0,0.7727,7.9213,1.0274,131.8454,116.5447,123.9864,2.2962,1.1858,7.9679,-14.701,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-CDF-C1,CDF-AS2,50.0,1.1163,8.533,0.758,66.1119,60.0,71.3733,2.2962,1.1858,7.9679,-14.701,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-CDF-C1,CDF-AS3,50.0,0.8922,8.8487,0.9908,50.6752,46.4553,49.1671,2.2962,1.1858,7.9679,-14.701,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-CDF-C1,CDF-AS4,60.0,2.032,15.3065,0.7502,80.4433,72.0,86.8452,2.2962,1.1858,7.9679,-14.701,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-FGR-C1,FGR-AS1,160.0,0.7997,8.3417,1.0415,153.9734,134.9987,143.3736,2.8479,1.4375,10.3071,-20.7106,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-FGR-C1,FGR-AS2,60.0,1.1301,9.8916,0.8675,69.3553,69.0973,73.6044,2.8479,1.4375,10.3071,-20.7106,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-FGR-C1,FGR-AS3,40.0,0.9804,14.2234,1.4439,27.8735,32.0,25.3799,2.8479,1.4375,10.3071,-20.7106,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-FGR-C1,FGR-AS4,125.0,2.1208,17.421,0.82,152.912,148.904,164.6043,2.8479,1.4375,10.3071,-20.7106,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-NDL-C1,NDL-AS1,150.0,0.7064,10.547,1.498,100.6314,128.3667,94.276,2.6547,1.3622,9.327,-17.2712,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-NDL-C1,NDL-AS2,80.0,1.0638,11.4706,1.0743,74.624,96.0,80.5628,2.6547,1.3622,9.327,-17.2712,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-NDL-C1,NDL-AS3,110.0,0.9621,14.7118,1.5264,72.4173,93.6333,67.7091,2.6547,1.3622,9.327,-17.2712,Daily scenario averaged here; equal spend across active ads; not sales uplift.
-NDL-C1,NDL-AS4,110.0,1.8288,20.7836,1.1289,97.7527,132.0,105.5322,2.6547,1.3622,9.327,-17.2712,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+CDF-C1,CDF-AS1,135.0,0.7727,9.4995,1.231,110.1001,111.6693,101.7349,2.3251,1.201,8.0398,-11.8958,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+CDF-C1,CDF-AS2,50.0,1.1163,9.3428,0.8321,60.1999,60.0,64.9908,2.3251,1.201,8.0398,-11.8958,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+CDF-C1,CDF-AS3,50.0,0.8922,9.6675,1.0852,46.1205,51.3307,46.6151,2.3251,1.201,8.0398,-11.8958,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+CDF-C1,CDF-AS4,60.0,2.032,18.2071,0.8902,67.9137,72.0,73.3185,2.3251,1.201,8.0398,-11.8958,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+FGR-C1,FGR-AS1,160.0,0.7997,10.1375,1.2629,126.8974,131.9847,117.0305,2.6126,1.2997,9.7117,-17.1554,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+FGR-C1,FGR-AS2,60.0,1.1301,10.8991,0.9595,62.621,71.9493,67.5839,2.6126,1.2997,9.7117,-17.1554,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+FGR-C1,FGR-AS3,40.0,0.9804,15.5759,1.5781,25.3967,32.0,23.1246,2.6126,1.2997,9.7117,-17.1554,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+FGR-C1,FGR-AS4,125.0,2.1208,21.0063,0.9875,127.152,149.066,136.9408,2.6126,1.2997,9.7117,-17.1554,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+NDL-C1,NDL-AS1,150.0,0.7064,12.445,1.7639,85.3811,131.6913,80.8537,2.5325,1.322,8.5861,-12.3793,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+NDL-C1,NDL-AS2,80.0,1.0638,12.7768,1.202,66.6239,96.0,71.926,2.5325,1.322,8.5861,-12.3793,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+NDL-C1,NDL-AS3,110.0,0.9621,18.0852,1.8727,58.8071,90.3087,54.1348,2.5325,1.322,8.5861,-12.3793,Daily scenario averaged here; equal spend across active ads; not sales uplift.
+NDL-C1,NDL-AS4,110.0,1.8288,25.2358,1.3684,80.7969,132.0,87.227,2.5325,1.322,8.5861,-12.3793,Daily scenario averaged here; equal spend across active ads; not sales uplift.

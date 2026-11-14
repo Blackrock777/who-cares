@@ -173,3 +173,40 @@ Do not spend the last hours adding an unvalidated chatbot panel, advertising out
 The initial audit used `/tmp/who-cares-original-20261114` to run existing validation/prediction commands without changing the repository's original outputs. Missing dependencies were installed in `/tmp/who-cares-audit-20261114`, outside the project. Additional experiment and test logs are in `/tmp/who-cares-*.log`; these are temporary, not submission dependencies.
 
 Run the current `src/pipeline.py` to regenerate deliverables, and `python -m unittest discover -s tests -v` for the integration/UI checks. Final test results and input/output integrity checks are recorded in `out/audit/verification.json`. No source data was deleted, no hidden outcomes were retrieved, no remote repository was pushed, and no event submission was made.
+
+
+## I. ML audit of 14 November: CPM model replaced, CTR model kept
+
+Scope: a second independent review focused on whether the forecasts will hold in the hidden period, which differs from every validation window in two ways: budgets rise to 1.25–2.5× in seven ad sets, and the seasonal index goes from 119 to 158. All experiments used four rolling origins (21 Sep, 5 Oct, 19 Oct for selection; 2 Nov, the organisers' protocol, as confirmation). The competition's scoring formula is not published; log error, MAPE, MAE, rank correlation and winner selection were all tracked.
+
+### Findings
+
+| # | Finding | Evidence | Action |
+|---|---|---|---|
+| P0 | **Budget response was half-applied to CPM.** | Re-predicting the 699 rows with budgets held at last week's level: the tree's CPM changes by ×1.00 everywhere, the ridge by up to ×1.43, the blend by ×1.20 for a 2.5× budget. The one historical event (NDL-AS4, €45→€90, 5–11 Oct), compared against the same ad slots in the other two advertisers' ad set 4, gives +0.18 and +0.28 log CPM for the two ads active, an elasticity near 0.33. | Fixed: one elasticity (0.31), estimated with ad and fatigue controls, applied to all learners. |
+| P0 | **Seasonal features inside the ridge cancelled part of Black Friday.** | On the forecast rows the ridge's seasonal features multiplied CPM by 0.77 in Black Friday week on top of the index (blend: 0.88). Detrended CPM is flat within ±3% over 13 weeks while the index rose 83→119, and in the 2 Nov window the learned-coefficient variant was biased −5% with 2/12 CPM winners against −0.6% and 7/12 for the fixed-coefficient variant. | Fixed for CPM: no seasonal feature inside the learners. |
+| P1 | **The 2025 index carries week-to-week noise.** | Same-ad week-over-week CPM change regressed on index change: slope 0.21 ± 0.07, intercept +2.3%/week (the index's own average rise). | Fixed for CPM: verticals averaged, unimodal isotonic fit; peak value unchanged at 157.6. |
+| P1 | **CTR budget response is not identified.** | Model-based estimate −0.21; matched comparison against sister ad sets +0.04 ± 0.13 per doubling. The current CTR blend applies about −0.11, between the two. | Not changed. Stated as a risk: if CTR does not fall with budget, CTR in the seven raised-budget ad sets is under-predicted by 5–10%. |
+| P2 | Budget optimiser uses a fixed click elasticity of 0.42, not the forecaster's. | The forecaster implies 1 − 0.31 − (0 to 0.21) = 0.48 to 0.69, inside the optimiser's 0.25–1.0 sensitivity range. | Not changed; scenario range already covers it. |
+| P2 | Validation table labelled the same CPM model as tree, ridge and blend after integration. | Found during this audit. | Fixed: ablation rows use the previous method for both KPIs; a PRODUCTION row is added. |
+| P3 | App crashed on Streamlit versions before the `width=` chart argument. | 2 of 14 tests failed on Python 3.9 / Streamlit 1.50. | Fixed with a fallback; 14 of 14 pass on both. |
+
+### Model comparison (CPM, mean absolute log error; lower is better)
+
+| Model | 21 Sep | 5 Oct | 19 Oct | 2 Nov | New ads, 2 Nov |
+|---|---:|---:|---:|---:|---:|
+| Last 7 days | 0.065 | 0.092 | 0.086 | 0.092 | 0.135 |
+| Previous tree/ridge blend | 0.069 | 0.096 | 0.075 | 0.074 | 0.112 |
+| Hierarchical ridge alone, raw index | 0.088 | 0.087 | 0.067 | 0.068 | n/a |
+| Three-learner ensemble, raw index | 0.080 | 0.085 | 0.062 | 0.064 | n/a |
+| **Production: three learners, de-noised index, budget elasticity** | **0.065** | **0.080** | **0.062** | **0.063** | **0.067** |
+
+CTR (same metric): previous blend 0.147 / 0.180 / 0.176 / 0.212; best alternative (hierarchical ridge) 0.137 / 0.184 / 0.180 / 0.210; pooled difference of the best hybrid +0.002 with a 95% bootstrap interval of −0.005 to +0.009. No change is justified.
+
+### Rejected
+
+Poisson rate model for CTR (worse in three of four windows); impression weighting and recency decay (no effect); active-ad count as a feature (hurt the earliest window); boosted trees without the linear partner (worst learned model on CTR in every window; cannot extrapolate budget or season). Swapping the tree library (CatBoost, LightGBM, XGBoost) was not pursued: the tree is the weakest component here for structural reasons that a different implementation does not address, and 1,400 rows do not support it.
+
+### Effect on the submitted forecasts
+
+CTR: identical. CPM: higher by 16% on average (2% to 38% by row), largest where budgets rise most in Black Friday week, for example NDL-AS4 from about €21 to €26. The earlier file is at `out/audit/pre_cpm_audit_predictions.csv`; `cpm_previous` in `out/predictions.csv` carries the old value per row.
