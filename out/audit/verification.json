@@ -1,0 +1,72 @@
+{
+  "audit_date": "2026-11-14",
+  "original_commit": "02678af",
+  "source_zip_files_match": {
+    "cpm_storici.csv": true,
+    "benchmark_mercato_settimanale_2025.csv": true,
+    "da_prevedere.csv": true,
+    "asset_creativi/asset_pet_ecommerce.csv": true,
+    "campagne.csv": true,
+    "inserzionisti.csv": true,
+    "asset_creativi/asset_abbigliamento.csv": true,
+    "asset_creativi/asset_beauty_skincare.csv": true,
+    "calendario.csv": true,
+    "adset.csv": true,
+    "annunci.csv": true,
+    "budget_giornaliero.csv": true,
+    "storico_giornaliero.csv": true
+  },
+  "prediction_checks": {
+    "required_rows": 699,
+    "predicted_rows": 699,
+    "unique_keys": true,
+    "metadata_matches": true,
+    "finite_ordered_intervals": true
+  },
+  "max_point_prediction_change_from_original": {
+    "ctr_pred": 0.0,
+    "cpm_pred": 0.0
+  },
+  "unit_and_application_tests": {
+    "executed": 14,
+    "passed": 14,
+    "failed": 0,
+    "runner": "unittest + streamlit.testing.v1.AppTest"
+  },
+  "application_checks": [
+    "all 3 advertisers",
+    "all 12 audience segment selections",
+    "CTR/CPM/CPC controls",
+    "both decision windows",
+    "new creative submit",
+    "habit sensitivity",
+    "invalid age weights handled"
+  ],
+  "visual_review": "Forecast screen inspected in native Chrome; creative/scenario controls checked with AppTest; mobile not reviewed.",
+  "budget_checks": {
+    "daily_rows": 180,
+    "campaign_day_totals_preserved": true,
+    "per_set_change_within_20pct": true,
+    "amounts_in_euro_cents": true
+  },
+  "training_fingerprint_matches_manifest": true,
+  "limitations": [
+    "Hidden Black Friday outcomes unavailable",
+    "Age/habit realism unvalidated",
+    "Interval coverage below 80% target",
+    "Budget elasticity and delivery are scenario assumptions",
+    "Video not recorded or verified"
+  ],
+  "temporary_environment": "/tmp/who-cares-audit-20261114",
+  "artifacts": {
+    "predictions.csv": "137b5f3766698a911c5b7de4b6da4368da67fe6a8e78bf86f77cd8be4498339d",
+    "validation.csv": "07c69317729bd5d59aacd9eb96763831f06a776620719966dca7f6fa04215591",
+    "rolling_validation.csv": "67b60486d1039b819393aae7768fe49e4998c652fe50bcf2485a489c1391925d",
+    "validation_breakdown.csv": "de5cf53b049bb73c39642ea23d0d9e24389602c006b7c0b7a2d39a8bf8ee95d1",
+    "interval_validation.json": "bc9479dfea1673c42fe0155ec7c5f5d301c50c9ace1d1cd1fabf9f68981a35e2",
+    "audiences.json": "72a18f7f3802991e569a08d4a89fa08ea72ec2d64acd600cb9917937068f7943",
+    "decisions.json": "4d005da2925772679508a2be5625ab22e0689c80ddce9dc726f3a5413d4bf7c5",
+    "decisions_budget_daily.csv": "9b4315eb55e9db6f0e7986f423df988e43149446babf1d9d11b98c7d08aa84bf",
+    "run_manifest.json": "28671ad97c46607a2b800c0f84e9097036c9dbbddc93497c1bd25db91d298418"
+  }
+}

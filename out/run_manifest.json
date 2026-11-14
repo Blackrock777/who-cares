@@ -1,0 +1,61 @@
+{
+  "input_sha256": "67f97858fe8a3d77278943b8c2801451bfb3f73f993ed98795a7a1f50e5a4799",
+  "training_rows": 1869,
+  "raw_history_rows": 1879,
+  "flagged_rows": 10,
+  "trained_through": "2026-11-15",
+  "calibration": {
+    "start": "2026-11-02",
+    "end": "2026-11-15",
+    "warm_rows": 377,
+    "cold_rows": 66,
+    "cold_source": "calibration window",
+    "cold_reference_rows": 66,
+    "interpretation": "Empirical daily intervals; temporal/seasonal shifts can reduce coverage."
+  },
+  "intervals": {
+    "ctr": {
+      "warm": 0.3113091502602093,
+      "cold": 0.3458210312355927
+    },
+    "cpm": {
+      "warm": 0.11503138103415322,
+      "cold": 0.17778073108778125
+    }
+  },
+  "output_checks": {
+    "required_rows": 699,
+    "predicted_rows": 699,
+    "unique_keys": true,
+    "metadata_matches": true,
+    "finite_ordered_intervals": true
+  },
+  "sklearn_version": "1.8.0",
+  "python_version": "3.12.14",
+  "numpy_version": "2.3.5",
+  "pandas_version": "2.2.3",
+  "new_ad_ids": [
+    "CDF-AD06",
+    "CDF-AD11",
+    "CDF-AD17",
+    "CDF-AD23",
+    "FGR-AD06",
+    "FGR-AD11",
+    "FGR-AD17",
+    "FGR-AD23",
+    "NDL-AD06",
+    "NDL-AD11",
+    "NDL-AD17",
+    "NDL-AD23"
+  ],
+  "new_asset_ids": [
+    "CDF-B3",
+    "CDF-B4",
+    "FGR-B3",
+    "FGR-B4",
+    "NDL-B3",
+    "NDL-B4"
+  ],
+  "model": "50/50 log-space tree/ridge; supported by pre-November rolling comparison",
+  "seasonality": "2025 benchmark aligned 364 days back; Black Friday transfer is untested"
+}

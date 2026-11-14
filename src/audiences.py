@@ -1,119 +1,134 @@
-"""Infer who is behind each ad set from its behaviour, and write the audience hypotheses.
+"""Infer behavioural audience hypotheses from each ad set's measured fingerprint.
 
-The organisers hide the audiences. We reverse-engineer them from a behavioural fingerprint:
-cost per reach, frequency, fatigue speed, response to levers and to creative features.
-
-Writes out/audiences.md (for the README) and out/audiences.json (for the app).
+Identities, ages, income and targeting settings are not observed in this kit.
+A warm-response profile is consistent with retargeting, not proof of it.
 """
 import json
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 from features import load_history
 
 OUT = Path(__file__).resolve().parents[1] / "out"
-
-# One hypothesis per ad-set rank. The same structure repeats in all three advertisers,
-# which is itself evidence: it is how a Meta account for a sales campaign is usually built.
-HYPOTHESES = {
-    "1": {
-        "name": "Broad prospecting (cold)",
-        "who": "Everyone 18-65 in Italy, no interest targeting (Advantage+ broad). The widest and "
-               "cheapest audience in the account, mostly people who have never heard of the brand.",
-        "evidence": [
-            "Largest budget and the lowest CPM in every advertiser: Meta finds cheap impressions because the pool is huge.",
-            "Highest reach per euro and frequency pinned at 1.03: almost nobody sees an ad twice.",
-            "Lowest CTR: a cold stranger rarely clicks.",
-            "Almost no fatigue (week-4 CTR is 92-97% of week-0): the pool refreshes itself.",
-            "Black Friday lever under-indexes (0.8-0.9x): a cold audience is not waiting for this brand's sale.",
-        ],
-        "implication": "Use it for reach and for creative that explains the product. Keep heavy-text graphics out: this is where they hurt most.",
+PROFILES = {
+    "broad": {
+        "name": "Broad / discovery response",
+        "who": "A broad, relatively cold audience is plausible. Low auction cost and weak click response support this reading.",
+        "implication": "Test a clear product introduction against the strongest existing creative.",
+        "alternative": "Cheap placements or weaker creative delivery could produce a similar profile.",
     },
-    "2": {
-        "name": "Interest / lookalike, deal-driven, younger",
-        "who": "Interest-based or 1-3% lookalike of past buyers, skewed 25-34, Instagram-heavy, "
-               "responds to deals and to people on camera.",
-        "evidence": [
-            "Mid budget, CPM 10-20% above ad set 1: a narrower pool, but still cold (frequency 1.03).",
-            "Fastest fatigue after the warm set (week-4 CTR is ~70% of week-0): the pool is finite.",
-            "Black Friday lever over-indexes strongly (1.2-1.7x) and scarcity over-indexes: deal hunters.",
-            "Weekend CTR slightly higher (Saturday +6%): leisure browsing, not desk browsing.",
-            "Video and talking-to-camera creatives beat images by 1.3-1.7x.",
-        ],
-        "implication": "The right place for promo creatives in Black Week. Rotate creatives every 3-4 weeks; it burns out.",
+    "deal": {
+        "name": "Promotion-responsive prospecting hypothesis",
+        "who": "An interest or lookalike prospecting audience is plausible. Promotion response should be tested rather than assumed.",
+        "implication": "Compare promotion, scarcity and urgency on the same dates. Watch the measured creative fatigue.",
+        "alternative": "Creative mix and launch dates can explain apparent deal sensitivity.",
     },
-    "3": {
-        "name": "Narrow premium interest, older",
-        "who": "Tight interest stack (premium skincare / premium pet food / mid-range fashion), "
-               "skewed 35-54, higher income, trust-driven rather than deal-driven.",
-        "evidence": [
-            "Smallest budget yet CPM close to the warm set: an expensive, narrow pool.",
-            "Frequency 1.035, slightly above the other cold sets: a smaller pool reached more than once.",
-            "Black Friday lever under-indexes most (0.6-0.7x): price is not what moves them.",
-            "Scarcity creatives over-index and 'talking to camera' creatives get the biggest lift of any set (1.4x).",
-            "Almost no fatigue (0.9-1.0): a loyal, stable segment that tolerates the same creative.",
-        ],
-        "implication": "Sell quality and proof, not discounts. The dermatologist video and the numbered-kit carousel belong here.",
+    "selective": {
+        "name": "Selective / higher-cost response",
+        "who": "A narrower or more expensive audience is plausible. Premium interests and trust needs are hypotheses only.",
+        "implication": "Compare product proof with discount-led creative; retain the winner only when the evidence supports it.",
+        "alternative": "Placement, bidding or competition can raise CPM without premium customers.",
     },
-    "4": {
-        "name": "Retargeting (warm)",
-        "who": "Site visitors, add-to-cart and past customers of the last 30-90 days. People who already "
-               "know the brand and are deciding whether to buy.",
-        "evidence": [
-            "CTR about 2x the cold sets in every advertiser: warm people click.",
-            "Frequency 1.20-1.24 against 1.03 elsewhere: a small pool, so the same people see the ad again.",
-            "Lowest reach per euro and the highest CPM: competition for warm users is expensive and the pool is small.",
-            "Strongest fatigue of all (week-4 CTR is 60-72% of week-0): once the pool has seen it, it is done.",
-            "Black Friday lever over-indexes 1.35-1.6x and Friday-to-Sunday CTR is above average: they were waiting for the price drop.",
-        ],
-        "implication": "Highest click volume per euro. Load Black Friday creatives here first, refresh weekly, and cap frequency.",
+    "warm": {
+        "name": "Warm-response / retargeting hypothesis",
+        "who": "Visitors, previous buyers or cart abandoners are plausible: repeat exposure and click propensity are relatively high.",
+        "implication": "Prioritise promising creatives cautiously and monitor fatigue; high CTR does not establish sales lift.",
+        "alternative": "A small, highly interested prospecting pool can also click often and see repeated impressions.",
+    },
+    "uncertain": {
+        "name": "Mixed prospecting response / identity uncertain",
+        "who": "An interest-based audience is plausible, but the observed signals do not reliably distinguish deal seekers from selective shoppers.",
+        "implication": "Run a controlled proof-versus-promotion comparison before changing the targeting story.",
+        "alternative": "Creative mix, delivery and time effects can explain the differences between these ad sets.",
     },
 }
 
 
-def fingerprint() -> pd.DataFrame:
-    h = load_history()
-    h["cpc"] = h["spesa"] / h["click"]
-    h["reach_per_eur"] = h["copertura"] / h["spesa"]
+def fingerprint(history=None):
+    h = load_history() if history is None else history.copy()
     g = h.groupby("adset_id", observed=True)
-    wk0 = h[h["days_since_launch"] < 7].groupby("adset_id", observed=True)["ctr"].mean()
-    wk4 = h[h["days_since_launch"] >= 28].groupby("adset_id", observed=True)["ctr"].mean()
-    bf = h[h["leva"] == "black_friday"].groupby("adset_id", observed=True)["ctr"].mean()
-    tab = pd.DataFrame({
-        "budget_eur": g["budget"].mean(),
-        "ctr_%": g["ctr"].mean(),
-        "cpm_eur": g["cpm"].mean(),
-        "cpc_eur": g["cpc"].mean(),
-        "frequency": g["frequenza"].mean(),
-        "reach_per_eur": g["reach_per_eur"].mean(),
-        "fatigue_wk4_vs_wk0": wk4 / wk0,
-        "black_friday_lift": bf / g["ctr"].mean(),
-    }).round(3)
-    tab["rank"] = tab.index.str[-1]
-    tab["audience"] = tab["rank"].map({k: v["name"] for k, v in HYPOTHESES.items()})
-    return tab
+    tab = g.agg(budget_eur=("budget", "mean"), impressions=("impression", "sum"),
+                clicks=("click", "sum"), spend=("spesa", "sum"),
+                frequency=("frequenza", "median"), rows=("ad_id", "size"))
+    tab["ctr_%"] = tab.clicks / tab.impressions * 100
+    tab["cpm_eur"] = tab.spend / tab.impressions * 1000
+    tab["cpc_eur"] = tab.spend / tab.clicks
+    tab["reach_per_eur"] = g["copertura"].sum() / tab.spend
+    # Compare the SAME ad's first observed week with observations 28+ days later.
+    # Remove the supplied seasonal CTR index first. This is descriptive, not causal.
+    h["observed_age"] = (h.data - h.groupby("ad_id", observed=True).data.transform("min")).dt.days
+    h["normalized_ctr"] = h.ctr / (h.idx_ctr / 100)
+    early = h[h.observed_age < 7].groupby(["adset_id", "ad_id"], observed=True).normalized_ctr.mean()
+    late = h[h.observed_age >= 28].groupby(["adset_id", "ad_id"], observed=True).normalized_ctr.mean()
+    ratios = (late / early).dropna()
+    tab["fatigue_late_vs_first_week"] = ratios.groupby(level=0, observed=True).median()
+    tab["fatigue_ads"] = ratios.groupby(level=0, observed=True).size()
+    bf = h[h.leva == "black_friday"].groupby("adset_id", observed=True).ctr.mean()
+    tab["bf_mix_ratio"] = bf / g.ctr.mean()
+    # Asset/date matching reduces (but does not eliminate) creative-mix confounding.
+    match = h.groupby(["data", "asset_id"], observed=True).ctr.transform("mean")
+    nsets = h.groupby(["data", "asset_id"], observed=True).adset_id.transform("nunique")
+    h["matched_ctr_ratio"] = (h.ctr / match).where(nsets > 1)
+    tab["matched_ctr_ratio"] = h.groupby("adset_id", observed=True).matched_ctr_ratio.median()
+    tab["campaign_id"] = g.campaign_id.first()
+    tab["profile"] = ""
+    # Explicit heuristic hypotheses. Do not force one of every type per advertiser.
+    # These thresholds describe relative behaviour, not recovered targeting settings.
+    for _, group in tab.groupby("campaign_id"):
+        tab.loc[group.index, "profile"] = "uncertain"
+        for adset, row in group.iterrows():
+            if row.frequency > 1.1*group.frequency.median() and row['ctr_%'] > group['ctr_%'].median():
+                key = "warm"
+            elif row.cpm_eur == group.cpm_eur.min() and row['ctr_%'] < group['ctr_%'].median():
+                key = "broad"
+            elif row.bf_mix_ratio > 1.1 and row.fatigue_late_vs_first_week < .8:
+                key = "deal"
+            elif row.cpm_eur > 1.1*group.cpm_eur.median() and row.bf_mix_ratio < 1:
+                key = "selective"
+            else:
+                key = "uncertain"
+            tab.loc[adset, "profile"] = key
+    tab["audience"] = tab.profile.map(lambda x: PROFILES[x]["name"])
+    return tab.round(4)
+
+
+def infer(history=None):
+    tab = fingerprint(history)
+    payload = {}
+    for adset, row in tab.iterrows():
+        profile = PROFILES[row.profile]
+        evidence = [f"{int(row.rows)} cleaned ad-day observations; pooled CTR {row['ctr_%']:.2f}%, CPM €{row.cpm_eur:.2f}.",
+                    f"Median daily frequency per ad {row.frequency:.3f}; this is not deduplicated audience reach.",
+                    f"Within-ad late/first-week CTR ratio, season-adjusted: {row.fatigue_late_vs_first_week:.2f} across {int(row.fatigue_ads)} ads.",
+                    f"Same-asset/day relative CTR median {row.matched_ctr_ratio:.2f}; a descriptive matched comparison.",
+                    f"Black Friday creative CTR / all-creative CTR {row.bf_mix_ratio:.2f}; creative/date mix confounds this comparison."]
+        values = row.drop(["campaign_id", "profile", "audience"]).to_dict()
+        values = {k: (None if pd.isna(v) else v) for k, v in values.items()}
+        payload[str(adset)] = {**profile, "profile": row.profile, "evidence": evidence,
+                              "confidence": "Moderate for relative behaviour; low for targeting identity; demographics unobserved.",
+                              "demographics": "Age, gender, income, geography and placement cannot be recovered from these aggregates.",
+                              "fingerprint": values}
+    return tab, payload
 
 
 def main():
     OUT.mkdir(exist_ok=True)
-    tab = fingerprint()
+    tab, payload = infer()
     tab.to_csv(OUT / "adset_fingerprint.csv")
-    lines = ["# Who is behind each ad set\n",
-             "The audiences are hidden, so we inferred them from behaviour. The same four-way structure "
-             "appears in all three advertisers, which is the standard way a Meta sales campaign is built: "
-             "one broad set, two interest sets, one retargeting set.\n",
-             "## Fingerprint (history, traps removed)\n", tab.to_markdown(), ""]
-    for rank, hyp in HYPOTHESES.items():
-        sets = ", ".join(tab.index[tab["rank"] == rank])
-        lines += [f"## Ad set {rank} ({sets}): {hyp['name']}\n", f"**Who:** {hyp['who']}\n", "**Evidence:**"]
-        lines += [f"- {e}" for e in hyp["evidence"]]
-        lines += ["", f"**What it means for the plan:** {hyp['implication']}", ""]
+    lines = ["# Audience hypotheses grounded in observed response\n",
+             "Simulated challenge data. Targeting identities and demographics are not observed. "
+             "Profiles are ranked from metrics within each advertiser, not assigned from ad-set IDs.\n",
+             tab.to_markdown(), ""]
+    for adset, hyp in payload.items():
+        lines += [f"## {adset}: {hyp['name']}\n", hyp["who"], "",
+                  f"**Confidence:** {hyp['confidence']}", f"**Unobserved:** {hyp['demographics']}", "",
+                  *[f"- {e}" for e in hyp["evidence"]], "",
+                  f"**Alternative:** {hyp['alternative']}", f"**Decision:** {hyp['implication']}", ""]
     (OUT / "audiences.md").write_text("\n".join(lines), encoding="utf-8")
-    payload = {row: {**HYPOTHESES[row[-1]], "fingerprint": tab.loc[row].drop(["rank", "audience"]).to_dict()}
-               for row in tab.index}
-    (OUT / "audiences.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(tab.to_string())
+    (OUT / "audiences.json").write_text(json.dumps(payload, indent=2, ensure_ascii=False, allow_nan=False), encoding="utf-8")
+    print(tab[["audience", "ctr_%", "cpm_eur", "frequency", "fatigue_late_vs_first_week"]].to_string())
 
 
 if __name__ == "__main__":
