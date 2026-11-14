@@ -23,6 +23,14 @@ The application opens at http://localhost:8501. Existing generated outputs are i
 
 Individual commands remain available: `python src/model.py rolling`, `python src/model.py validate`, `python src/model.py predict`, `python src/audiences.py`, `python src/decide.py`. Run the full pipeline after source/data changes to keep the dashboard outputs consistent.
 
+## Beyond this dataset: `adsim`
+
+`adsim/` is the same method rebuilt as a product: one config file per customer, no hard-coded IDs, dates, language or anomaly lists, a multilingual pretrained creative encoder, a structural budget what-if, behavioural audience archetypes and Monte Carlo simulation. On the same four validation windows it matches the tuned submission (CTR MAPE 25.1% vs 25.6%, CPM 6.2% vs 6.3%). See `docs/BUILD_BRIEF.md` for the specification and `docs/ADOPTION.md` for results, the pretrained models tested, and how a new customer plugs in. The official forecasts in `out/predictions.csv` still come from `src/`.
+
+```bash
+.venv/bin/python -m adsim configs/wevion_bighack.json whatif --audience NDL-AS4
+```
+
 ## What to demonstrate
 
 1. **Compare ads:** select an advertiser and audience. See the first creative to test, its copy, CTR/CPM/CPC forecasts, daily intervals and a ranking on common dates.
