@@ -186,6 +186,8 @@ class SharedAudiencesAcrossAdvertisers(unittest.TestCase):
         b["advertiser_id"] = "TWIN"
         b["ad_id"] = "T-" + b["ad_id"]
         b["clicks"] = (b["clicks"] * 0.5).round()                       # same audiences and creatives, half the response
+        b["ctr"] = b["clicks"] / b["impressions"] * 100
+        b = b[b["clicks"] > 0]
         e = Engine(CFG).fit(pd.concat([a, b]), C)
         self.assertTrue(e.shared_audiences)
         pa, pb = e.predict(a.tail(200))["ctr"].values, e.predict(b.tail(200))["ctr"].values
