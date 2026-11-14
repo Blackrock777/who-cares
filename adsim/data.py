@@ -47,21 +47,33 @@ def _season(cfg, root):
     return out
 
 
-def flag_anomalies(h):
-    """Rule-based quality flags; nothing is listed by hand.
+QUALITY_HELP = {
+    "": "valid (legitimate zero-click days included)",
+    "invalid": "impossible record: non-positive impressions, negative values or more clicks than impressions",
+    "suspicious_zero_clicks": "zero clicks where the ad's own rate made that a <0.1% event",
+    "suspicious_spend_over_budget": "the audience's ads together spent more than 1.5x its daily budget",
+}
 
-    zero_clicks_improbable: zero clicks where the ad's own typical rate made that a <0.1% event.
-    spend_over_budget: an audience's ads together spent more than 1.5x its daily budget.
+
+def flag_anomalies(h):
+    """Rule-based quality flags, computed only from the rows passed in.
+
+    Three classes: invalid records, suspicious observations, and valid rows. A zero-click day is
+    valid unless it is statistically implausible for that ad; valid zeros stay in training and
+    evaluation. Callers that split by time must call this on the training rows alone.
     """
     h = h.copy()
     h["quality"] = ""
-    rate = h.groupby("ad_id").apply(lambda g: g.clicks.sum() / max(g.impressions.sum(), 1)).rename("r")
-    expected = h["impressions"] * h["ad_id"].map(rate)
-    h.loc[(h["clicks"] == 0) & (np.exp(-expected) < 1e-3), "quality"] = "zero_clicks_improbable"
-    if "budget" in h:
-        tot = h.groupby(["date", "audience_id"])["spend"].transform("sum")
-        h.loc[(tot > 1.5 * h["budget"]) & (h["quality"] == ""), "quality"] = "spend_over_budget"
-    h.loc[(h["clicks"] <= 0) & (h["quality"] == ""), "quality"] = "zero_clicks"
+    bad = (h["impressions"] <= 0) | (h["clicks"] < 0) | (h["spend"] < 0) | (h["clicks"] > h["impressions"])
+    h.loc[bad, "quality"] = "invalid"
+    ok = h[~bad]
+    tot = ok.groupby("ad_id")[["clicks", "impressions"]].sum()
+    rate = (tot["clicks"] / tot["impressions"].clip(lower=1))
+    expected = h["impressions"] * h["ad_id"].map(rate).fillna(0)
+    h.loc[(h["quality"] == "") & (h["clicks"] == 0) & (np.exp(-expected) < 1e-3), "quality"] = "suspicious_zero_clicks"
+    if "budget" in h and (h["budget"] != 1.0).any():
+        spent = h.groupby(["date", "audience_id"])["spend"].transform("sum")
+        h.loc[(spent > 1.5 * h["budget"]) & (h["quality"] == ""), "quality"] = "suspicious_spend_over_budget"
     return h
 
 
@@ -71,6 +83,11 @@ def load(config_path):
     if not root.is_absolute():
         root = (Path(config_path).resolve().parent.parent / root)
     hist = _canon(_read(root, cfg["history"]), cfg["history"]["columns"])
+    need = [c for c in ["date", "ad_id", "audience_id", "creative_id", "impressions", "clicks", "spend"] if c not in hist]
+    if need:
+        raise ValueError(f"History table is missing required columns after mapping: {need}. Check 'history.columns' in the config.")
+    if hist.empty:
+        raise ValueError("History table has no rows. Supply at least a few days of ad-level results before fitting.")
     fut = _canon(_read(root, cfg["future"]), cfg["future"]["columns"]) if cfg.get("future") else None
     cr = _canon(_read(root, cfg["creatives"]), cfg["creatives"]["columns"]) if cfg.get("creatives") else None
     ads = _canon(_read(root, cfg["ads"]), cfg["ads"]["columns"]) if cfg.get("ads") else None
@@ -99,7 +116,12 @@ def load(config_path):
         if aud is not None and "base_budget" in aud:
             df = df.merge(aud[["audience_id", "base_budget"]].astype({"audience_id": str}), on="audience_id", how="left")
         else:
-            base = hist.assign(a=hist["audience_id"].astype(str)).groupby("a")["budget"].median() if "budget" in hist else None
+            # Reference budget = the first budget ever observed for the audience. Unlike a median
+            # over the whole history, it is never information from after a training cut-off.
+            base = None
+            if "budget" in hist:
+                first = hist.assign(a=hist["audience_id"].astype(str), d=pd.to_datetime(hist["date"])).sort_values("d")
+                base = first.groupby("a")["budget"].first()
             df["base_budget"] = df["audience_id"].map(base) if base is not None else 1.0
         df["base_budget"] = df["base_budget"].fillna(df["budget"])
         df["lbr"] = np.log(df["budget"].astype(float) / df["base_budget"].astype(float))
@@ -114,8 +136,9 @@ def load(config_path):
                     raise ValueError(f"Season index does not cover all dates for {kpi}.")
                 df[f"season_{kpi}"] = val
         if is_history:
-            df["ctr"] = df["clicks"] / df["impressions"] * 100
-            df["cpm"] = df["spend"] / df["impressions"] * 1000
+            imp = df["impressions"].where(df["impressions"] > 0)
+            df["ctr"] = df["clicks"] / imp * 100
+            df["cpm"] = df["spend"] / imp * 1000
             df["frequency"] = df["impressions"] / df["reach"] if "reach" in df else np.nan
             df = flag_anomalies(df)
         return df

@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 out/model.pkl
 out/adsim/
+.env.tabpfn
+.venv312/
