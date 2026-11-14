@@ -7,3 +7,4 @@ out/adsim/
 .env.tabpfn
 .venv312/
 data/external/
+.env.meta
