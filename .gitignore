@@ -8,3 +8,4 @@ out/adsim/
 .venv312/
 data/external/
 .env.meta
+.env.apify

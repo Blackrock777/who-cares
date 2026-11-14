@@ -43,11 +43,77 @@ def _join(v):
     return " ".join(dict.fromkeys(x.strip() for x in (v or []) if x and x.strip())) if isinstance(v, list) else (v or "")
 
 
+def _find(obj, names, depth=0):
+    """First non-empty value stored under any of `names`, searching nested dicts (scraper output nests details)."""
+    if isinstance(obj, dict):
+        for n in names:
+            if obj.get(n) not in (None, "", [], {}):
+                return obj[n]
+        if depth < 4:
+            for v in obj.values():
+                if isinstance(v, (dict, list)):
+                    hit = _find(v, names, depth + 1)
+                    if hit not in (None, "", [], {}):
+                        return hit
+    elif isinstance(obj, list) and depth < 4:
+        for v in obj[:5]:
+            hit = _find(v, names, depth + 1)
+            if hit not in (None, "", [], {}):
+                return hit
+    return None
+
+
+def _text(v):
+    if isinstance(v, dict):
+        v = v.get("text") or v.get("markup") or ""
+    v = (v or "").strip()
+    return "" if v.startswith("{{") else v              # template placeholders of catalogue ads carry no copy
+
+
+def _day(v):
+    if v in (None, "", 0):
+        return None
+    if isinstance(v, (int, float)) or str(v).isdigit():
+        return pd.to_datetime(int(v), unit="s").strftime("%Y-%m-%d")
+    return str(v)[:10]
+
+
+def from_scraper(records):
+    """Map items from a third-party Ad Library scraper (Apify actors) onto the official API field names.
+
+    Field names vary by actor and change over time, so values are looked up by several known names
+    at any nesting level. Anything not found stays empty; `summary.json` reports how many ads have
+    text and reach so a silent mapping failure is visible.
+    """
+    out = []
+    for r in records:
+        snap = r.get("snapshot") or {}
+        cards = snap.get("cards") or []
+        bodies = [_text(snap.get("body"))] + [_text(c.get("body")) for c in cards]
+        titles = [_text(snap.get("title"))] + [_text(c.get("title")) for c in cards]
+        descs = [_text(snap.get("link_description"))] + [_text(c.get("link_description")) for c in cards]
+        fmt = snap.get("display_format") or ("VIDEO" if snap.get("videos") else "IMAGE" if snap.get("images") else "")
+        out.append({"id": str(r.get("ad_archive_id") or r.get("adArchiveID") or r.get("ad_id") or r.get("id")),
+                    "page_id": str(r.get("page_id") or snap.get("page_id") or ""), "page_name": r.get("page_name") or snap.get("page_name") or "",
+                    "ad_creative_bodies": [b for b in bodies if b], "ad_creative_link_titles": [t for t in titles if t],
+                    "ad_creative_link_descriptions": [d for d in descs if d], "ad_creative_link_captions": [snap.get("caption") or ""],
+                    "ad_delivery_start_time": _day(r.get("start_date") or r.get("startDate") or r.get("start_date_formatted")),
+                    "ad_delivery_stop_time": None if r.get("is_active") else _day(r.get("end_date") or r.get("endDate") or r.get("end_date_formatted")),
+                    "publisher_platforms": [str(p).lower() for p in (r.get("publisher_platform") or r.get("publisherPlatform") or [])],
+                    "eu_total_reach": _find(r, ["eu_total_reach"]), "target_ages": [], "target_gender": _find(r, ["gender_audience", "target_gender"]) or "",
+                    "age_country_gender_reach_breakdown": _find(r, ["age_country_gender_reach_breakdown"]) or [],
+                    "display_format": fmt, "cta": snap.get("cta_text") or "", "collation_count": r.get("collation_count")})
+    return out
+
+
 def normalise(paths, as_of=None):
     """One row per ad, plus one row per ad x country x age x gender of reach."""
     ads, demo = [], []
     for path in ([paths] if isinstance(paths, (str, Path)) else paths):
-        for r in _records(path):
+        recs = _records(path)
+        if recs and ("snapshot" in recs[0] or "ad_archive_id" in recs[0]):
+            recs = from_scraper(recs)
+        for r in recs:
             start = pd.to_datetime(r.get("ad_delivery_start_time"), errors="coerce")
             stop = pd.to_datetime(r.get("ad_delivery_stop_time"), errors="coerce")
             ads.append(dict(ad_id=str(r.get("id")), page_id=str(r.get("page_id", "")), page_name=r.get("page_name", ""),
@@ -55,7 +121,7 @@ def normalise(paths, as_of=None):
                             description=_join(r.get("ad_creative_link_descriptions")), caption=_join(r.get("ad_creative_link_captions")),
                             start=start, stop=stop, platforms=",".join(sorted(r.get("publisher_platforms") or [])),
                             languages=",".join(r.get("languages") or []), eu_total_reach=pd.to_numeric(r.get("eu_total_reach"), errors="coerce"),
-                            target_gender=r.get("target_gender", ""), target_ages=_join([str(a) for a in (r.get("target_ages") or [])]),
+                            display_format=r.get("display_format", ""), cta=r.get("cta", ""), target_gender=r.get("target_gender", ""), target_ages=_join([str(a) for a in (r.get("target_ages") or [])]),
                             source_file=Path(path).name))
             for c in r.get("age_country_gender_reach_breakdown") or []:
                 for a in c.get("age_gender_breakdowns") or []:
