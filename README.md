@@ -1,103 +1,89 @@
-# Clienti che non esistono · Wevion BigHack 2026
+# Who Cares · Campaign rehearsal
 
-Uno strumento che immagina il pubblico di ogni ad set, prevede CTR e CPM giorno per giorno
-nelle due settimane del Black Friday, e dice dove mettere il budget. Tutto a partire dal kit:
-91 giorni di storico, 36 creatività descritte a parole, 3 inserzionisti simulati.
+Forecast an ad before launch, compare its response across 12 audience segments, and test where the same budget could buy more clicks. Built for Wevion BigHack 2026, “Clienti che non esistono”.
 
-*A tool that infers who is behind each ad set, forecasts CTR and CPM per ad per day for
-Black Week with error bands, and turns the forecast into budget, creative and timing decisions.*
+All advertisers, creative descriptions and outcomes in the organisers' kit are **simulated**. The forecast window is 16–30 November 2026. No external advertising outcomes or persona datasets are used.
 
-## Run it
+## Run
+
+Tested with Python 3.12.14. Use Python 3.12 and the pinned dependencies; the system Python on the development machine is a different version.
 
 ```bash
-python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt
-cd src
-../.venv/bin/python model.py validate   # train to 1 Nov, score 2-15 Nov
-../.venv/bin/python model.py predict    # train on all 91 days, write out/predictions.csv
-../.venv/bin/python audiences.py        # out/audiences.md, out/audiences.json
-../.venv/bin/python decide.py           # out/decisions.md, out/decisions.json
-cd .. && ./.venv/bin/streamlit run app.py
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python src/pipeline.py
+.venv/bin/python -m streamlit run app.py
 ```
 
-## The three deliverables
+The application opens at http://localhost:8501. Existing generated outputs are included. `pipeline.py` rebuilds the forecasts, validations, audience evidence and decisions from `data/raw`. It archives the initially supplied prediction, validation, audience and decision files under `out/audit/` before replacing them. Raw kit files are never changed. The local `out/model.pkl` is intentionally excluded from Git; the creative lab builds it automatically if absent or stale.
 
-| # | What | Where |
-|---|---|---|
-| 1 | The tool | `app.py` (Streamlit): audiences, forecasts with bands, decisions, and a "score a new creative" page |
-| 2 | The predictions | `out/predictions.csv`: for every row of `da_prevedere.csv`, `ctr_pred`, `cpm_pred` and 80% bands (`*_lo`, `*_hi`), plus `cold_start` |
-| 3 | The reasoning | this README, `out/audiences.md`, `out/decisions.md`, and the 3-minute video |
+```bash
+.venv/bin/python -m unittest discover -s tests -v
+```
 
-## 1. Who is behind each ad set
+Individual commands remain available: `python src/model.py rolling`, `python src/model.py validate`, `python src/model.py predict`, `python src/audiences.py`, `python src/decide.py`. Run the full pipeline after source/data changes to keep the dashboard outputs consistent.
 
-The audiences are hidden, so we read them off the behaviour. The same four-way structure appears in
-all three advertisers, which is how a Meta sales campaign is normally built. Full evidence per set
-is in `out/audiences.md`.
+## What to demonstrate
 
-| Ad set | Audience | The fingerprint that gives it away |
-|---|---|---|
-| 1 | Broad prospecting, cold | Biggest budget, lowest CPM, highest reach per euro, frequency 1.03, lowest CTR, almost no fatigue, Black Friday lever under-indexes |
-| 2 | Interest / lookalike, deal-driven, younger | Mid CPM, fast fatigue (week-4 CTR is 70% of week-0), Black Friday lever over-indexes 1.2-1.7x, Saturday CTR higher, video and talking-to-camera beat images 1.3-1.7x |
-| 3 | Narrow premium interest, older | Smallest budget but near-warm CPM, Black Friday lever under-indexes most (0.6-0.7x), scarcity and "talks to camera" get the biggest lift, no fatigue |
-| 4 | Retargeting, warm | CTR 2x the cold sets, frequency 1.20-1.24 against 1.03, lowest reach per euro, strongest fatigue, Black Friday lever 1.35-1.6x, Friday-Sunday CTR above average |
+1. **Compare ads:** select an advertiser and audience. See the first creative to test, its copy, CTR/CPM/CPC forecasts, daily intervals and a ranking on common dates.
+2. **Audience evidence:** measured response, exposure, fatigue, alternative explanations and confidence for each segment.
+3. **Budget scenarios:** daily allocation that preserves campaign budgets, limits changes to 20%, and shows sensitivity to uncertain returns.
+4. **Creative lab:** score a new Italian creative description across four audience segments, inspect tag sensitivities, and explore a synthetic viewer panel.
+5. **Validation & exports:** compare against the baseline, inspect weak segments, see quality exclusions and download all required forecasts.
 
-## 2. How the forecast works
+## Measured performance
 
-`src/features.py` builds one row per ad per day with:
+Training: 1,426 cleaned ad-days through 1 November. Evaluation: 443 cleaned ad-days on 2–15 November. Twelve ads are unseen at training time. Full supplied validation contains 444 rows; the additional row has zero CTR and is also reported using MAE/WAPE.
 
-- **Creative features** tagged from the Italian visual descriptions: hook in the first 2 seconds, someone talking to camera, a person on screen, heavy text or infographic, logo before the hook, discount revealed at the end, timer, studio background, crossed-out price, reviews, black background, discount percentage, format, video length, CTA.
-- **Fatigue**: days since the ad launched. CTR falls from ~1.6% in week 0 to ~1.1% by week 8 in the history.
-- **Budget**: the ad set's daily budget and its ratio to the initial budget. When NDL ad set 4 doubled its budget in the history, CPM rose 28% and CTR fell 14%.
-- **Season**: the 2025 weekly market index for the same week (Black Friday week 2025: CPM 1.57x, CTR 1.24x), aligned 52 weeks back so weekdays match, plus the monthly market CPM.
-- **Calendar**: weekday, weekend, event days.
+| Model | CTR MAE, percentage points | CTR MAPE | CTR global / within-set Spearman | CTR winners | CPM MAPE |
+|---|---:|---:|---:|---:|---:|
+| Last 7 days per ad; ad-set fallback | 0.316 | 33.3% | 0.65 / 0.21 | 4/12 | 8.6% |
+| Tree/ridge blend with 2025 index | 0.228 | 25.6% | 0.85 / 0.66 | 11/12 | 7.2% |
 
-`src/model.py` trains two learners on log(CTR) and log(CPM) **detrended by the 2025 index**, so the
-Black Week lift comes from the index and the model only explains what is specific to each ad:
+These original point metrics were independently reproduced. The regenerated point forecasts are unchanged. Ridge alone has better CTR MAPE on this particular window (24.0%), while the index-adjusted tree has better CPM MAPE (6.8%). Three earlier 14-day windows favour the blend overall among the learned candidates; see `out/rolling_validation.csv`. Those checks use only completed monthly market observations at each forecast cutoff. The simple baseline remains competitive, particularly for CPM. The known November window has been examined during development; it is not a pristine final test. The 699 hidden-outcome rows are the actual competition test.
 
-- a gradient-boosted tree (interactions: ad set x creative x fatigue),
-- a log-linear ridge (extrapolates cleanly to budgets and index values the history never saw).
+**Intervals are empirical, not a guarantee.** Calibration on 2–8 November contains no new ads. The original fallback was an arbitrary 0.4 log-width; the revised method uses new-ad errors from an earlier temporal holdout instead. Coverage on 9–15 November remains below the 80% target: see `out/interval_validation.json` for exact aggregate and known/new-ad coverage. Average daily bounds shown in summaries are not confidence intervals for a window average or a winning probability.
 
-They are blended 50/50. Bands are conformal: the 80% quantile of absolute log error on a held-out
-window, computed separately for ads with history and for cold-start ads.
+## How forecasts work
 
-Three data traps were removed before training: 14 Oct (every pet ad has zero clicks), 21 Oct
-(FGR ad set 1 spent 4x its budget), 9 Nov (NDL-AD15 zero clicks).
+`src/features.py` joins each ad/date to creative descriptions, launch dates, planned daily budgets and the supplied calendar. Keyword rules extract hooks, speaking to camera, heavy text, late discounts, timers, people, studio backgrounds, prices and reviews. Format, duration, headline discount and text length are included. These rules read the supplied descriptions; no image or video was supplied.
 
-## Validation (exactly the protocol in the brief)
+`src/model.py` fits a gradient-boosted tree and a regularized ridge model to log CTR and log CPM after subtracting the log 2025 weekly market index. It averages the two predictions in log space, then restores the seasonal index. Both models use training-only preprocessing. Market indices remain predictors as well, so detrending does not force a fixed causal seasonal effect. The supplied 2025 shape is a transfer assumption, not measured Black Friday 2026 accuracy.
 
-Trained on data to 1 November, scored on 2-15 November. Twelve ads launched inside the window, so
-they were cold-start for the model, the same situation as the four Black Friday creatives in the test.
+A 364-day offset aligns weekdays and the Black Friday/Cyber Monday weeks correctly. November market CPM is projected from October 2026 using the 2025 November/October ratio. A model's forecast context restricts monthly observations to completed months at its training cutoff. Future budgets are known inputs supplied by the organisers.
 
-| Model | CTR MAE (pp) | CTR MAPE | CTR rank corr | CTR winner per ad set | CPM MAPE | CPM rank corr |
-|---|---|---|---|---|---|---|
-| Naive: last 7 days per ad | 0.32 | 33% | 0.65 | 4 / 12 | 8.6% | 0.96 |
-| Ours: tree + ridge, index-detrended | 0.23 | 26% | 0.85 | 11 / 12 | 7.2% | 0.97 |
+Ten suspected quality anomalies are excluded from training: eight pet zero-click rows, one clothing spend spike, and one skincare zero-click row. Their causes are **unconfirmed**. All exclusions are exported in `out/quality_flags.csv`; validation sensitivity includes the supplied zero-click outcome rather than hiding it. MAPE excludes undefined zero denominators; MAE and WAPE include them.
 
-Bands calibrated on 2-8 Nov covered 71% (CTR) and 83% (CPM) of 9-15 Nov at an 80% target.
-All variants are in `out/validation.csv`.
+## What the audience simulation means
 
-## 3. Decisions (full tables in `out/decisions.md`)
+Behavioural profiles are hypotheses generated from each segment's measured fingerprint; no profile is assigned from the numeric ad-set ID. High frequency and high CTR are consistent with warm audiences, not proof of retargeting. The code permits ambiguous profiles instead of forcing four audience types in every advertiser. Within-ad fatigue and same-asset/day comparisons reduce some creative/date mixing, without establishing causality.
 
-- **Budget.** Cost per click = CPM / (10 x CTR). The warm set buys the cheapest clicks in pet and
-  fashion; the deal-driven set 2 buys the cheapest in beauty. We move 20% of the most expensive
-  set's budget there, with diminishing returns (clicks scale with budget^0.42, from the history).
-- **Creative and lever.** In every cold ad set the Black Friday day creative with a fast hook and a
-  person talking to camera wins (predicted CTR ~1.5%). The heavy-text "Black Friday anticipato"
-  graphic loses everywhere (0.6-0.7%) and should be paused. In the warm set the "Black Week" unboxing
-  video wins at ~2.4%.
-- **Timing.** CPM steps up on 23 November and stays high through Cyber Monday; the price of
-  attention in Black Friday week is about 20% above the week before, so the pre-week is where cheap
-  reach lives and Black Week is where warm audiences convert.
+Age, gender, income, targeting configuration and browsing habits are **not observed**. The creative lab's viewer panel introduces explicit age, habit and need assumptions. It calibrates individual click probabilities so their population-weighted expected CTR equals the segment forecast. Age has no learned effect. Optional habit sensitivity is a user-defined scenario and defaults to zero. Simulated click counts are illustrative random draws, never validation evidence or demographic predictions.
 
-## Beyond: score a creative before it exists
+## What budget recommendations mean
 
-Tab 4 of the app takes a product vertical, lever, format and a description written like the kit's,
-tags it, predicts CTR and CPM for each ad set over the Black Week window, and explains the
-prediction by flipping one creative feature at a time ("if the discount were revealed at the end
-instead of at the start, CTR -18%"). This closes the loop the brief describes: idea, simulated
-audience, expected KPIs, before spending.
+CPC = CPM / (10 × CTR%) for a single ad/day. A segment's click efficiency is the average of each active ad's `10 × CTR / CPM`, assuming equal spend across active ads. Actual future platform delivery shares are unknown.
 
-## Tools used
+Daily allocation maximizes expected clicks under the scenario `clicks(B) = baseline_clicks × (B / baseline_budget)^0.42`. Every campaign/day retains its total budget, each segment stays within ±20%, and euro-cent rounding preserves totals. The 0.42 elasticity is **an assumption**, not a fitted causal effect. Sensitivity covers elasticity 0.25–1.0 and adverse KPI bounds. Recommendations can lose clicks under adverse assumptions. They are tests to consider, not guaranteed gains or sales predictions.
 
-Python, pandas, scikit-learn, Streamlit. Claude Code was used to explore the data, write the
-pipeline and draft this README; the modelling choices and the audience hypotheses were checked
-against the validation window, not taken on faith.
+Creative recommendations compare candidates on dates when all are active. Overlapping daily uncertainty leads to “test challenger”, rather than an unconditional pause recommendation. Feature toggles in the creative lab describe model sensitivity, not the effect a real edit will cause.
+
+## Deliverables and evidence
+
+| File | Purpose |
+|---|---|
+| `out/predictions.csv` | All 699 required ad-days, CTR/CPM point forecasts, daily bounds and cold-start flags |
+| `out/run_manifest.json` | Input/code fingerprint, versions, training/calibration dates and output checks |
+| `out/validation.csv`, `out/validation_predictions.csv` | Reproducible held-out metrics and row-level predictions |
+| `out/validation_breakdown.csv`, `out/rolling_validation.csv` | Advertiser, segment, date, cold-start and earlier-window checks |
+| `out/interval_validation.json` | Interval provenance and empirical coverage |
+| `out/audiences.md`, `out/audiences.json` | Twelve audience hypotheses and measured evidence |
+| `out/decisions_budget_daily.csv` | Daily, bounded, budget-conserving scenarios |
+| `out/seasonality_assumptions.csv` | Forecast-date alignment to 2025 market weeks |
+| `AUDIT.md` | Independent review of the initial project, verified results, fixes and remaining risks |
+| `DESIGN.md` | System architecture, assumptions and mathematical contracts |
+| `DEMO.md` | Three-minute recording script and submission copy |
+
+**Submission still requires a recorded video link.** The repository includes a script, not a recording. Submit through the event platform yourself after checking the repository/video links and team details; no project has been published or submitted by this code.
+
+Tools: Python, pandas, NumPy, scikit-learn, SciPy, Streamlit and Altair. Claude assisted the initial implementation; Codex assisted the independent audit and subsequent changes. No LLM-generated person-level response is presented as measured evidence.

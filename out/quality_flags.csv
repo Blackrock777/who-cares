@@ -1,0 +1,11 @@
+data,giorno_settimana,piattaforma,inserzionista_id,vertical,campaign_id,campaign_name,adset_id,ad_id,asset_id,leva,formato,budget_giornaliero_adset,spesa,impression,copertura,frequenza,click,ctr,cpc,cpm,quality_reason
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS1,CDF-AD02,CDF-U2,urgency,video,90.0,37.81,6738,6538,1.0306,0,0.0,,5.6115,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS1,CDF-AD03,CDF-S3,scarcity,carosello,90.0,49.43,8193,7949,1.0307,0,0.0,,6.0332,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS2,CDF-AD08,CDF-S2,scarcity,immagine,50.0,21.36,2985,2893,1.0318,0,0.0,,7.1558,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS2,CDF-AD09,CDF-U3,urgency,video,50.0,27.66,4037,3913,1.0317,0,0.0,,6.8516,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS3,CDF-AD13,CDF-S2,scarcity,immagine,50.0,20.97,3473,3368,1.0312,0,0.0,,6.038,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS3,CDF-AD15,CDF-U3,urgency,video,50.0,27.16,4669,4528,1.0311,0,0.0,,5.8171,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS4,CDF-AD19,CDF-U2,urgency,video,35.0,15.77,1652,1417,1.1658,0,0.0,,9.546,suspected_zero_click_reporting
+2026-10-14,mercoledi,meta,CDF,pet_ecommerce,CDF-C1,CDF | Vendite | Cani e gatti,CDF-AS4,CDF-AD20,CDF-S3,scarcity,carosello,35.0,17.4,1498,1284,1.1667,0,0.0,,11.6155,suspected_zero_click_reporting
+2026-10-21,mercoledi,meta,FGR,abbigliamento,FGR-C1,FGR | Vendite | Autunno-Inverno,FGR-AS1,FGR-AD03,FGR-S3,scarcity,carosello,100.0,397.55,52640,51073,1.0307,607,1.1531,0.6549,7.5522,spend_exceeds_adset_budget
+2026-11-09,lunedi,meta,NDL,beauty_skincare,NDL-C1,NDL | Vendite | Skincare,NDL-AS3,NDL-AD15,NDL-U3,urgency,video,60.0,8.99,766,739,1.0365,0,0.0,,11.7363,suspected_zero_click_reporting

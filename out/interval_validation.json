@@ -1,0 +1,38 @@
+{
+  "calibration": {
+    "start": "2026-11-02",
+    "end": "2026-11-08",
+    "warm_rows": 189,
+    "cold_rows": 0,
+    "cold_source": "earlier temporal holdout, ending at training cutoff",
+    "cold_reference_rows": 63,
+    "interpretation": "Empirical daily intervals; temporal/seasonal shifts can reduce coverage."
+  },
+  "log_widths": {
+    "ctr": {
+      "warm": 0.24287278526861739,
+      "cold": 0.39359471824566666
+    },
+    "cpm": {
+      "warm": 0.10874231065867468,
+      "cold": 0.15797906272069806
+    }
+  },
+  "coverage": {
+    "all": {
+      "rows": 254,
+      "ctr": 0.7086614173228346,
+      "cpm": 0.7598425196850394
+    },
+    "known_ads": {
+      "rows": 188,
+      "ctr": 0.6648936170212766,
+      "cpm": 0.776595744680851
+    },
+    "new_ads": {
+      "rows": 66,
+      "ctr": 0.8333333333333334,
+      "cpm": 0.7121212121212122
+    }
+  }
+}

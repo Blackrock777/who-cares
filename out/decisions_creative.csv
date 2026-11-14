@@ -1,25 +1,25 @@
-adset_id,week,push,push_asset,push_leva,push_formato,push_ctr,push_band,push_is_cold_start,pause,pause_asset,pause_ctr,ctr_gap,confident
-CDF-AS1,Black Week + Black Friday (23-30 Nov),CDF-AD06,CDF-B3,black_friday,carosello,0.98,0.69-1.38,True,CDF-AD04,CDF-U4,0.66,1.5x,False
-CDF-AS1,Pre Black Week (16-22 Nov),CDF-AD06,CDF-B3,black_friday,carosello,1.06,0.75-1.50,True,CDF-AD04,CDF-U4,0.63,1.7x,False
-CDF-AS2,Black Week + Black Friday (23-30 Nov),CDF-AD11,CDF-B4,black_friday,video,1.6,1.13-2.26,True,CDF-AD09,CDF-U3,0.87,1.8x,False
-CDF-AS2,Pre Black Week (16-22 Nov),CDF-AD10,CDF-B2,black_friday,video,1.43,1.05-1.94,False,CDF-AD09,CDF-U3,0.84,1.7x,False
-CDF-AS3,Black Week + Black Friday (23-30 Nov),CDF-AD17,CDF-B4,black_friday,video,1.43,1.01-2.02,True,CDF-AD15,CDF-U3,0.74,1.9x,True
-CDF-AS3,Pre Black Week (16-22 Nov),CDF-AD16,CDF-B1,black_friday,immagine,0.94,0.69-1.28,False,CDF-AD15,CDF-U3,0.72,1.3x,False
-CDF-AS4,Black Week + Black Friday (23-30 Nov),CDF-AD22,CDF-B2,black_friday,video,2.4,1.76-3.26,False,CDF-AD21,CDF-U4,1.5,1.6x,False
-CDF-AS4,Pre Black Week (16-22 Nov),CDF-AD22,CDF-B2,black_friday,video,2.71,1.99-3.69,False,CDF-AD21,CDF-U4,1.46,1.9x,True
-FGR-AS1,Black Week + Black Friday (23-30 Nov),FGR-AD06,FGR-B3,black_friday,carosello,0.97,0.69-1.37,True,FGR-AD05,FGR-B1,0.58,1.7x,False
-FGR-AS1,Pre Black Week (16-22 Nov),FGR-AD06,FGR-B3,black_friday,carosello,1.01,0.72-1.43,True,FGR-AD05,FGR-B1,0.55,1.8x,False
-FGR-AS2,Black Week + Black Friday (23-30 Nov),FGR-AD11,FGR-B4,black_friday,video,1.47,1.04-2.07,True,FGR-AD09,FGR-U3,0.87,1.7x,False
-FGR-AS2,Pre Black Week (16-22 Nov),FGR-AD10,FGR-B2,black_friday,video,1.26,0.92-1.71,False,FGR-AD09,FGR-U3,0.8,1.6x,False
-FGR-AS3,Black Week + Black Friday (23-30 Nov),FGR-AD17,FGR-B4,black_friday,video,1.47,1.04-2.08,True,FGR-AD16,FGR-B1,0.69,2.1x,True
-FGR-AS3,Pre Black Week (16-22 Nov),FGR-AD13,FGR-S2,scarcity,video,1.17,0.86-1.59,False,FGR-AD16,FGR-B1,0.65,1.8x,False
-FGR-AS4,Black Week + Black Friday (23-30 Nov),FGR-AD22,FGR-B2,black_friday,video,2.3,1.69-3.13,False,FGR-AD20,FGR-S3,2.0,1.2x,False
-FGR-AS4,Pre Black Week (16-22 Nov),FGR-AD22,FGR-B2,black_friday,video,2.4,1.76-3.26,False,FGR-AD20,FGR-S3,1.8,1.3x,False
-NDL-AS1,Black Week + Black Friday (23-30 Nov),NDL-AD06,NDL-B3,black_friday,carosello,0.96,0.68-1.36,True,NDL-AD05,NDL-B1,0.59,1.6x,False
-NDL-AS1,Pre Black Week (16-22 Nov),NDL-AD06,NDL-B3,black_friday,carosello,1.03,0.73-1.45,True,NDL-AD05,NDL-B1,0.59,1.8x,False
-NDL-AS2,Black Week + Black Friday (23-30 Nov),NDL-AD11,NDL-B4,black_friday,video,1.47,1.04-2.07,True,NDL-AD09,NDL-U3,0.74,2.0x,True
-NDL-AS2,Pre Black Week (16-22 Nov),NDL-AD10,NDL-B2,black_friday,video,1.29,0.95-1.75,False,NDL-AD09,NDL-U3,0.71,1.8x,False
-NDL-AS3,Black Week + Black Friday (23-30 Nov),NDL-AD17,NDL-B4,black_friday,video,1.51,1.07-2.13,True,NDL-AD15,NDL-U3,0.72,2.1x,True
-NDL-AS3,Pre Black Week (16-22 Nov),NDL-AD13,NDL-S2,scarcity,video,1.13,0.83-1.54,False,NDL-AD15,NDL-U3,0.67,1.7x,False
-NDL-AS4,Black Week + Black Friday (23-30 Nov),NDL-AD22,NDL-B2,black_friday,video,2.3,1.69-3.13,False,NDL-AD20,NDL-S3,1.47,1.6x,False
-NDL-AS4,Pre Black Week (16-22 Nov),NDL-AD22,NDL-B2,black_friday,video,2.46,1.81-3.35,False,NDL-AD20,NDL-S3,1.39,1.8x,False
+adset_id,week,comparison_days,comparison_start,comparison_end,push,push_asset,push_leva,push_formato,push_ctr,push_band,push_is_cold_start,pause,pause_asset,pause_ctr,ctr_gap,daily_envelopes_separate,action
+CDF-AS1,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,CDF-AD06,CDF-B3,black_friday,carosello,0.979,0.57-1.46,True,CDF-AD04,CDF-U4,0.658,1.5x,False,Test challenger; overlapping uncertainty
+CDF-AS1,Pre Black Week (16-22 Nov),3,2026-11-20,2026-11-22,CDF-AD06,CDF-B3,black_friday,carosello,1.06,0.72-1.57,True,CDF-AD04,CDF-U4,0.624,1.7x,False,Test challenger; overlapping uncertainty
+CDF-AS2,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,CDF-AD11,CDF-B4,black_friday,video,1.6,0.92-2.46,True,CDF-AD09,CDF-U3,0.866,1.8x,False,Test challenger; overlapping uncertainty
+CDF-AS2,Pre Black Week (16-22 Nov),7,2026-11-16,2026-11-22,CDF-AD10,CDF-B2,black_friday,video,1.425,0.97-2.10,False,CDF-AD09,CDF-U3,0.844,1.7x,False,Test challenger; overlapping uncertainty
+CDF-AS3,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,CDF-AD17,CDF-B4,black_friday,video,1.432,0.84-2.19,True,CDF-AD15,CDF-U3,0.742,1.9x,False,Test challenger; overlapping uncertainty
+CDF-AS3,Pre Black Week (16-22 Nov),7,2026-11-16,2026-11-22,CDF-AD16,CDF-B1,black_friday,immagine,0.942,0.66-1.39,False,CDF-AD15,CDF-U3,0.719,1.3x,False,Test challenger; overlapping uncertainty
+CDF-AS4,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,CDF-AD22,CDF-B2,black_friday,video,2.397,1.54-3.46,False,CDF-AD21,CDF-U4,1.499,1.6x,False,Test challenger; overlapping uncertainty
+CDF-AS4,Pre Black Week (16-22 Nov),3,2026-11-20,2026-11-22,CDF-AD22,CDF-B2,black_friday,video,2.664,1.91-3.76,False,CDF-AD21,CDF-U4,1.472,1.8x,False,Test challenger; overlapping uncertainty
+FGR-AS1,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,FGR-AD06,FGR-B3,black_friday,carosello,0.973,0.57-1.45,True,FGR-AD05,FGR-B1,0.581,1.7x,False,Test challenger; overlapping uncertainty
+FGR-AS1,Pre Black Week (16-22 Nov),3,2026-11-20,2026-11-22,FGR-AD06,FGR-B3,black_friday,carosello,1.011,0.69-1.52,True,FGR-AD05,FGR-B1,0.537,1.9x,False,Test challenger; overlapping uncertainty
+FGR-AS2,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,FGR-AD11,FGR-B4,black_friday,video,1.466,0.81-2.23,True,FGR-AD09,FGR-U3,0.871,1.7x,False,Test challenger; overlapping uncertainty
+FGR-AS2,Pre Black Week (16-22 Nov),7,2026-11-16,2026-11-22,FGR-AD10,FGR-B2,black_friday,video,1.255,0.86-1.85,False,FGR-AD09,FGR-U3,0.798,1.6x,False,Test challenger; overlapping uncertainty
+FGR-AS3,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,FGR-AD17,FGR-B4,black_friday,video,1.473,0.83-2.24,True,FGR-AD16,FGR-B1,0.691,2.1x,False,Test challenger; overlapping uncertainty
+FGR-AS3,Pre Black Week (16-22 Nov),7,2026-11-16,2026-11-22,FGR-AD13,FGR-S2,scarcity,video,1.165,0.82-1.75,False,FGR-AD16,FGR-B1,0.649,1.8x,False,Test challenger; overlapping uncertainty
+FGR-AS4,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,FGR-AD22,FGR-B2,black_friday,video,2.303,1.43-3.30,False,FGR-AD20,FGR-S3,1.996,1.2x,False,Test challenger; overlapping uncertainty
+FGR-AS4,Pre Black Week (16-22 Nov),3,2026-11-20,2026-11-22,FGR-AD22,FGR-B2,black_friday,video,2.348,1.68-3.30,False,FGR-AD20,FGR-S3,1.872,1.3x,False,Test challenger; overlapping uncertainty
+NDL-AS1,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,NDL-AD06,NDL-B3,black_friday,carosello,0.965,0.57-1.44,True,NDL-AD05,NDL-B1,0.591,1.6x,False,Test challenger; overlapping uncertainty
+NDL-AS1,Pre Black Week (16-22 Nov),3,2026-11-20,2026-11-22,NDL-AD06,NDL-B3,black_friday,carosello,1.03,0.70-1.53,True,NDL-AD05,NDL-B1,0.59,1.7x,False,Test challenger; overlapping uncertainty
+NDL-AS2,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,NDL-AD11,NDL-B4,black_friday,video,1.471,0.81-2.27,True,NDL-AD09,NDL-U3,0.74,2.0x,False,Test challenger; overlapping uncertainty
+NDL-AS2,Pre Black Week (16-22 Nov),7,2026-11-16,2026-11-22,NDL-AD10,NDL-B2,black_friday,video,1.289,0.87-1.90,False,NDL-AD09,NDL-U3,0.707,1.8x,False,Test challenger; overlapping uncertainty
+NDL-AS3,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,NDL-AD17,NDL-B4,black_friday,video,1.51,0.86-2.28,True,NDL-AD15,NDL-U3,0.719,2.1x,False,Test challenger; overlapping uncertainty
+NDL-AS3,Pre Black Week (16-22 Nov),7,2026-11-16,2026-11-22,NDL-AD13,NDL-S2,scarcity,video,1.135,0.80-1.63,False,NDL-AD15,NDL-U3,0.671,1.7x,False,Test challenger; overlapping uncertainty
+NDL-AS4,Black Week + Cyber Monday (23-30 Nov),8,2026-11-23,2026-11-30,NDL-AD22,NDL-B2,black_friday,video,2.299,1.45-3.30,False,NDL-AD20,NDL-S3,1.474,1.6x,False,Test challenger; overlapping uncertainty
+NDL-AS4,Pre Black Week (16-22 Nov),3,2026-11-20,2026-11-22,NDL-AD22,NDL-B2,black_friday,video,2.428,1.74-3.43,False,NDL-AD21,NDL-U4,1.417,1.7x,False,Test challenger; overlapping uncertainty
