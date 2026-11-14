@@ -1,0 +1,266 @@
+{
+  "CDF-AS1": {
+    "name": "Broad prospecting (cold)",
+    "who": "Everyone 18-65 in Italy, no interest targeting (Advantage+ broad). The widest and cheapest audience in the account, mostly people who have never heard of the brand.",
+    "evidence": [
+      "Largest budget and the lowest CPM in every advertiser: Meta finds cheap impressions because the pool is huge.",
+      "Highest reach per euro and frequency pinned at 1.03: almost nobody sees an ad twice.",
+      "Lowest CTR: a cold stranger rarely clicks.",
+      "Almost no fatigue (week-4 CTR is 92-97% of week-0): the pool refreshes itself.",
+      "Black Friday lever under-indexes (0.8-0.9x): a cold audience is not waiting for this brand's sale."
+    ],
+    "implication": "Use it for reach and for creative that explains the product. Keep heavy-text graphics out: this is where they hurt most.",
+    "fingerprint": {
+      "budget_eur": 90.0,
+      "ctr_%": 1.074,
+      "cpm_eur": 5.49,
+      "cpc_eur": 0.553,
+      "frequency": 1.031,
+      "reach_per_eur": 181.212,
+      "fatigue_wk4_vs_wk0": 0.922,
+      "black_friday_lift": 0.905
+    }
+  },
+  "CDF-AS2": {
+    "name": "Interest / lookalike, deal-driven, younger",
+    "who": "Interest-based or 1-3% lookalike of past buyers, skewed 25-34, Instagram-heavy, responds to deals and to people on camera.",
+    "evidence": [
+      "Mid budget, CPM 10-20% above ad set 1: a narrower pool, but still cold (frequency 1.03).",
+      "Fastest fatigue after the warm set (week-4 CTR is ~70% of week-0): the pool is finite.",
+      "Black Friday lever over-indexes strongly (1.2-1.7x) and scarcity over-indexes: deal hunters.",
+      "Weekend CTR slightly higher (Saturday +6%): leisure browsing, not desk browsing.",
+      "Video and talking-to-camera creatives beat images by 1.3-1.7x."
+    ],
+    "implication": "The right place for promo creatives in Black Week. Rotate creatives every 3-4 weeks; it burns out.",
+    "fingerprint": {
+      "budget_eur": 50.0,
+      "ctr_%": 1.043,
+      "cpm_eur": 6.622,
+      "cpc_eur": 0.669,
+      "frequency": 1.032,
+      "reach_per_eur": 148.354,
+      "fatigue_wk4_vs_wk0": 0.684,
+      "black_friday_lift": 1.713
+    }
+  },
+  "CDF-AS3": {
+    "name": "Narrow premium interest, older",
+    "who": "Tight interest stack (premium skincare / premium pet food / mid-range fashion), skewed 35-54, higher income, trust-driven rather than deal-driven.",
+    "evidence": [
+      "Smallest budget yet CPM close to the warm set: an expensive, narrow pool.",
+      "Frequency 1.035, slightly above the other cold sets: a smaller pool reached more than once.",
+      "Black Friday lever under-indexes most (0.6-0.7x): price is not what moves them.",
+      "Scarcity creatives over-index and 'talking to camera' creatives get the biggest lift of any set (1.4x).",
+      "Almost no fatigue (0.9-1.0): a loyal, stable segment that tolerates the same creative."
+    ],
+    "implication": "Sell quality and proof, not discounts. The dermatologist video and the numbered-kit carousel belong here.",
+    "fingerprint": {
+      "budget_eur": 50.0,
+      "ctr_%": 1.105,
+      "cpm_eur": 6.626,
+      "cpc_eur": 0.692,
+      "frequency": 1.031,
+      "reach_per_eur": 149.744,
+      "fatigue_wk4_vs_wk0": 0.945,
+      "black_friday_lift": 1.034
+    }
+  },
+  "CDF-AS4": {
+    "name": "Retargeting (warm)",
+    "who": "Site visitors, add-to-cart and past customers of the last 30-90 days. People who already know the brand and are deciding whether to buy.",
+    "evidence": [
+      "CTR about 2x the cold sets in every advertiser: warm people click.",
+      "Frequency 1.20-1.24 against 1.03 elsewhere: a small pool, so the same people see the ad again.",
+      "Lowest reach per euro and the highest CPM: competition for warm users is expensive and the pool is small.",
+      "Strongest fatigue of all (week-4 CTR is 60-72% of week-0): once the pool has seen it, it is done.",
+      "Black Friday lever over-indexes 1.35-1.6x and Friday-to-Sunday CTR is above average: they were waiting for the price drop."
+    ],
+    "implication": "Highest click volume per euro. Load Black Friday creatives here first, refresh weekly, and cap frequency.",
+    "fingerprint": {
+      "budget_eur": 35.0,
+      "ctr_%": 2.316,
+      "cpm_eur": 10.504,
+      "cpc_eur": 0.497,
+      "frequency": 1.166,
+      "reach_per_eur": 83.377,
+      "fatigue_wk4_vs_wk0": 0.641,
+      "black_friday_lift": 1.509
+    }
+  },
+  "FGR-AS1": {
+    "name": "Broad prospecting (cold)",
+    "who": "Everyone 18-65 in Italy, no interest targeting (Advantage+ broad). The widest and cheapest audience in the account, mostly people who have never heard of the brand.",
+    "evidence": [
+      "Largest budget and the lowest CPM in every advertiser: Meta finds cheap impressions because the pool is huge.",
+      "Highest reach per euro and frequency pinned at 1.03: almost nobody sees an ad twice.",
+      "Lowest CTR: a cold stranger rarely clicks.",
+      "Almost no fatigue (week-4 CTR is 92-97% of week-0): the pool refreshes itself.",
+      "Black Friday lever under-indexes (0.8-0.9x): a cold audience is not waiting for this brand's sale."
+    ],
+    "implication": "Use it for reach and for creative that explains the product. Keep heavy-text graphics out: this is where they hurt most.",
+    "fingerprint": {
+      "budget_eur": 100.0,
+      "ctr_%": 0.908,
+      "cpm_eur": 6.13,
+      "cpc_eur": 0.728,
+      "frequency": 1.031,
+      "reach_per_eur": 160.837,
+      "fatigue_wk4_vs_wk0": 0.697,
+      "black_friday_lift": 0.796
+    }
+  },
+  "FGR-AS2": {
+    "name": "Interest / lookalike, deal-driven, younger",
+    "who": "Interest-based or 1-3% lookalike of past buyers, skewed 25-34, Instagram-heavy, responds to deals and to people on camera.",
+    "evidence": [
+      "Mid budget, CPM 10-20% above ad set 1: a narrower pool, but still cold (frequency 1.03).",
+      "Fastest fatigue after the warm set (week-4 CTR is ~70% of week-0): the pool is finite.",
+      "Black Friday lever over-indexes strongly (1.2-1.7x) and scarcity over-indexes: deal hunters.",
+      "Weekend CTR slightly higher (Saturday +6%): leisure browsing, not desk browsing.",
+      "Video and talking-to-camera creatives beat images by 1.3-1.7x."
+    ],
+    "implication": "The right place for promo creatives in Black Week. Rotate creatives every 3-4 weeks; it burns out.",
+    "fingerprint": {
+      "budget_eur": 60.0,
+      "ctr_%": 1.144,
+      "cpm_eur": 7.588,
+      "cpc_eur": 0.743,
+      "frequency": 1.032,
+      "reach_per_eur": 129.541,
+      "fatigue_wk4_vs_wk0": 0.7,
+      "black_friday_lift": 1.199
+    }
+  },
+  "FGR-AS3": {
+    "name": "Narrow premium interest, older",
+    "who": "Tight interest stack (premium skincare / premium pet food / mid-range fashion), skewed 35-54, higher income, trust-driven rather than deal-driven.",
+    "evidence": [
+      "Smallest budget yet CPM close to the warm set: an expensive, narrow pool.",
+      "Frequency 1.035, slightly above the other cold sets: a smaller pool reached more than once.",
+      "Black Friday lever under-indexes most (0.6-0.7x): price is not what moves them.",
+      "Scarcity creatives over-index and 'talking to camera' creatives get the biggest lift of any set (1.4x).",
+      "Almost no fatigue (0.9-1.0): a loyal, stable segment that tolerates the same creative."
+    ],
+    "implication": "Sell quality and proof, not discounts. The dermatologist video and the numbered-kit carousel belong here.",
+    "fingerprint": {
+      "budget_eur": 40.0,
+      "ctr_%": 1.138,
+      "cpm_eur": 10.843,
+      "cpc_eur": 1.151,
+      "frequency": 1.035,
+      "reach_per_eur": 90.814,
+      "fatigue_wk4_vs_wk0": 0.907,
+      "black_friday_lift": 0.624
+    }
+  },
+  "FGR-AS4": {
+    "name": "Retargeting (warm)",
+    "who": "Site visitors, add-to-cart and past customers of the last 30-90 days. People who already know the brand and are deciding whether to buy.",
+    "evidence": [
+      "CTR about 2x the cold sets in every advertiser: warm people click.",
+      "Frequency 1.20-1.24 against 1.03 elsewhere: a small pool, so the same people see the ad again.",
+      "Lowest reach per euro and the highest CPM: competition for warm users is expensive and the pool is small.",
+      "Strongest fatigue of all (week-4 CTR is 60-72% of week-0): once the pool has seen it, it is done.",
+      "Black Friday lever over-indexes 1.35-1.6x and Friday-to-Sunday CTR is above average: they were waiting for the price drop."
+    ],
+    "implication": "Highest click volume per euro. Load Black Friday creatives here first, refresh weekly, and cap frequency.",
+    "fingerprint": {
+      "budget_eur": 50.0,
+      "ctr_%": 2.203,
+      "cpm_eur": 11.236,
+      "cpc_eur": 0.546,
+      "frequency": 1.213,
+      "reach_per_eur": 74.424,
+      "fatigue_wk4_vs_wk0": 0.602,
+      "black_friday_lift": 1.347
+    }
+  },
+  "NDL-AS1": {
+    "name": "Broad prospecting (cold)",
+    "who": "Everyone 18-65 in Italy, no interest targeting (Advantage+ broad). The widest and cheapest audience in the account, mostly people who have never heard of the brand.",
+    "evidence": [
+      "Largest budget and the lowest CPM in every advertiser: Meta finds cheap impressions because the pool is huge.",
+      "Highest reach per euro and frequency pinned at 1.03: almost nobody sees an ad twice.",
+      "Lowest CTR: a cold stranger rarely clicks.",
+      "Almost no fatigue (week-4 CTR is 92-97% of week-0): the pool refreshes itself.",
+      "Black Friday lever under-indexes (0.8-0.9x): a cold audience is not waiting for this brand's sale."
+    ],
+    "implication": "Use it for reach and for creative that explains the product. Keep heavy-text graphics out: this is where they hurt most.",
+    "fingerprint": {
+      "budget_eur": 120.0,
+      "ctr_%": 0.816,
+      "cpm_eur": 8.003,
+      "cpc_eur": 1.062,
+      "frequency": 1.031,
+      "reach_per_eur": 123.434,
+      "fatigue_wk4_vs_wk0": 0.971,
+      "black_friday_lift": 0.796
+    }
+  },
+  "NDL-AS2": {
+    "name": "Interest / lookalike, deal-driven, younger",
+    "who": "Interest-based or 1-3% lookalike of past buyers, skewed 25-34, Instagram-heavy, responds to deals and to people on camera.",
+    "evidence": [
+      "Mid budget, CPM 10-20% above ad set 1: a narrower pool, but still cold (frequency 1.03).",
+      "Fastest fatigue after the warm set (week-4 CTR is ~70% of week-0): the pool is finite.",
+      "Black Friday lever over-indexes strongly (1.2-1.7x) and scarcity over-indexes: deal hunters.",
+      "Weekend CTR slightly higher (Saturday +6%): leisure browsing, not desk browsing.",
+      "Video and talking-to-camera creatives beat images by 1.3-1.7x."
+    ],
+    "implication": "The right place for promo creatives in Black Week. Rotate creatives every 3-4 weeks; it burns out.",
+    "fingerprint": {
+      "budget_eur": 80.0,
+      "ctr_%": 1.074,
+      "cpm_eur": 8.792,
+      "cpc_eur": 0.921,
+      "frequency": 1.032,
+      "reach_per_eur": 112.037,
+      "fatigue_wk4_vs_wk0": 0.705,
+      "black_friday_lift": 1.54
+    }
+  },
+  "NDL-AS3": {
+    "name": "Narrow premium interest, older",
+    "who": "Tight interest stack (premium skincare / premium pet food / mid-range fashion), skewed 35-54, higher income, trust-driven rather than deal-driven.",
+    "evidence": [
+      "Smallest budget yet CPM close to the warm set: an expensive, narrow pool.",
+      "Frequency 1.035, slightly above the other cold sets: a smaller pool reached more than once.",
+      "Black Friday lever under-indexes most (0.6-0.7x): price is not what moves them.",
+      "Scarcity creatives over-index and 'talking to camera' creatives get the biggest lift of any set (1.4x).",
+      "Almost no fatigue (0.9-1.0): a loyal, stable segment that tolerates the same creative."
+    ],
+    "implication": "Sell quality and proof, not discounts. The dermatologist video and the numbered-kit carousel belong here.",
+    "fingerprint": {
+      "budget_eur": 60.0,
+      "ctr_%": 1.289,
+      "cpm_eur": 10.44,
+      "cpc_eur": 0.924,
+      "frequency": 1.037,
+      "reach_per_eur": 93.954,
+      "fatigue_wk4_vs_wk0": 1.016,
+      "black_friday_lift": 0.669
+    }
+  },
+  "NDL-AS4": {
+    "name": "Retargeting (warm)",
+    "who": "Site visitors, add-to-cart and past customers of the last 30-90 days. People who already know the brand and are deciding whether to buy.",
+    "evidence": [
+      "CTR about 2x the cold sets in every advertiser: warm people click.",
+      "Frequency 1.20-1.24 against 1.03 elsewhere: a small pool, so the same people see the ad again.",
+      "Lowest reach per euro and the highest CPM: competition for warm users is expensive and the pool is small.",
+      "Strongest fatigue of all (week-4 CTR is 60-72% of week-0): once the pool has seen it, it is done.",
+      "Black Friday lever over-indexes 1.35-1.6x and Friday-to-Sunday CTR is above average: they were waiting for the price drop."
+    ],
+    "implication": "Highest click volume per euro. Load Black Friday creatives here first, refresh weekly, and cap frequency.",
+    "fingerprint": {
+      "budget_eur": 49.375,
+      "ctr_%": 1.837,
+      "cpm_eur": 13.961,
+      "cpc_eur": 0.837,
+      "frequency": 1.24,
+      "reach_per_eur": 59.111,
+      "fatigue_wk4_vs_wk0": 0.725,
+      "black_friday_lift": 1.576
+    }
+  }
+}
