@@ -13,7 +13,7 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 
 /* ---------------- language ---------------- */
 const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
-let LANG = store.get("lang") || ((navigator.language || "en").toLowerCase().startsWith("it") ? "it" : "en");
+let LANG = store.get("lang") || "it";          // the jury is Italian: Italian unless the viewer picked English
 const t = (k, v = {}) => { let s = (I18N[LANG] && I18N[LANG][k]) ?? I18N.en[k] ?? k; for (const x in v) s = s.split("{" + x + "}").join(v[x]); return s; };
 const loc = () => LANG === "it" ? "it-IT" : "en-GB";
 const fmt = (x, n = 2) => x == null || !isFinite(x) ? "–" : Number(x).toLocaleString(loc(), { minimumFractionDigits: n, maximumFractionDigits: n });

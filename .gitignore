@@ -15,3 +15,5 @@ out/world_run.log
 out/studio/live/
 .env.openrouter
 out/studio_run.log
+.env.elevenlabs
+out/video/
