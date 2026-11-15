@@ -26,6 +26,11 @@ def library_url(query, country):
     return "https://www.facebook.com/ads/library/?" + q
 
 
+def page_url(page_id, country="ALL"):
+    return ("https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=%s&is_targeted_country=false"
+            "&media_type=all&search_type=page&view_all_page_id=%s" % (country, page_id))
+
+
 DEFAULT_SOURCES = [library_url("Sephora", "IT"), library_url("Sephora", "FR")]
 
 
@@ -43,21 +48,40 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--limit", type=int, required=True, help="max ads per source URL (this is what you pay for)")
     ap.add_argument("--sources", nargs="+", default=DEFAULT_SOURCES)
+    ap.add_argument("--page-ids", nargs="+", help="advertiser page ids: pulls each page's own ads instead of a keyword search")
     ap.add_argument("--name", default="sephora")
     ap.add_argument("--train-share", type=float, default=0.4)
     ap.add_argument("--page-filter", default="sephora", help="keep only advertisers whose page name contains this (case-insensitive); '' keeps all")
     a = ap.parse_args()
     tok = token()
+    if a.page_ids:
+        a.sources = [page_url(p) for p in a.page_ids]
     body = {"urls": [{"url": u} for u in a.sources], "scrapeAdDetails": True, "limitPerSource": a.limit,
             "scrapePageAds.activeStatus": "all", "scrapePageAds.countryCode": "ALL"}
-    url = f"https://api.apify.com/v2/acts/{ACTOR}/run-sync-get-dataset-items?" + urllib.parse.urlencode({"token": tok, "format": "json", "clean": "true"})
-    print(f"running {ACTOR} on {len(a.sources)} sources, up to {a.limit} ads each (max about ${0.75 * a.limit * len(a.sources) / 1000:.2f}) ...", flush=True)
-    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
-    try:
-        with urllib.request.urlopen(req, timeout=290) as r:
-            items = json.load(r)
-    except urllib.error.HTTPError as e:
-        sys.exit(f"Apify error {e.code}: {e.read().decode(errors='replace').replace(tok, '<token>')[:500]}")
+    print(f"running {ACTOR} on {len(a.sources)} sources, up to {a.limit} ads each (about ${0.75 * a.limit * len(a.sources) / 1000:.2f}; the actor may overshoot each source by ~30 ads) ...", flush=True)
+
+    def call(url, data=None):
+        req = urllib.request.Request(url, data=json.dumps(data).encode() if data is not None else None, headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=120) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            sys.exit(f"Apify error {e.code}: {e.read().decode(errors='replace').replace(tok, '<token>')[:500]}")
+    import time
+    run = call(f"https://api.apify.com/v2/acts/{ACTOR}/runs?" + urllib.parse.urlencode({"token": tok}), body)["data"]
+    while run["status"] in ("READY", "RUNNING"):
+        time.sleep(15)
+        run = call(f"https://api.apify.com/v2/actor-runs/{run['id']}?" + urllib.parse.urlencode({"token": tok}))["data"]
+        print("  status", run["status"], flush=True)
+    if run["status"] != "SUCCEEDED":
+        sys.exit(f"Apify run ended with status {run['status']}")
+    items, offset = [], 0
+    while True:
+        page = call(f"https://api.apify.com/v2/datasets/{run['defaultDatasetId']}/items?" + urllib.parse.urlencode({"token": tok, "format": "json", "clean": "true", "offset": offset, "limit": 500}))
+        items += page
+        offset += len(page)
+        if len(page) < 500:
+            break
     out = ROOT / "data" / "external" / "ad_library" / a.name
     out.mkdir(parents=True, exist_ok=True)
     kept = [i for i in items if a.page_filter.lower() in str(i.get("page_name") or (i.get("snapshot") or {}).get("page_name") or "").lower()]

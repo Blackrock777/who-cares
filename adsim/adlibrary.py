@@ -102,7 +102,9 @@ def from_scraper(records):
                     "publisher_platforms": [str(p).lower() for p in (r.get("publisher_platform") or r.get("publisherPlatform") or [])],
                     "eu_total_reach": _find(r, ["eu_total_reach"]), "target_ages": [], "target_gender": _find(r, ["gender_audience", "target_gender"]) or "",
                     "age_country_gender_reach_breakdown": _find(r, ["age_country_gender_reach_breakdown"]) or [],
-                    "display_format": fmt, "cta": snap.get("cta_text") or "", "collation_count": r.get("collation_count")})
+                    "display_format": fmt, "cta": snap.get("cta_text") or "", "collation_count": r.get("collation_count"),
+                    "target_age_min": (_find(r, ["age_audience"]) or {}).get("min"), "target_age_max": (_find(r, ["age_audience"]) or {}).get("max"),
+                    "target_countries": [x.get("name") for x in (_find(r, ["location_audience"]) or []) if isinstance(x, dict) and not x.get("excluded")]})
     return out
 
 
@@ -121,7 +123,9 @@ def normalise(paths, as_of=None):
                             description=_join(r.get("ad_creative_link_descriptions")), caption=_join(r.get("ad_creative_link_captions")),
                             start=start, stop=stop, platforms=",".join(sorted(r.get("publisher_platforms") or [])),
                             languages=",".join(r.get("languages") or []), eu_total_reach=pd.to_numeric(r.get("eu_total_reach"), errors="coerce"),
-                            display_format=r.get("display_format", ""), cta=r.get("cta", ""), target_gender=r.get("target_gender", ""), target_ages=_join([str(a) for a in (r.get("target_ages") or [])]),
+                            display_format=r.get("display_format", ""), cta=r.get("cta", ""), target_age_min=pd.to_numeric(r.get("target_age_min"), errors="coerce"),
+                            target_age_max=pd.to_numeric(r.get("target_age_max"), errors="coerce"), target_countries=",".join(r.get("target_countries") or []),
+                            collation_count=pd.to_numeric(r.get("collation_count"), errors="coerce"), target_gender=r.get("target_gender", ""), target_ages=_join([str(a) for a in (r.get("target_ages") or [])]),
                             source_file=Path(path).name))
             for c in r.get("age_country_gender_reach_breakdown") or []:
                 for a in c.get("age_gender_breakdowns") or []:
@@ -144,6 +148,8 @@ def normalise(paths, as_of=None):
         wide = shares.pivot_table(index="ad_id", columns="gender", values="share", aggfunc="sum").add_prefix("share_").reset_index()
         age = shares.pivot_table(index="ad_id", columns="age", values="share", aggfunc="sum").add_prefix("share_age_").reset_index()
         ads = ads.merge(wide, on="ad_id", how="left").merge(age, on="ad_id", how="left")
+        top = demo.groupby(["ad_id", "country"])["reach"].sum().reset_index().sort_values("reach").groupby("ad_id").tail(1)
+        ads = ads.merge(top[["ad_id", "country"]].rename(columns={"country": "main_country"}), on="ad_id", how="left")
     return ads, demo
 
 
