@@ -1,0 +1,5682 @@
+{
+ "NDL-AS1": {
+  "brand": "NDL",
+  "audience": "NDL-AS1",
+  "brief": {
+   "product": "Siero alla vitamina C e kit routine (detergente, siero, crema). Crema notte al retinolo. SPF 50 invisibile.",
+   "offer": "Black Week: fino al -40% sulla skincare; spedizione gratis; mini detergente in regalo sopra una soglia.",
+   "max_discount_pct": 40,
+   "notes": "Tono diretto, niente promesse mediche."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "mostly women, around 20-35",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.818,
+    "mean_age": 29.4,
+    "confidence": "partly data-led"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.273,
+    "urgency": 0.954,
+    "black_friday": 0.936
+   },
+   "format_forecast_ctr": {
+    "video": 1.173,
+    "immagine": 1.0,
+    "carosello": 0.93
+   },
+   "best_existing": [
+    {
+     "creative_id": "NDL-S2",
+     "ctr": 1.5586,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Torna disponibile, ma per poco",
+     "testo_principale": "La crema notte al retinolo è tornata. Ne abbiamo prodotta poca.",
+     "descrizione_visual": "Ragazza sui 30 anni in bagno, parla in camera col telefono; nei primi 2 secondi mostra lo scaffale quasi vuoto."
+    },
+    {
+     "creative_id": "NDL-S1",
+     "ctr": 1.479,
+     "leva": "scarcity",
+     "formato": "immagine",
+     "headline": "Siero Vitamina C: ultimi 200 flaconi",
+     "testo_principale": "Il lotto di settembre è quasi finito. Quando finisce, si riparte a ottobre.",
+     "descrizione_visual": "Flacone del siero su sfondo arancio pieno, luce da studio, scritta 'ultimi 200' in un bollino rosso."
+    },
+    {
+     "creative_id": "NDL-B2",
+     "ctr": 1.2231,
+     "leva": "black_friday",
+     "formato": "video",
+     "headline": "La Black Week è iniziata",
+     "testo_principale": "Una settimana di prezzi bassi su sieri e creme.",
+     "descrizione_visual": "Ragazza apre il pacco a casa e mostra i prodotti, parla in camera; nei primi 2 secondi scritta 'BLACK WEEK'."
+    }
+   ],
+   "benchmark_ctr": 1.5586
+  },
+  "candidates": [
+   {
+    "creative_id": "NDL-G31036271-4",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Siero vitamina C: scorte quasi esaurite",
+    "testo_principale": "Lotto di settembre in fase finale, riordino a ottobre",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Ragazza 28 anni in bagno mostra flacone quasi vuoto, zoom su etichetta 'ultimi 200', testo a schermo 'Scorte limitate'",
+    "rationale_en": "Shows low stock of vitamin C serum to trigger fear of missing out.",
+    "rationale_it": "Mostra le scorte basse del siero vitamina C per attivare la paura di perdersi l'offerta.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-S1",
+     "similarity": 0.771
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.419,
+     "ctr_lo": 0.9818,
+     "ctr_hi": 2.0507,
+     "cpm": 11.452,
+     "cpc": 0.807
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.419,
+      "ctr_lo": 0.9818,
+      "ctr_hi": 2.0507,
+      "cpm": 11.452,
+      "cpc": 0.807
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.6262,
+      "ctr_lo": 1.1253,
+      "ctr_hi": 2.3502,
+      "cpm": 12.604,
+      "cpc": 0.775
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.654,
+      "ctr_lo": 1.1445,
+      "ctr_hi": 2.3903,
+      "cpm": 17.874,
+      "cpc": 1.081
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.9163,
+      "ctr_lo": 2.0179,
+      "ctr_hi": 4.2146,
+      "cpm": 24.124,
+      "cpc": 0.827
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.91,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31036271-3",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Ultimi kit routine autunnali disponibili",
+    "testo_principale": "Detergente, siero vitamina C e crema in un solo pack",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Tre slide: 1) scatola kit chiusa, 2) prodotti estratti su marmo, 3) scritta 'Ultimi 100 kit' con contatore che scende",
+    "rationale_en": "Uses scarcity of limited autumn routine kits to drive urgency.",
+    "rationale_it": "Usa la scarsità dei kit routine autunnali limitati per creare urgenza.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-S3",
+     "similarity": 0.791
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.2122,
+     "ctr_lo": 0.8388,
+     "ctr_hi": 1.7519,
+     "cpm": 12.114,
+     "cpc": 0.999
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.2122,
+      "ctr_lo": 0.8388,
+      "ctr_hi": 1.7519,
+      "cpm": 12.114,
+      "cpc": 0.999
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.3787,
+      "ctr_lo": 0.954,
+      "ctr_hi": 1.9926,
+      "cpm": 13.096,
+      "cpc": 0.95
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.4928,
+      "ctr_lo": 1.0329,
+      "ctr_hi": 2.1574,
+      "cpm": 18.337,
+      "cpc": 1.228
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.3961,
+      "ctr_lo": 1.658,
+      "ctr_hi": 3.4629,
+      "cpm": 25.414,
+      "cpc": 1.061
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.778,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31036271-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Week: fino al -40% su skincare",
+    "testo_principale": "Spedizione gratis e mini detergente in regalo",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Ragazza apre scatola nera, mostra siero vitamina C, crema retinolo, SPF 50; nei primi 2s appare 'BLACK WEEK -40%'",
+    "rationale_en": "Leverages Black Week discount and free shipping to attract cold prospects.",
+    "rationale_it": "Sfrutta lo sconto Black Week e la spedizione gratis per attrarre prospect freddi.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B2",
+     "similarity": 0.752
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.9741,
+     "ctr_lo": 0.674,
+     "ctr_hi": 1.4078,
+     "cpm": 11.696,
+     "cpc": 1.201
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.9741,
+      "ctr_lo": 0.674,
+      "ctr_hi": 1.4078,
+      "cpm": 11.696,
+      "cpc": 1.201
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.2,
+      "ctr_lo": 0.8303,
+      "ctr_hi": 1.7342,
+      "cpm": 12.704,
+      "cpc": 1.059
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.0576,
+      "ctr_lo": 0.7318,
+      "ctr_hi": 1.5284,
+      "cpm": 18.03,
+      "cpc": 1.705
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.8882,
+      "ctr_lo": 1.3065,
+      "ctr_hi": 2.7288,
+      "cpm": 24.24,
+      "cpc": 1.284
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.625,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31036271-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 18,
+    "headline": "48 ore: routine completa a -30%",
+    "testo_principale": "Due giorni per detergente, siero e crema con spedizione gratis",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Split screen: orologio conta 48h, ragazza applica siero, poi crema, infine SPF; overlay '48 ORE -30%' lampeggia",
+    "rationale_en": "Creates a 48-hour countdown on the full routine to push immediate purchase.",
+    "rationale_it": "Crea un conto alla rovescia di 48 ore sulla routine completa per spingere all'acquisto immediato.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "48"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-U3",
+     "similarity": 0.705
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.9687,
+     "ctr_lo": 0.6703,
+     "ctr_hi": 1.4,
+     "cpm": 11.56,
+     "cpc": 1.193
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.9687,
+      "ctr_lo": 0.6703,
+      "ctr_hi": 1.4,
+      "cpm": 11.56,
+      "cpc": 1.193
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.155,
+      "ctr_lo": 0.7992,
+      "ctr_hi": 1.6692,
+      "cpm": 12.682,
+      "cpc": 1.098
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.1329,
+      "ctr_lo": 0.7839,
+      "ctr_hi": 1.6372,
+      "cpm": 18.04,
+      "cpc": 1.592
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.0635,
+      "ctr_lo": 1.4278,
+      "ctr_hi": 2.9821,
+      "cpm": 24.268,
+      "cpc": 1.176
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.622,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31036271-6",
+    "leva": "urgency",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Offerta flash: -25% su tutta la linea",
+    "testo_principale": "Solo oggi, spedizione gratuita e mini detergente in omaggio",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Sfondo bianco, tre prodotti allineati: detergente, siero vitamina C, crema notte; banner rosso 'FLASH -25%' sopra",
+    "rationale_en": "Flash offer with limited time and free gift to convert impulse buyers.",
+    "rationale_it": "Offerta flash a tempo limitato con omaggio per convertire gli acquirenti d'impulso.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "beyond",
+    "nearest_training": {
+     "creative_id": "NDL-S4",
+     "similarity": 0.55
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.872,
+     "ctr_lo": 0.6034,
+     "ctr_hi": 1.2603,
+     "cpm": 12.127,
+     "cpc": 1.391
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.872,
+      "ctr_lo": 0.6034,
+      "ctr_hi": 1.2603,
+      "cpm": 12.127,
+      "cpc": 1.391
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.066,
+      "ctr_lo": 0.7376,
+      "ctr_hi": 1.5406,
+      "cpm": 13.095,
+      "cpc": 1.228
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.0681,
+      "ctr_lo": 0.7391,
+      "ctr_hi": 1.5436,
+      "cpm": 18.501,
+      "cpc": 1.732
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.8526,
+      "ctr_lo": 1.2819,
+      "ctr_hi": 2.6773,
+      "cpm": 25.203,
+      "cpc": 1.36
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.559,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31036271-2",
+    "leva": "black_friday",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Black Week: -40% su sieri e creme",
+    "testo_principale": "Sconto massimo dell'anno, spedizione gratuita",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Flat lay rosa: siero vitamina C, crema retinolo, SPF 50; badge rosso '-40%' in alto a destra",
+    "rationale_en": "Highlights max discount on hero products in a static image for quick scanning.",
+    "rationale_it": "Evidenzia lo sconto massimo sui prodotti hero in un'immagine statica per una lettura rapida.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.719
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.803,
+     "ctr_lo": 0.5556,
+     "ctr_hi": 1.1605,
+     "cpm": 12.239,
+     "cpc": 1.524
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.803,
+      "ctr_lo": 0.5556,
+      "ctr_hi": 1.1605,
+      "cpm": 12.239,
+      "cpc": 1.524
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.0143,
+      "ctr_lo": 0.7018,
+      "ctr_hi": 1.4658,
+      "cpm": 13.098,
+      "cpc": 1.291
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 0.9131,
+      "ctr_lo": 0.6318,
+      "ctr_hi": 1.3196,
+      "cpm": 18.474,
+      "cpc": 2.023
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.5524,
+      "ctr_lo": 1.0741,
+      "ctr_hi": 2.2435,
+      "cpm": 25.148,
+      "cpc": 1.62
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.515,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1888,
+   "output_tokens": 7247,
+   "request_id": "gen-1794730922-Z8UuS8aBI6Fgegqb9uoj",
+   "backend": "openai_compat",
+   "seconds": 115.1,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:23:56",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "NDL-AS2": {
+  "brand": "NDL",
+  "audience": "NDL-AS2",
+  "brief": {
+   "product": "Siero alla vitamina C e kit routine (detergente, siero, crema). Crema notte al retinolo. SPF 50 invisibile.",
+   "offer": "Black Week: fino al -40% sulla skincare; spedizione gratis; mini detergente in regalo sopra una soglia.",
+   "max_discount_pct": 40,
+   "notes": "Tono diretto, niente promesse mediche."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "mostly women, around 20-35",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.855,
+    "mean_age": 31.5,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.458,
+    "black_friday": 1.156,
+    "urgency": 1.142
+   },
+   "format_forecast_ctr": {
+    "video": 1.402,
+    "immagine": 1.199,
+    "carosello": 1.072
+   },
+   "best_existing": [
+    {
+     "creative_id": "NDL-S2",
+     "ctr": 1.7863,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Torna disponibile, ma per poco",
+     "testo_principale": "La crema notte al retinolo è tornata. Ne abbiamo prodotta poca.",
+     "descrizione_visual": "Ragazza sui 30 anni in bagno, parla in camera col telefono; nei primi 2 secondi mostra lo scaffale quasi vuoto."
+    },
+    {
+     "creative_id": "NDL-S1",
+     "ctr": 1.7379,
+     "leva": "scarcity",
+     "formato": "immagine",
+     "headline": "Siero Vitamina C: ultimi 200 flaconi",
+     "testo_principale": "Il lotto di settembre è quasi finito. Quando finisce, si riparte a ottobre.",
+     "descrizione_visual": "Flacone del siero su sfondo arancio pieno, luce da studio, scritta 'ultimi 200' in un bollino rosso."
+    },
+    {
+     "creative_id": "NDL-B2",
+     "ctr": 1.5067,
+     "leva": "black_friday",
+     "formato": "video",
+     "headline": "La Black Week è iniziata",
+     "testo_principale": "Una settimana di prezzi bassi su sieri e creme.",
+     "descrizione_visual": "Ragazza apre il pacco a casa e mostra i prodotti, parla in camera; nei primi 2 secondi scritta 'BLACK WEEK'."
+    }
+   ],
+   "benchmark_ctr": 1.7863
+  },
+  "candidates": [
+   {
+    "creative_id": "NDL-G31126359-1",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Siero Vitamina C: ultime scorte",
+    "testo_principale": "Il lotto di settembre sta finendo, non rifaremo scorta prima di ottobre.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Ragazza 30 anni in bagno, mostra flacone quasi vuoto, primo piano su etichetta 'ultimi 200'.",
+    "rationale_en": "Scarcity lever shows the highest forecasted CTR for this audience.",
+    "rationale_it": "La leva scarcity ha la CTR prevista più alta per questo pubblico.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-S1",
+     "similarity": 0.874
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.6332,
+     "ctr_lo": 1.1301,
+     "ctr_hi": 2.3602,
+     "cpm": 12.605,
+     "cpc": 0.772
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.425,
+      "ctr_lo": 0.986,
+      "ctr_hi": 2.0594,
+      "cpm": 11.436,
+      "cpc": 0.803
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.6332,
+      "ctr_lo": 1.1301,
+      "ctr_hi": 2.3602,
+      "cpm": 12.605,
+      "cpc": 0.772
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.661,
+      "ctr_lo": 1.1493,
+      "ctr_hi": 2.4005,
+      "cpm": 17.882,
+      "cpc": 1.077
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.9287,
+      "ctr_lo": 2.0265,
+      "ctr_hi": 4.2325,
+      "cpm": 24.147,
+      "cpc": 0.824
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.914,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31126359-4",
+    "leva": "scarcity",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Crema notte retinolo: ultime 150 pezzi",
+    "testo_principale": "Il lotto sta per esaurirsi, non ne produrremo altri fino a primavera.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Vaso crema su sfondo scuro, riflettore laterale, bollino rosso 'ultime 150' in basso a sinistra.",
+    "rationale_en": "Highlighting limited stock of a hero product triggers scarcity clicks.",
+    "rationale_it": "Evidenziare lo stock limitato di un prodotto hero genera clic per scarcity.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "150"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-S2",
+     "similarity": 0.68
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.4138,
+     "ctr_lo": 0.9783,
+     "ctr_hi": 2.0432,
+     "cpm": 12.998,
+     "cpc": 0.919
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.2031,
+      "ctr_lo": 0.8325,
+      "ctr_hi": 1.7388,
+      "cpm": 11.94,
+      "cpc": 0.992
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.4138,
+      "ctr_lo": 0.9783,
+      "ctr_hi": 2.0432,
+      "cpm": 12.998,
+      "cpc": 0.919
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.4688,
+      "ctr_lo": 1.0164,
+      "ctr_hi": 2.1228,
+      "cpm": 18.268,
+      "cpc": 1.244
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.4661,
+      "ctr_lo": 1.7064,
+      "ctr_hi": 3.5639,
+      "cpm": 25.023,
+      "cpc": 1.015
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.791,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31126359-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 20,
+    "headline": "Solo oggi: SPF 50 invisibile -25%",
+    "testo_principale": "Protezione solare, oggi a prezzo speciale, valido fino a mezzanotte.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Ragazza applica SPF sul viso al sole, primo piano sul tubo, overlay 'Solo oggi -25%' appare nei primi 2 secondi.",
+    "rationale_en": "Same‑day deadline on a high‑use product creates strong urgency.",
+    "rationale_it": "Scadenza giornaliera su un prodotto ad alto uso crea forte urgenza.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-S4",
+     "similarity": 0.67
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.2101,
+     "ctr_lo": 0.8373,
+     "ctr_hi": 1.7489,
+     "cpm": 12.66,
+     "cpc": 1.046
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.015,
+      "ctr_lo": 0.7023,
+      "ctr_hi": 1.4669,
+      "cpm": 11.53,
+      "cpc": 1.136
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.2101,
+      "ctr_lo": 0.8373,
+      "ctr_hi": 1.7489,
+      "cpm": 12.66,
+      "cpc": 1.046
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.187,
+      "ctr_lo": 0.8213,
+      "ctr_hi": 1.7154,
+      "cpm": 18.059,
+      "cpc": 1.521
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.162,
+      "ctr_lo": 1.496,
+      "ctr_hi": 3.1246,
+      "cpm": 24.234,
+      "cpc": 1.121
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.677,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31126359-6",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Black Week: kit routine a -40%",
+    "testo_principale": "Detergente, siero e crema al miglior prezzo, mini detergente omaggio.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Ragazza apre scatola kit, mostra i tre prodotti, testo 'Black Week -40%' appare subito, sfondo domestico.",
+    "rationale_en": "Bundling the routine kit at the max discount leverages Black Week appeal.",
+    "rationale_it": "Il bundle del kit routine allo sconto massimo sfrutta l'attrattiva della Black Week.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B2",
+     "similarity": 0.769
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1649,
+     "ctr_lo": 0.8061,
+     "ctr_hi": 1.6835,
+     "cpm": 12.726,
+     "cpc": 1.092
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.9456,
+      "ctr_lo": 0.6543,
+      "ctr_hi": 1.3666,
+      "cpm": 11.768,
+      "cpc": 1.244
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.1649,
+      "ctr_lo": 0.8061,
+      "ctr_hi": 1.6835,
+      "cpm": 12.726,
+      "cpc": 1.092
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.0267,
+      "ctr_lo": 0.7104,
+      "ctr_hi": 1.4837,
+      "cpm": 18.07,
+      "cpc": 1.76
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.833,
+      "ctr_lo": 1.2683,
+      "ctr_hi": 2.6491,
+      "cpm": 24.31,
+      "cpc": 1.326
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.652,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31126359-3",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Week: fino al -40% su tutto",
+    "testo_principale": "Sieri, creme e kit routine al prezzo più basso dell'anno, spedizione gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello di 4 card: ogni card mostra un prodotto con badge '-40%' e icona spedizione gratuita.",
+    "rationale_en": "Black Friday lever aligns with the current Black Week promotion.",
+    "rationale_it": "La leva Black Friday è allineata alla promozione Black Week in corso.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.806
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0036,
+     "ctr_lo": 0.6945,
+     "ctr_hi": 1.4505,
+     "cpm": 13.185,
+     "cpc": 1.314
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.8209,
+      "ctr_lo": 0.568,
+      "ctr_hi": 1.1864,
+      "cpm": 12.415,
+      "cpc": 1.512
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.0036,
+      "ctr_lo": 0.6945,
+      "ctr_hi": 1.4505,
+      "cpm": 13.185,
+      "cpc": 1.314
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 0.9416,
+      "ctr_lo": 0.6515,
+      "ctr_hi": 1.3608,
+      "cpm": 18.583,
+      "cpc": 1.974
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.5305,
+      "ctr_lo": 1.059,
+      "ctr_hi": 2.2118,
+      "cpm": 25.641,
+      "cpc": 1.675
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.562,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31126359-2",
+    "leva": "urgency",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "48 ore: routine completa -30%",
+    "testo_principale": "Due giorni per prendere detergente, siero e crema al prezzo più basso.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Sfondo bianco, tre prodotti allineati, timer rosso '48h' in alto a destra, luce naturale.",
+    "rationale_en": "Urgency with a short deadline drives quick clicks in prospecting.",
+    "rationale_it": "L'urgenza con una scadenza breve spinge clic rapidi in prospezione.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "48"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-U3",
+     "similarity": 0.698
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.9725,
+     "ctr_lo": 0.6729,
+     "ctr_hi": 1.4054,
+     "cpm": 13.104,
+     "cpc": 1.348
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.7955,
+      "ctr_lo": 0.5504,
+      "ctr_hi": 1.1497,
+      "cpm": 12.163,
+      "cpc": 1.529
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 0.9725,
+      "ctr_lo": 0.6729,
+      "ctr_hi": 1.4054,
+      "cpm": 13.104,
+      "cpc": 1.348
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 0.9744,
+      "ctr_lo": 0.6742,
+      "ctr_hi": 1.4082,
+      "cpm": 18.468,
+      "cpc": 1.895
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.69,
+      "ctr_lo": 1.1694,
+      "ctr_hi": 2.4424,
+      "cpm": 25.187,
+      "cpc": 1.49
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.544,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1892,
+   "output_tokens": 7057,
+   "request_id": "gen-1794731037-hnlBhAH5iOmHaDw9GvPZ",
+   "backend": "openai_compat",
+   "seconds": 89.8,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:25:26",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "NDL-AS3": {
+  "brand": "NDL",
+  "audience": "NDL-AS3",
+  "brief": {
+   "product": "Siero alla vitamina C e kit routine (detergente, siero, crema). Crema notte al retinolo. SPF 50 invisibile.",
+   "offer": "Black Week: fino al -40% sulla skincare; spedizione gratis; mini detergente in regalo sopra una soglia.",
+   "max_discount_pct": 40,
+   "notes": "Tono diretto, niente promesse mediche."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "mostly women, around 25-40",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.875,
+    "mean_age": 34.1,
+    "confidence": "partly data-led"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.541,
+    "urgency": 1.143,
+    "black_friday": 1.037
+   },
+   "format_forecast_ctr": {
+    "video": 1.333,
+    "immagine": 1.207,
+    "carosello": 1.129
+   },
+   "best_existing": [
+    {
+     "creative_id": "NDL-S2",
+     "ctr": 1.8168,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Torna disponibile, ma per poco",
+     "testo_principale": "La crema notte al retinolo è tornata. Ne abbiamo prodotta poca.",
+     "descrizione_visual": "Ragazza sui 30 anni in bagno, parla in camera col telefono; nei primi 2 secondi mostra lo scaffale quasi vuoto."
+    },
+    {
+     "creative_id": "NDL-S1",
+     "ctr": 1.8056,
+     "leva": "scarcity",
+     "formato": "immagine",
+     "headline": "Siero Vitamina C: ultimi 200 flaconi",
+     "testo_principale": "Il lotto di settembre è quasi finito. Quando finisce, si riparte a ottobre.",
+     "descrizione_visual": "Flacone del siero su sfondo arancio pieno, luce da studio, scritta 'ultimi 200' in un bollino rosso."
+    },
+    {
+     "creative_id": "NDL-U1",
+     "ctr": 1.3895,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Solo fino a mezzanotte: -20%",
+     "testo_principale": "Il siero alla vitamina C a -20%, solo oggi.",
+     "descrizione_visual": "Video verticale: countdown grande nei primi 2 secondi, poi ragazza applica il siero e parla in camera."
+    }
+   ],
+   "benchmark_ctr": 1.8168
+  },
+  "candidates": [
+   {
+    "creative_id": "NDL-G31231914-3",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 18,
+    "headline": "Scorte limitate: kit routine",
+    "testo_principale": "Solo pochi kit completi, spedizione gratis e mini detergente omaggio",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video: mano apre cofanetto numerato, mostra detergente, siero vitamina C e crema, sovrapposizione 'Ultimi pezzi' nei primi 2 secondi",
+    "rationale_en": "Scarcity cue with limited kits drives urgency without inventing stock numbers.",
+    "rationale_it": "Cue di scarsità con kit limitati spinge all'azione senza inventare numeri di stock.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-S3",
+     "similarity": 0.654
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.5818,
+     "ctr_lo": 1.0946,
+     "ctr_hi": 2.2861,
+     "cpm": 17.88,
+     "cpc": 1.13
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.3571,
+      "ctr_lo": 0.939,
+      "ctr_hi": 1.9613,
+      "cpm": 11.464,
+      "cpc": 0.845
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.5553,
+      "ctr_lo": 1.0762,
+      "ctr_hi": 2.2477,
+      "cpm": 12.606,
+      "cpc": 0.811
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.5818,
+      "ctr_lo": 1.0946,
+      "ctr_hi": 2.2861,
+      "cpm": 17.88,
+      "cpc": 1.13
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.7891,
+      "ctr_lo": 1.9299,
+      "ctr_hi": 4.0308,
+      "cpm": 24.143,
+      "cpc": 0.866
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.871,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31231914-4",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Edizione limitata: routine completa",
+    "testo_principale": "Detergente, siero vitamina C e crema notte retinolo, spedizione gratis",
+    "call_to_action": "Scopri di più",
+    "descrizione_visual": "Carosello 3 card: 1) cofanetto chiuso con badge 'Edizione limitata', 2) prodotti aperti, 3) mini detergente in regalo",
+    "rationale_en": "Carousel format tells the limited‑edition story step by step, encouraging swipe‑through.",
+    "rationale_it": "Il formato carosello racconta la storia dell'edizione limitata passo passo, incentivando lo swipe.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-S3",
+     "similarity": 0.639
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.3239,
+     "ctr_lo": 0.916,
+     "ctr_hi": 1.9133,
+     "cpm": 18.168,
+     "cpc": 1.372
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.0586,
+      "ctr_lo": 0.7325,
+      "ctr_hi": 1.5299,
+      "cpm": 12.111,
+      "cpc": 1.144
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.1317,
+      "ctr_lo": 0.7831,
+      "ctr_hi": 1.6355,
+      "cpm": 13.189,
+      "cpc": 1.165
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.3239,
+      "ctr_lo": 0.916,
+      "ctr_hi": 1.9133,
+      "cpm": 18.168,
+      "cpc": 1.372
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.0587,
+      "ctr_lo": 1.4245,
+      "ctr_hi": 2.9752,
+      "cpm": 25.243,
+      "cpc": 1.226
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.729,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31231914-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 20,
+    "headline": "Offerta valida fino a esaurimento",
+    "testo_principale": "Siero vitamina C e SPF 50 a -40% finché scorte, spedizione gratis",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video: countdown generico 'Ultimi giorni' nei primi 2 sec, poi ragazza applica siero e crema, testo 'Spedizione gratis'",
+    "rationale_en": "Urgency cue with a generic countdown pushes immediate purchase while staying factual.",
+    "rationale_it": "Cue di urgenza con countdown generico spinge all'acquisto immediato restando fedele ai fatti.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-U1",
+     "similarity": 0.71
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.2344,
+     "ctr_lo": 0.8542,
+     "ctr_hi": 1.784,
+     "cpm": 17.998,
+     "cpc": 1.458
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.0556,
+      "ctr_lo": 0.7304,
+      "ctr_hi": 1.5256,
+      "cpm": 11.535,
+      "cpc": 1.093
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.2585,
+      "ctr_lo": 0.8708,
+      "ctr_hi": 1.8188,
+      "cpm": 12.613,
+      "cpc": 1.002
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.2344,
+      "ctr_lo": 0.8542,
+      "ctr_hi": 1.784,
+      "cpm": 17.998,
+      "cpc": 1.458
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.2485,
+      "ctr_lo": 1.5559,
+      "ctr_hi": 3.2496,
+      "cpm": 24.154,
+      "cpc": 1.074
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.679,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31231914-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Week: skincare -40%",
+    "testo_principale": "Tutta la linea a -40% con spedizione gratis e mini detergente in regalo",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video verticale: ragazza 30enne apre la scatola del kit routine, mostra siero vitamina C, crema notte retinolo e SPF 50, testo 'Black Week -40%' appare nei primi 2 secondi",
+    "rationale_en": "Leverages Black Week discount and free shipping to attract cold prospects with a strong visual hook.",
+    "rationale_it": "Sfrutta lo sconto Black Week e la spedizione gratis per attrarre prospect freddi con un forte hook visivo.",
+    "flags": [
+     {
+      "code": "length",
+      "field": "descrizione_visual",
+      "len": 171,
+      "lo": 54,
+      "hi": 120
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B2",
+     "similarity": 0.741
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0625,
+     "ctr_lo": 0.7352,
+     "ctr_hi": 1.5356,
+     "cpm": 18.058,
+     "cpc": 1.7
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.9787,
+      "ctr_lo": 0.6772,
+      "ctr_hi": 1.4144,
+      "cpm": 11.746,
+      "cpc": 1.2
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.2056,
+      "ctr_lo": 0.8342,
+      "ctr_hi": 1.7424,
+      "cpm": 12.734,
+      "cpc": 1.056
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.0625,
+      "ctr_lo": 0.7352,
+      "ctr_hi": 1.5356,
+      "cpm": 18.058,
+      "cpc": 1.7
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.8971,
+      "ctr_lo": 1.3127,
+      "ctr_hi": 2.7416,
+      "cpm": 24.264,
+      "cpc": 1.279
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.585,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31231914-6",
+    "leva": "urgency",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Ultima possibilità: -40% skincare",
+    "testo_principale": "Acquista siero, crema notte e SPF 50 con spedizione gratis e mini detergente",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Immagine: trio prodotti su sfondo chiaro, banner rosso 'Ultima possibilità -40%' in alto, icona spedizione gratis",
+    "rationale_en": "Final‑chance framing on a clean product shot captures last‑minute buyers.",
+    "rationale_it": "Framing 'ultima possibilità' su uno shot pulito cattura gli acquirenti dell'ultimo minuto.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.634
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0191,
+     "ctr_lo": 0.7052,
+     "ctr_hi": 1.4728,
+     "cpm": 18.566,
+     "cpc": 1.822
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.832,
+      "ctr_lo": 0.5757,
+      "ctr_hi": 1.2025,
+      "cpm": 12.163,
+      "cpc": 1.462
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.0171,
+      "ctr_lo": 0.7038,
+      "ctr_hi": 1.4699,
+      "cpm": 13.142,
+      "cpc": 1.292
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.0191,
+      "ctr_lo": 0.7052,
+      "ctr_hi": 1.4728,
+      "cpm": 18.566,
+      "cpc": 1.822
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.7676,
+      "ctr_lo": 1.2231,
+      "ctr_hi": 2.5545,
+      "cpm": 25.296,
+      "cpc": 1.431
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.561,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31231914-2",
+    "leva": "black_friday",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Black Week: fino al -40%",
+    "testo_principale": "Sieri, creme e protezione solare al prezzo più basso dell'anno",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Immagine studio: flacone siero vitamina C, crema notte retinolo e SPF 50 su sfondo nero, badge 'Black Week -40%' in alto a destra",
+    "rationale_en": "Static image highlights the full range at the max discount, matching the brand's clean aesthetic.",
+    "rationale_it": "Immagine statica evidenzia l'intera gamma allo sconto massimo, in linea con l'estetica pulita del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.723
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.889,
+     "ctr_lo": 0.6152,
+     "ctr_hi": 1.2849,
+     "cpm": 18.535,
+     "cpc": 2.085
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.7819,
+      "ctr_lo": 0.541,
+      "ctr_hi": 1.1299,
+      "cpm": 12.27,
+      "cpc": 1.569
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 0.9875,
+      "ctr_lo": 0.6833,
+      "ctr_hi": 1.4272,
+      "cpm": 13.144,
+      "cpc": 1.331
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 0.889,
+      "ctr_lo": 0.6152,
+      "ctr_hi": 1.2849,
+      "cpm": 18.535,
+      "cpc": 2.085
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.5115,
+      "ctr_lo": 1.0458,
+      "ctr_hi": 2.1844,
+      "cpm": 25.243,
+      "cpc": 1.67
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.489,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1889,
+   "output_tokens": 5015,
+   "request_id": "gen-1794731127-q3PQM8L2mZsd89d7MKHl",
+   "backend": "openai_compat",
+   "seconds": 105.2,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:27:12",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "NDL-AS4": {
+  "brand": "NDL",
+  "audience": "NDL-AS4",
+  "brief": {
+   "product": "Siero alla vitamina C e kit routine (detergente, siero, crema). Crema notte al retinolo. SPF 50 invisibile.",
+   "offer": "Black Week: fino al -40% sulla skincare; spedizione gratis; mini detergente in regalo sopra una soglia.",
+   "max_discount_pct": 40,
+   "notes": "Tono diretto, niente promesse mediche."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "mostly women, around 20-35",
+    "temperature": "warm (retargeting-like)",
+    "share_female": 0.86,
+    "mean_age": 32.0,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 2.585,
+    "urgency": 2.013,
+    "black_friday": 1.798
+   },
+   "format_forecast_ctr": {
+    "video": 2.39,
+    "immagine": 2.045,
+    "carosello": 1.818
+   },
+   "best_existing": [
+    {
+     "creative_id": "NDL-S2",
+     "ctr": 3.2033,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Torna disponibile, ma per poco",
+     "testo_principale": "La crema notte al retinolo è tornata. Ne abbiamo prodotta poca.",
+     "descrizione_visual": "Ragazza sui 30 anni in bagno, parla in camera col telefono; nei primi 2 secondi mostra lo scaffale quasi vuoto."
+    },
+    {
+     "creative_id": "NDL-S1",
+     "ctr": 3.0315,
+     "leva": "scarcity",
+     "formato": "immagine",
+     "headline": "Siero Vitamina C: ultimi 200 flaconi",
+     "testo_principale": "Il lotto di settembre è quasi finito. Quando finisce, si riparte a ottobre.",
+     "descrizione_visual": "Flacone del siero su sfondo arancio pieno, luce da studio, scritta 'ultimi 200' in un bollino rosso."
+    },
+    {
+     "creative_id": "NDL-U1",
+     "ctr": 2.531,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Solo fino a mezzanotte: -20%",
+     "testo_principale": "Il siero alla vitamina C a -20%, solo oggi.",
+     "descrizione_visual": "Video verticale: countdown grande nei primi 2 secondi, poi ragazza applica il siero e parla in camera."
+    }
+   ],
+   "benchmark_ctr": 3.2033
+  },
+  "candidates": [
+   {
+    "creative_id": "NDL-G31314231-1",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Ultime unità: siero Vitamina C",
+    "testo_principale": "Scorte limitate, spedizione gratis e mini detergente in regalo.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Ragazza 30 anni in bagno mostra flacone quasi vuoto, testo 'ultime unità' appare nei primi 2 secondi.",
+    "rationale_en": "Scarcity lever shows the highest forecast CTR for this audience.",
+    "rationale_it": "La leva scarcity ha la previsione CTR più alta per questo pubblico.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-S1",
+     "similarity": 0.625
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.8384,
+     "ctr_lo": 1.964,
+     "ctr_hi": 4.102,
+     "cpm": 24.126,
+     "cpc": 0.85
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.3811,
+      "ctr_lo": 0.9556,
+      "ctr_hi": 1.9959,
+      "cpm": 11.43,
+      "cpc": 0.828
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.5828,
+      "ctr_lo": 1.0952,
+      "ctr_hi": 2.2875,
+      "cpm": 12.611,
+      "cpc": 0.797
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.6098,
+      "ctr_lo": 1.1139,
+      "ctr_hi": 2.3265,
+      "cpm": 17.874,
+      "cpc": 1.11
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.8384,
+      "ctr_lo": 1.964,
+      "ctr_hi": 4.102,
+      "cpm": 24.126,
+      "cpc": 0.85
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.886,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31314231-4",
+    "leva": "scarcity",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Disponibilità limitata: crema retinolo",
+    "testo_principale": "Pochi pezzi rimasti, spedizione gratuita e mini detergente omaggio.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Flacone crema notte su sfondo scuro, bollino 'ultimi pezzi' in alto a destra.",
+    "rationale_en": "Static image with scarcity cue performs well for retargeting‑warm users.",
+    "rationale_it": "Un'immagine statica con cue di scarcity funziona bene per utenti warm in retargeting.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-S2",
+     "similarity": 0.568
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.3875,
+     "ctr_lo": 1.652,
+     "ctr_hi": 3.4504,
+     "cpm": 25.081,
+     "cpc": 1.051
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.1648,
+      "ctr_lo": 0.806,
+      "ctr_hi": 1.6834,
+      "cpm": 11.957,
+      "cpc": 1.027
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.3687,
+      "ctr_lo": 0.9471,
+      "ctr_hi": 1.9781,
+      "cpm": 13.025,
+      "cpc": 0.952
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.422,
+      "ctr_lo": 0.984,
+      "ctr_hi": 2.0551,
+      "cpm": 18.301,
+      "cpc": 1.287
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.3875,
+      "ctr_lo": 1.652,
+      "ctr_hi": 3.4504,
+      "cpm": 25.081,
+      "cpc": 1.051
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.745,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31314231-2",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Solo 24 ore: -40% su tutta la linea",
+    "testo_principale": "Black Week finisce a mezzanotte, approfitta ora.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Countdown gigante nei primi 2 secondi, poi ragazza applica crema notte e sorride.",
+    "rationale_en": "Urgency with a clear deadline drives strong short‑term response.",
+    "rationale_it": "L'urgenza con una scadenza chiara genera una risposta immediata forte.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "24"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-B4",
+     "similarity": 0.807
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.2779,
+     "ctr_lo": 1.5762,
+     "ctr_hi": 3.292,
+     "cpm": 24.374,
+     "cpc": 1.07
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.0694,
+      "ctr_lo": 0.7399,
+      "ctr_hi": 1.5455,
+      "cpm": 11.566,
+      "cpc": 1.082
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.275,
+      "ctr_lo": 0.8822,
+      "ctr_hi": 1.8426,
+      "cpm": 12.625,
+      "cpc": 0.99
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.2506,
+      "ctr_lo": 0.8653,
+      "ctr_hi": 1.8073,
+      "cpm": 18.088,
+      "cpc": 1.446
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.2779,
+      "ctr_lo": 1.5762,
+      "ctr_hi": 3.292,
+      "cpm": 24.374,
+      "cpc": 1.07
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.711,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31314231-6",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 20,
+    "headline": "Black Week: -40% su siero e crema",
+    "testo_principale": "Spedizione gratis, mini detergente in regalo, solo fino a domenica.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video verticale: ragazza apre pacco, mostra siero e crema, testo 'Black Week -40%' appare subito.",
+    "rationale_en": "Video showcases unboxing and the headline offer within the first seconds.",
+    "rationale_it": "Il video mostra l'unboxing e l'offerta principale nei primi secondi.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B2",
+     "similarity": 0.851
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.0261,
+     "ctr_lo": 1.402,
+     "ctr_hi": 2.9282,
+     "cpm": 24.133,
+     "cpc": 1.191
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 1.0453,
+      "ctr_lo": 0.7233,
+      "ctr_hi": 1.5106,
+      "cpm": 11.602,
+      "cpc": 1.11
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.2877,
+      "ctr_lo": 0.891,
+      "ctr_hi": 1.8609,
+      "cpm": 12.593,
+      "cpc": 0.978
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.1348,
+      "ctr_lo": 0.7852,
+      "ctr_hi": 1.6401,
+      "cpm": 17.945,
+      "cpc": 1.581
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 2.0261,
+      "ctr_lo": 1.402,
+      "ctr_hi": 2.9282,
+      "cpm": 24.133,
+      "cpc": 1.191
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.633,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31314231-5",
+    "leva": "urgency",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Ultimi giorni Black Week: -40%",
+    "testo_principale": "Offerta scade domani, kit routine e SPF 50 a prezzo speciale.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 4 card: countdown, kit, siero, SPF; ogni card con timer in alto.",
+    "rationale_en": "Carousel lets us show multiple hero products under a tight deadline.",
+    "rationale_it": "Il carosello permette di mostrare più prodotti hero sotto una scadenza stretta.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.684
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.8489,
+     "ctr_lo": 1.2793,
+     "ctr_hi": 2.672,
+     "cpm": 25.518,
+     "cpc": 1.38
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.9025,
+      "ctr_lo": 0.6245,
+      "ctr_hi": 1.3043,
+      "cpm": 12.249,
+      "cpc": 1.357
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.0678,
+      "ctr_lo": 0.7389,
+      "ctr_hi": 1.5432,
+      "cpm": 13.123,
+      "cpc": 1.229
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 1.115,
+      "ctr_lo": 0.7715,
+      "ctr_hi": 1.6114,
+      "cpm": 18.518,
+      "cpc": 1.661
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.8489,
+      "ctr_lo": 1.2793,
+      "ctr_hi": 2.672,
+      "cpm": 25.518,
+      "cpc": 1.38
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.577,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "NDL-G31314231-3",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Week: fino al -40% sui kit",
+    "testo_principale": "Kit routine e crema retinolo al prezzo più basso dell'anno.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 3 card: kit routine, siero vitamina C, crema notte; cadauna con badge '-40%'.",
+    "rationale_en": "Black Friday lever aligns with the seasonal promotion and carousel format.",
+    "rationale_it": "La leva Black Friday si allinea alla promozione stagionale e al formato carosello.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.769
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.6183,
+     "ctr_lo": 1.1198,
+     "ctr_hi": 2.3388,
+     "cpm": 25.391,
+     "cpc": 1.569
+    },
+    "by_audience": [
+     {
+      "audience": "NDL-AS1",
+      "ctr": 0.868,
+      "ctr_lo": 0.6006,
+      "ctr_hi": 1.2545,
+      "cpm": 12.349,
+      "cpc": 1.423
+     },
+     {
+      "audience": "NDL-AS2",
+      "ctr": 1.0612,
+      "ctr_lo": 0.7343,
+      "ctr_hi": 1.5337,
+      "cpm": 13.168,
+      "cpc": 1.241
+     },
+     {
+      "audience": "NDL-AS3",
+      "ctr": 0.9957,
+      "ctr_lo": 0.6889,
+      "ctr_hi": 1.4389,
+      "cpm": 18.452,
+      "cpc": 1.853
+     },
+     {
+      "audience": "NDL-AS4",
+      "ctr": 1.6183,
+      "ctr_lo": 1.1198,
+      "ctr_hi": 2.3388,
+      "cpm": 25.391,
+      "cpc": 1.569
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.505,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1887,
+   "output_tokens": 4402,
+   "request_id": "gen-1794731232-bVRnR5A4KAbyQG6NF2um",
+   "backend": "openai_compat",
+   "seconds": 82.0,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:28:34",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "CDF-AS1": {
+  "brand": "CDF",
+  "audience": "CDF-AS1",
+  "brief": {
+   "product": "Crocchette monoproteiche grain free, snack senza cereali per gatti, cucce invernali, box cani e gatti.",
+   "offer": "Black Friday: fino al -35%; riordino automatico a -20%; spedizione gratis sopra 29 euro.",
+   "max_discount_pct": 35,
+   "notes": "Tono caldo, il protagonista è l'animale."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 35-50",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.463,
+    "mean_age": 47.0,
+    "confidence": "partly data-led"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.256,
+    "urgency": 1.041,
+    "black_friday": 1.032
+   },
+   "format_forecast_ctr": {
+    "video": 1.293,
+    "immagine": 0.996,
+    "carosello": 0.956
+   },
+   "best_existing": [
+    {
+     "creative_id": "CDF-S1",
+     "ctr": 1.7372,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Le crocchette monoproteiche stanno finendo",
+     "testo_principale": "L'ultimo lotto del mese: poi tre settimane di attesa.",
+     "descrizione_visual": "Proprietaria in cucina riprende il suo cane che svuota la ciotola, parla in camera; apre sul sacco quasi vuoto."
+    },
+    {
+     "creative_id": "CDF-B2",
+     "ctr": 1.3079,
+     "leva": "black_friday",
+     "formato": "video",
+     "headline": "Black Week: il box dei suoi sogni",
+     "testo_principale": "Una settimana di sconti sul box cani e gatti.",
+     "descrizione_visual": "Cane che apre la scatola dell'ordine, scritta 'BLACK WEEK' nei primi 2 secondi, proprietario parla."
+    },
+    {
+     "creative_id": "CDF-U2",
+     "ctr": 1.2969,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Solo oggi: snack 3x2",
+     "testo_principale": "Tre confezioni al prezzo di due, fino a mezzanotte.",
+     "descrizione_visual": "Gatto vero che salta per prendere lo snack, primi 2 secondi molto dinamici, timer in sovrimpressione."
+    }
+   ],
+   "benchmark_ctr": 1.7372
+  },
+  "candidates": [
+   {
+    "creative_id": "CDF-G31385471-1",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Cucce invernali: ultime 5 taglie",
+    "testo_principale": "Solo pochi pezzi per taglia, spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Cane che annusa la cuccia vuota, primo piano sul cartello 'ULTIMI 5', proprietario sorride.",
+    "rationale_en": "Leverages scarcity of winter beds with limited stock visual.",
+    "rationale_it": "Sfrutta la scarsità delle cucce invernali con stock limitato nel visual.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "5"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-U1",
+     "similarity": 0.639
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.3291,
+     "ctr_lo": 0.9197,
+     "ctr_hi": 1.9209,
+     "cpm": 9.224,
+     "cpc": 0.694
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.3291,
+      "ctr_lo": 0.9197,
+      "ctr_hi": 1.9209,
+      "cpm": 9.224,
+      "cpc": 0.694
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.5672,
+      "ctr_lo": 1.0844,
+      "ctr_hi": 2.2649,
+      "cpm": 9.136,
+      "cpc": 0.583
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.4762,
+      "ctr_lo": 1.0214,
+      "ctr_hi": 2.1334,
+      "cpm": 9.305,
+      "cpc": 0.63
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 3.0933,
+      "ctr_lo": 2.1404,
+      "ctr_hi": 4.4705,
+      "cpm": 17.203,
+      "cpc": 0.556
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.765,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G31385471-6",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 18,
+    "headline": "Il box dei sogni a -35% oggi",
+    "testo_principale": "Cane e gatto scoprono insieme il box Black Friday.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Apertura scatola: cane tira fuori crocchette, gatto sniffa snack, testo 'BLACK FRIDAY -35%' nei primi 2 secondi.",
+    "rationale_en": "Shows pet joy unboxing the Black Friday box with max discount.",
+    "rationale_it": "Mostra la gioia degli animali nell'unboxing del box Black Friday con sconto massimo.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B2",
+     "similarity": 0.789
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.2612,
+     "ctr_lo": 0.8727,
+     "ctr_hi": 1.8227,
+     "cpm": 9.283,
+     "cpc": 0.736
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.2612,
+      "ctr_lo": 0.8727,
+      "ctr_hi": 1.8227,
+      "cpm": 9.283,
+      "cpc": 0.736
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.5985,
+      "ctr_lo": 1.1061,
+      "ctr_hi": 2.3102,
+      "cpm": 9.092,
+      "cpc": 0.569
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.5057,
+      "ctr_lo": 1.0418,
+      "ctr_hi": 2.176,
+      "cpm": 9.259,
+      "cpc": 0.615
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.7685,
+      "ctr_lo": 1.9156,
+      "ctr_hi": 4.001,
+      "cpm": 17.106,
+      "cpc": 0.618
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.726,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G31385471-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Mezzanotte: Black Friday -35% finisce",
+    "testo_principale": "Ultime ore per prendere crocchette e cucce al -35%.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Timer conto alla rovescia a mezzanotte, cane che mangia crocchette, gatto nella cuccia, sovrimpressione '-35%'.",
+    "rationale_en": "Urgency of midnight deadline for max Black Friday discount.",
+    "rationale_it": "Urgenza della scadenza mezzanotte per lo sconto massimo del Black Friday.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B4",
+     "similarity": 0.784
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.141,
+     "ctr_lo": 0.7895,
+     "ctr_hi": 1.6489,
+     "cpm": 9.315,
+     "cpc": 0.816
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.141,
+      "ctr_lo": 0.7895,
+      "ctr_hi": 1.6489,
+      "cpm": 9.315,
+      "cpc": 0.816
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.3996,
+      "ctr_lo": 0.9684,
+      "ctr_hi": 2.0227,
+      "cpm": 9.183,
+      "cpc": 0.656
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.3183,
+      "ctr_lo": 0.9122,
+      "ctr_hi": 1.9052,
+      "cpm": 9.335,
+      "cpc": 0.708
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.7522,
+      "ctr_lo": 1.9044,
+      "ctr_hi": 3.9775,
+      "cpm": 17.296,
+      "cpc": 0.628
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.657,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G31385471-4",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Snack grain‑free: solo 12 confezioni",
+    "testo_principale": "Ultimi pezzi per taglia, spedizione gratis sopra 29€.",
+    "call_to_action": "Scopri di più",
+    "descrizione_visual": "Carosello 4 card: gatto salta per snack, contatore '12 rimasti' in alto a destra su ogni card.",
+    "rationale_en": "Highlights scarcity of grain‑free snack packs with live counter.",
+    "rationale_it": "Evidenzia la scarsità degli snack grain‑free con contatore in tempo reale.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "12"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-S2",
+     "similarity": 0.756
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0074,
+     "ctr_lo": 0.6971,
+     "ctr_hi": 1.4559,
+     "cpm": 9.554,
+     "cpc": 0.948
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.0074,
+      "ctr_lo": 0.6971,
+      "ctr_hi": 1.4559,
+      "cpm": 9.554,
+      "cpc": 0.948
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.1081,
+      "ctr_lo": 0.7667,
+      "ctr_hi": 1.6014,
+      "cpm": 9.644,
+      "cpc": 0.87
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.0437,
+      "ctr_lo": 0.7222,
+      "ctr_hi": 1.5084,
+      "cpm": 9.784,
+      "cpc": 0.937
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.2186,
+      "ctr_lo": 1.5351,
+      "ctr_hi": 3.2063,
+      "cpm": 17.768,
+      "cpc": 0.801
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.58,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G31385471-3",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Friday: fino al -35% su box",
+    "testo_principale": "Cibo, snack e cucce nel box cani e gatti al prezzo minimo.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 3 card: cane apre box, gatto annusa snack, cuccia invernale; badge '-35%' su ogni card.",
+    "rationale_en": "Shows Black Friday depth across best‑selling box with max discount.",
+    "rationale_it": "Mostra la profondità del Black Friday sul box best‑seller con lo sconto massimo.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.743
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.9882,
+     "ctr_lo": 0.6838,
+     "ctr_hi": 1.4281,
+     "cpm": 9.6,
+     "cpc": 0.971
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.9882,
+      "ctr_lo": 0.6838,
+      "ctr_hi": 1.4281,
+      "cpm": 9.6,
+      "cpc": 0.971
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.243,
+      "ctr_lo": 0.8601,
+      "ctr_hi": 1.7963,
+      "cpm": 9.487,
+      "cpc": 0.763
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.1707,
+      "ctr_lo": 0.8101,
+      "ctr_hi": 1.692,
+      "cpm": 9.639,
+      "cpc": 0.823
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.0862,
+      "ctr_lo": 1.4435,
+      "ctr_hi": 3.015,
+      "cpm": 17.841,
+      "cpc": 0.855
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.569,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G31385471-2",
+    "leva": "urgency",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "48 ore: riordino automatico -20%",
+    "testo_principale": "Attiva ora e blocchi il 20% di sconto per sempre.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Schermata smartphone con timer 48h, cane che lecca la ciotola, testo 'RIORDINO -20%'.",
+    "rationale_en": "Uses urgency of 48‑hour window for auto‑reorder discount.",
+    "rationale_it": "Usa l'urgenza della finestra di 48 ore per lo sconto sul riordino automatico.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "48"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-U3",
+     "similarity": 0.775
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.8565,
+     "ctr_lo": 0.5927,
+     "ctr_hi": 1.2378,
+     "cpm": 9.487,
+     "cpc": 1.108
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.8565,
+      "ctr_lo": 0.5927,
+      "ctr_hi": 1.2378,
+      "cpm": 9.487,
+      "cpc": 1.108
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.0773,
+      "ctr_lo": 0.7454,
+      "ctr_hi": 1.5569,
+      "cpm": 9.432,
+      "cpc": 0.876
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.0147,
+      "ctr_lo": 0.7021,
+      "ctr_hi": 1.4664,
+      "cpm": 9.613,
+      "cpc": 0.947
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.0605,
+      "ctr_lo": 1.4258,
+      "ctr_hi": 2.9779,
+      "cpm": 17.768,
+      "cpc": 0.862
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.493,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1864,
+   "output_tokens": 4129,
+   "request_id": "gen-1794731327-orxZYuSAsMxXH1nTG0Jf",
+   "backend": "openai_compat",
+   "seconds": 71.0,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:29:45",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "CDF-AS2": {
+  "brand": "CDF",
+  "audience": "CDF-AS2",
+  "brief": {
+   "product": "Crocchette monoproteiche grain free, snack senza cereali per gatti, cucce invernali, box cani e gatti.",
+   "offer": "Black Friday: fino al -35%; riordino automatico a -20%; spedizione gratis sopra 29 euro.",
+   "max_discount_pct": 35,
+   "notes": "Tono caldo, il protagonista è l'animale."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 40-55",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.502,
+    "mean_age": 48.8,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.458,
+    "black_friday": 1.313,
+    "urgency": 1.283
+   },
+   "format_forecast_ctr": {
+    "video": 1.59,
+    "immagine": 1.219,
+    "carosello": 1.131
+   },
+   "best_existing": [
+    {
+     "creative_id": "CDF-S1",
+     "ctr": 2.0484,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Le crocchette monoproteiche stanno finendo",
+     "testo_principale": "L'ultimo lotto del mese: poi tre settimane di attesa.",
+     "descrizione_visual": "Proprietaria in cucina riprende il suo cane che svuota la ciotola, parla in camera; apre sul sacco quasi vuoto."
+    },
+    {
+     "creative_id": "CDF-B2",
+     "ctr": 1.6576,
+     "leva": "black_friday",
+     "formato": "video",
+     "headline": "Black Week: il box dei suoi sogni",
+     "testo_principale": "Una settimana di sconti sul box cani e gatti.",
+     "descrizione_visual": "Cane che apre la scatola dell'ordine, scritta 'BLACK WEEK' nei primi 2 secondi, proprietario parla."
+    },
+    {
+     "creative_id": "CDF-U2",
+     "ctr": 1.5908,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Solo oggi: snack 3x2",
+     "testo_principale": "Tre confezioni al prezzo di due, fino a mezzanotte.",
+     "descrizione_visual": "Gatto vero che salta per prendere lo snack, primi 2 secondi molto dinamici, timer in sovrimpressione."
+    }
+   ],
+   "benchmark_ctr": 2.0484
+  },
+  "candidates": [
+   {
+    "creative_id": "CDF-G32296620-5",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 20,
+    "headline": "Snack grain free gatto: scorte limitate",
+    "testo_principale": "Ultimi 50 pacchetti snack senza cereali. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Gatto che salta per afferrare lo snack, contatore scorte che scende nei primi 2 secondi.",
+    "rationale_en": "Emphasizes limited grain‑free cat snack stock with a dynamic cat jump and a live stock counter.",
+    "rationale_it": "Sottolinea la scarsità degli snack grain‑free per gatti con un salto dinamico e un contatore scorte in tempo reale.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "50"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-S2",
+     "similarity": 0.823
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.6804,
+     "ctr_lo": 1.1627,
+     "ctr_hi": 2.4285,
+     "cpm": 9.102,
+     "cpc": 0.542
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.4251,
+      "ctr_lo": 0.9861,
+      "ctr_hi": 2.0596,
+      "cpm": 9.189,
+      "cpc": 0.645
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.6804,
+      "ctr_lo": 1.1627,
+      "ctr_hi": 2.4285,
+      "cpm": 9.102,
+      "cpc": 0.542
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.5828,
+      "ctr_lo": 1.0952,
+      "ctr_hi": 2.2874,
+      "cpm": 9.26,
+      "cpc": 0.585
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 3.3167,
+      "ctr_lo": 2.295,
+      "ctr_hi": 4.7934,
+      "cpm": 17.035,
+      "cpc": 0.514
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.82,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32296620-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: -35% crocchette monoproteiche",
+    "testo_principale": "Fino a mezzanotte tutto a -35%. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Cane che mangia crocchette da una ciotola, primo piano sul sacco con scritta BLACK FRIDAY -35% nei primi 2 secondi.",
+    "rationale_en": "Leverages the Black Friday discount on the flagship mono‑protein kibble with a pet‑centric opening that matches the brand’s warm tone.",
+    "rationale_it": "Sfrutta lo sconto Black Friday sulle crocchette monoproteiche con un apertura incentrata sull'animale, coerente con il tono caldo del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.803
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.3435,
+     "ctr_lo": 0.9296,
+     "ctr_hi": 1.9416,
+     "cpm": 9.22,
+     "cpc": 0.686
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.06,
+      "ctr_lo": 0.7335,
+      "ctr_hi": 1.5319,
+      "cpm": 9.412,
+      "cpc": 0.888
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.3435,
+      "ctr_lo": 0.9296,
+      "ctr_hi": 1.9416,
+      "cpm": 9.22,
+      "cpc": 0.686
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.2654,
+      "ctr_lo": 0.8756,
+      "ctr_hi": 1.8288,
+      "cpm": 9.4,
+      "cpc": 0.743
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.3268,
+      "ctr_lo": 1.61,
+      "ctr_hi": 3.3626,
+      "cpm": 17.28,
+      "cpc": 0.743
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.656,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32296620-6",
+    "leva": "urgency",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Offerta 48h: abbonamento -20% su crocchette",
+    "testo_principale": "Attiva entro 48 ore, risparmi 20% su ogni consegna. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Tre slide: cane che mangia, icona abbonamento con -20%, countdown 48h.",
+    "rationale_en": "Uses a carousel to convey a 48‑hour urgency on the subscription discount, featuring the dog eating.",
+    "rationale_it": "Usa un carosello per trasmettere l'urgenza di 48 ore sullo sconto abbonamento, con il cane che mangia.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "48"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-U4",
+     "similarity": 0.667
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1514,
+     "ctr_lo": 0.7967,
+     "ctr_hi": 1.664,
+     "cpm": 9.422,
+     "cpc": 0.818
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.9458,
+      "ctr_lo": 0.6545,
+      "ctr_hi": 1.3669,
+      "cpm": 9.526,
+      "cpc": 1.007
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.1514,
+      "ctr_lo": 0.7967,
+      "ctr_hi": 1.664,
+      "cpm": 9.422,
+      "cpc": 0.818
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.0845,
+      "ctr_lo": 0.7504,
+      "ctr_hi": 1.5674,
+      "cpm": 9.585,
+      "cpc": 0.884
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.1943,
+      "ctr_lo": 1.5183,
+      "ctr_hi": 3.1712,
+      "cpm": 17.893,
+      "cpc": 0.815
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.562,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32296620-3",
+    "leva": "urgency",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Riordino automatico -20% solo 48 ore",
+    "testo_principale": "Attiva il riordino entro 48 ore e risparmi il 20% per sempre.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Gatto che lecca la ciotola vuota, timer 48h in sovrimpressione, sfondo cucina calda.",
+    "rationale_en": "Creates urgency around the auto‑reorder discount with a 48‑hour countdown, keeping the pet as protagonist.",
+    "rationale_it": "Crea urgenza sullo sconto del riordino automatico con un countdown di 48 ore, mantenendo l'animale protagonista.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "48"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-U3",
+     "similarity": 0.73
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1397,
+     "ctr_lo": 0.7886,
+     "ctr_hi": 1.6471,
+     "cpm": 9.416,
+     "cpc": 0.826
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.9062,
+      "ctr_lo": 0.627,
+      "ctr_hi": 1.3096,
+      "cpm": 9.454,
+      "cpc": 1.043
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.1397,
+      "ctr_lo": 0.7886,
+      "ctr_hi": 1.6471,
+      "cpm": 9.416,
+      "cpc": 0.826
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.0735,
+      "ctr_lo": 0.7428,
+      "ctr_hi": 1.5514,
+      "cpm": 9.574,
+      "cpc": 0.892
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.18,
+      "ctr_lo": 1.5084,
+      "ctr_hi": 3.1505,
+      "cpm": 17.699,
+      "cpc": 0.812
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.556,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32296620-4",
+    "leva": "black_friday",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Black Friday: box cani e gatti -35%",
+    "testo_principale": "Il box più amato a -35%. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Scatola regalo aperta da un cane e un gatto, etichetta BLACK FRIDAY -35% visibile subito.",
+    "rationale_en": "Shows the best‑selling mixed box at the maximum Black Friday discount with both dog and cat unboxing.",
+    "rationale_it": "Mostra il box misto più venduto al massimo sconto Black Friday con cane e gatto che lo scartano.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.715
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1395,
+     "ctr_lo": 0.7884,
+     "ctr_hi": 1.6467,
+     "cpm": 9.538,
+     "cpc": 0.837
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.8768,
+      "ctr_lo": 0.6067,
+      "ctr_hi": 1.2672,
+      "cpm": 9.587,
+      "cpc": 1.093
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.1395,
+      "ctr_lo": 0.7884,
+      "ctr_hi": 1.6467,
+      "cpm": 9.538,
+      "cpc": 0.837
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.0733,
+      "ctr_lo": 0.7426,
+      "ctr_hi": 1.5511,
+      "cpm": 9.688,
+      "cpc": 0.903
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 1.9195,
+      "ctr_lo": 1.3282,
+      "ctr_hi": 2.7741,
+      "cpm": 17.733,
+      "cpc": 0.924
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.556,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32296620-2",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Cucce invernali: ultimi pezzi per taglia",
+    "testo_principale": "Solo 3 cucce per taglia M, L, XL. Spedizione gratis sopra 29€.",
+    "call_to_action": "Scopri di più",
+    "descrizione_visual": "Tre schede: cane in cuccia taglia M con badge 'ultimi 3', taglia L 'ultimi 2', taglia XL 'ultimo 1', sfondo neve.",
+    "rationale_en": "Highlights limited stock per size for winter beds, using a carousel to show each size’s scarcity.",
+    "rationale_it": "Evidenzia la disponibilità limitata per taglia delle cucce invernali, usando il carosello per mostrare la scarsità di ogni taglia.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "3"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-S3",
+     "similarity": 0.658
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0586,
+     "ctr_lo": 0.7325,
+     "ctr_hi": 1.5299,
+     "cpm": 9.621,
+     "cpc": 0.909
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.9624,
+      "ctr_lo": 0.666,
+      "ctr_hi": 1.3909,
+      "cpm": 9.551,
+      "cpc": 0.992
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.0586,
+      "ctr_lo": 0.7325,
+      "ctr_hi": 1.5299,
+      "cpm": 9.621,
+      "cpc": 0.909
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 0.9971,
+      "ctr_lo": 0.6899,
+      "ctr_hi": 1.441,
+      "cpm": 9.777,
+      "cpc": 0.98
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.1196,
+      "ctr_lo": 1.4666,
+      "ctr_hi": 3.0632,
+      "cpm": 17.863,
+      "cpc": 0.843
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.517,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1863,
+   "output_tokens": 4072,
+   "request_id": "gen-1794732197-PCnyyWxyqtX8sce3lMVP",
+   "backend": "openai_compat",
+   "seconds": 99.0,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:44:56",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "CDF-AS3": {
+  "brand": "CDF",
+  "audience": "CDF-AS3",
+  "brief": {
+   "product": "Crocchette monoproteiche grain free, snack senza cereali per gatti, cucce invernali, box cani e gatti.",
+   "offer": "Black Friday: fino al -35%; riordino automatico a -20%; spedizione gratis sopra 29 euro.",
+   "max_discount_pct": 35,
+   "notes": "Tono caldo, il protagonista è l'animale."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 40-55",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.499,
+    "mean_age": 48.7,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.373,
+    "black_friday": 1.237,
+    "urgency": 1.209
+   },
+   "format_forecast_ctr": {
+    "video": 1.497,
+    "immagine": 1.149,
+    "carosello": 1.065
+   },
+   "best_existing": [
+    {
+     "creative_id": "CDF-S1",
+     "ctr": 1.9294,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Le crocchette monoproteiche stanno finendo",
+     "testo_principale": "L'ultimo lotto del mese: poi tre settimane di attesa.",
+     "descrizione_visual": "Proprietaria in cucina riprende il suo cane che svuota la ciotola, parla in camera; apre sul sacco quasi vuoto."
+    },
+    {
+     "creative_id": "CDF-B2",
+     "ctr": 1.5613,
+     "leva": "black_friday",
+     "formato": "video",
+     "headline": "Black Week: il box dei suoi sogni",
+     "testo_principale": "Una settimana di sconti sul box cani e gatti.",
+     "descrizione_visual": "Cane che apre la scatola dell'ordine, scritta 'BLACK WEEK' nei primi 2 secondi, proprietario parla."
+    },
+    {
+     "creative_id": "CDF-U2",
+     "ctr": 1.4984,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Solo oggi: snack 3x2",
+     "testo_principale": "Tre confezioni al prezzo di due, fino a mezzanotte.",
+     "descrizione_visual": "Gatto vero che salta per prendere lo snack, primi 2 secondi molto dinamici, timer in sovrimpressione."
+    }
+   ],
+   "benchmark_ctr": 1.9294
+  },
+  "candidates": [
+   {
+    "creative_id": "CDF-G32354128-5",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 18,
+    "headline": "Snack senza cereali: scorte in esaurimento",
+    "testo_principale": "Ultimi lotti di snack grain free per gatti, spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Gatto salta per prendere snack, primo piano sacco quasi vuoto con scritta 'ULTIMI PEZZI'.",
+    "rationale_en": "Emphasizes dwindling stock of grain-free cat snacks to drive immediate purchase.",
+    "rationale_it": "Sottolinea l'esaurimento degli snack grain free per gatti per spingere all'acquisto immediato.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-S2",
+     "similarity": 0.883
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.6343,
+     "ctr_lo": 1.1309,
+     "ctr_hi": 2.3619,
+     "cpm": 9.233,
+     "cpc": 0.565
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.4715,
+      "ctr_lo": 1.0182,
+      "ctr_hi": 2.1267,
+      "cpm": 9.163,
+      "cpc": 0.623
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.7351,
+      "ctr_lo": 1.2006,
+      "ctr_hi": 2.5076,
+      "cpm": 9.075,
+      "cpc": 0.523
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.6343,
+      "ctr_lo": 1.1309,
+      "ctr_hi": 2.3619,
+      "cpm": 9.233,
+      "cpc": 0.565
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 3.4248,
+      "ctr_lo": 2.3697,
+      "ctr_hi": 4.9495,
+      "cpm": 16.994,
+      "cpc": 0.496
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.847,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32354128-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: fino al -35% su crocchette",
+    "testo_principale": "Crocchette monoproteiche grain free e snack senza cereali a prezzo speciale.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Cane felice mangia dalle crocchette, primo piano sul sacco con scritta 'BLACK FRIDAY -35%'.",
+    "rationale_en": "Leverages Black Friday discount on core product to attract price-sensitive pet owners.",
+    "rationale_it": "Sfrutta lo sconto Black Friday sul prodotto principale per attrarre proprietari sensibili al prezzo.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.791
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.2937,
+     "ctr_lo": 0.8952,
+     "ctr_hi": 1.8697,
+     "cpm": 9.395,
+     "cpc": 0.726
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.0837,
+      "ctr_lo": 0.7499,
+      "ctr_hi": 1.5662,
+      "cpm": 9.391,
+      "cpc": 0.867
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.3735,
+      "ctr_lo": 0.9504,
+      "ctr_hi": 1.985,
+      "cpm": 9.221,
+      "cpc": 0.671
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.2937,
+      "ctr_lo": 0.8952,
+      "ctr_hi": 1.8697,
+      "cpm": 9.395,
+      "cpc": 0.726
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.3788,
+      "ctr_lo": 1.646,
+      "ctr_hi": 3.4378,
+      "cpm": 17.259,
+      "cpc": 0.726
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.671,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32354128-2",
+    "leva": "scarcity",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Cucce invernali: ultimi pezzi per taglia",
+    "testo_principale": "Tre taglie disponibili, scorte limitate per ogni misura.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Gatto accoccolato in cuccia invernale, zoom su etichetta 'ULTIMI 3 PEZZI'.",
+    "rationale_en": "Highlights limited stock of winter beds to trigger scarcity-driven purchase.",
+    "rationale_it": "Evidenzia la disponibilità limitata delle cucce invernali per spingere all'acquisto per scarsità.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-S3",
+     "similarity": 0.657
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.274,
+     "ctr_lo": 0.8816,
+     "ctr_hi": 1.8412,
+     "cpm": 9.632,
+     "cpc": 0.756
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.1188,
+      "ctr_lo": 0.7741,
+      "ctr_hi": 1.6169,
+      "cpm": 9.425,
+      "cpc": 0.842
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.3526,
+      "ctr_lo": 0.9359,
+      "ctr_hi": 1.9548,
+      "cpm": 9.481,
+      "cpc": 0.701
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.274,
+      "ctr_lo": 0.8816,
+      "ctr_hi": 1.8412,
+      "cpm": 9.632,
+      "cpc": 0.756
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.5968,
+      "ctr_lo": 1.7969,
+      "ctr_hi": 3.753,
+      "cpm": 17.626,
+      "cpc": 0.679
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.66,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32354128-4",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Friday: box cani e gatti -35%",
+    "testo_principale": "Scopri il box misto con cibo, snack e accessori al prezzo più basso dell'anno.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carousel: 1) cane apre box, 2) gatto annusa snack, 3) dettaglio sconto -35% su ogni prodotto.",
+    "rationale_en": "Shows multi-pet box at max Black Friday discount to appeal to households with both dogs and cats.",
+    "rationale_it": "Mostra il box multi-pet al massimo sconto Black Friday per attrarre famiglie con cani e gatti.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.748
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1764,
+     "ctr_lo": 0.814,
+     "ctr_hi": 1.7002,
+     "cpm": 9.658,
+     "cpc": 0.821
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.993,
+      "ctr_lo": 0.6871,
+      "ctr_hi": 1.435,
+      "cpm": 9.614,
+      "cpc": 0.968
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.249,
+      "ctr_lo": 0.8642,
+      "ctr_hi": 1.805,
+      "cpm": 9.5,
+      "cpc": 0.761
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.1764,
+      "ctr_lo": 0.814,
+      "ctr_hi": 1.7002,
+      "cpm": 9.658,
+      "cpc": 0.821
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.0963,
+      "ctr_lo": 1.4505,
+      "ctr_hi": 3.0296,
+      "cpm": 17.848,
+      "cpc": 0.851
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.61,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32354128-3",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Attiva il riordino automatico -20% ora",
+    "testo_principale": "Risparmi il 20% su ogni consegna, spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Proprietario imposta abbonamento su smartphone, cane scodinzola accanto, timer 'ATTIVA ORA'.",
+    "rationale_en": "Uses automatic reorder discount and free shipping threshold to create urgency for subscription.",
+    "rationale_it": "Usa lo sconto sul riordino automatico e la soglia spedizione gratis per creare urgenza sull'abbonamento.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-U3",
+     "similarity": 0.578
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1601,
+     "ctr_lo": 0.8027,
+     "ctr_hi": 1.6766,
+     "cpm": 9.322,
+     "cpc": 0.804
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.0041,
+      "ctr_lo": 0.6948,
+      "ctr_hi": 1.4511,
+      "cpm": 9.305,
+      "cpc": 0.927
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.2317,
+      "ctr_lo": 0.8522,
+      "ctr_hi": 1.78,
+      "cpm": 9.156,
+      "cpc": 0.743
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.1601,
+      "ctr_lo": 0.8027,
+      "ctr_hi": 1.6766,
+      "cpm": 9.322,
+      "cpc": 0.804
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.422,
+      "ctr_lo": 1.6759,
+      "ctr_hi": 3.5003,
+      "cpm": 17.423,
+      "cpc": 0.719
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.601,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32354128-6",
+    "leva": "urgency",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Riordino automatico -20%: attiva ora",
+    "testo_principale": "Blocca il prezzo scontato per sempre, consegna gratuita sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Schermata app con pulsante 'Attiva riordino', cane e gatto seduti accanto, badge '-20%'.",
+    "rationale_en": "Prompts immediate activation of auto-reorder with permanent discount and free shipping threshold.",
+    "rationale_it": "Invita ad attivare subito il riordino automatico con sconto permanente e soglia spedizione gratis.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-U3",
+     "similarity": 0.584
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0084,
+     "ctr_lo": 0.6977,
+     "ctr_hi": 1.4573,
+     "cpm": 9.642,
+     "cpc": 0.956
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.8512,
+      "ctr_lo": 0.589,
+      "ctr_hi": 1.2302,
+      "cpm": 9.498,
+      "cpc": 1.116
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.0706,
+      "ctr_lo": 0.7408,
+      "ctr_hi": 1.5472,
+      "cpm": 9.478,
+      "cpc": 0.885
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.0084,
+      "ctr_lo": 0.6977,
+      "ctr_hi": 1.4573,
+      "cpm": 9.642,
+      "cpc": 0.956
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.0478,
+      "ctr_lo": 1.4169,
+      "ctr_hi": 2.9594,
+      "cpm": 17.788,
+      "cpc": 0.869
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.523,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1864,
+   "output_tokens": 3172,
+   "request_id": "gen-1794732297-TzMWgcP7dosqxjx9NYXa",
+   "backend": "openai_compat",
+   "seconds": 57.2,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:45:54",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "CDF-AS4": {
+  "brand": "CDF",
+  "audience": "CDF-AS4",
+  "brief": {
+   "product": "Crocchette monoproteiche grain free, snack senza cereali per gatti, cucce invernali, box cani e gatti.",
+   "offer": "Black Friday: fino al -35%; riordino automatico a -20%; spedizione gratis sopra 29 euro.",
+   "max_discount_pct": 35,
+   "notes": "Tono caldo, il protagonista è l'animale."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 40-55",
+    "temperature": "warm (retargeting-like)",
+    "share_female": 0.5,
+    "mean_age": 48.7,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 2.876,
+    "urgency": 2.49,
+    "black_friday": 2.247
+   },
+   "format_forecast_ctr": {
+    "video": 2.985,
+    "immagine": 2.298,
+    "carosello": 2.113
+   },
+   "best_existing": [
+    {
+     "creative_id": "CDF-S1",
+     "ctr": 4.043,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Le crocchette monoproteiche stanno finendo",
+     "testo_principale": "L'ultimo lotto del mese: poi tre settimane di attesa.",
+     "descrizione_visual": "Proprietaria in cucina riprende il suo cane che svuota la ciotola, parla in camera; apre sul sacco quasi vuoto."
+    },
+    {
+     "creative_id": "CDF-U2",
+     "ctr": 3.1283,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Solo oggi: snack 3x2",
+     "testo_principale": "Tre confezioni al prezzo di due, fino a mezzanotte.",
+     "descrizione_visual": "Gatto vero che salta per prendere lo snack, primi 2 secondi molto dinamici, timer in sovrimpressione."
+    },
+    {
+     "creative_id": "CDF-B2",
+     "ctr": 2.8708,
+     "leva": "black_friday",
+     "formato": "video",
+     "headline": "Black Week: il box dei suoi sogni",
+     "testo_principale": "Una settimana di sconti sul box cani e gatti.",
+     "descrizione_visual": "Cane che apre la scatola dell'ordine, scritta 'BLACK WEEK' nei primi 2 secondi, proprietario parla."
+    }
+   ],
+   "benchmark_ctr": 4.043
+  },
+  "candidates": [
+   {
+    "creative_id": "CDF-G32537740-4",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Snack grain free: ultime confezioni",
+    "testo_principale": "Solo pochi pacchetti rimasti. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video: gatto salta verso snack, primi 2 secondi close-up, sovrimpressione 'ULTIME CONFEZIONI'.",
+    "rationale_en": "Uses scarcity on grain‑free snacks with free shipping cue.",
+    "rationale_it": "Usa la scarsità sugli snack grain‑free con richiamo alla spedizione gratis.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-S2",
+     "similarity": 0.828
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 3.448,
+     "ctr_lo": 2.3858,
+     "ctr_hi": 4.983,
+     "cpm": 17.09,
+     "cpc": 0.496
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.4815,
+      "ctr_lo": 1.0251,
+      "ctr_hi": 2.1411,
+      "cpm": 9.199,
+      "cpc": 0.621
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.7469,
+      "ctr_lo": 1.2087,
+      "ctr_hi": 2.5246,
+      "cpm": 9.11,
+      "cpc": 0.521
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.6454,
+      "ctr_lo": 1.1385,
+      "ctr_hi": 2.378,
+      "cpm": 9.261,
+      "cpc": 0.563
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 3.448,
+      "ctr_lo": 2.3858,
+      "ctr_hi": 4.983,
+      "cpm": 17.09,
+      "cpc": 0.496
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.853,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32537740-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 18,
+    "headline": "Riordino automatico -20%: attivalo ora",
+    "testo_principale": "Attiva il riordino e risparmi il 20% ordine. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video: proprietario apre app, attiva riordino, cane festeggia con ciotola piena, timer 48h in sovrimpressione.",
+    "rationale_en": "Promotes auto‑reorder 20% discount and free shipping, urgency via activation.",
+    "rationale_it": "Promuove il riordino automatico al -20% e spedizione gratis, urgenza nell'attivazione.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-U3",
+     "similarity": 0.722
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.6969,
+     "ctr_lo": 1.8661,
+     "ctr_hi": 3.8975,
+     "cpm": 17.241,
+     "cpc": 0.639
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.118,
+      "ctr_lo": 0.7736,
+      "ctr_hi": 1.6158,
+      "cpm": 9.237,
+      "cpc": 0.826
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.3714,
+      "ctr_lo": 0.949,
+      "ctr_hi": 1.982,
+      "cpm": 9.053,
+      "cpc": 0.66
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.2918,
+      "ctr_lo": 0.8938,
+      "ctr_hi": 1.8669,
+      "cpm": 9.238,
+      "cpc": 0.715
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.6969,
+      "ctr_lo": 1.8661,
+      "ctr_hi": 3.8975,
+      "cpm": 17.241,
+      "cpc": 0.639
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.667,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32537740-6",
+    "leva": "urgency",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Spedizione gratis sopra 29€: ordina oggi",
+    "testo_principale": "Cibo, snack e accessori consegnati gratis. Offerta valida finché dura.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello: 1) sacco crocchette, 2) snack gatto, 3) cuccia, badge 'SPEDIZIONE GRATIS >29€' su ogni card.",
+    "rationale_en": "Highlights free shipping threshold to create urgency without a deadline.",
+    "rationale_it": "Evidenzia la soglia di spedizione gratis per creare urgenza senza scadenza.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "CDF-U1",
+     "similarity": 0.591
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.3026,
+     "ctr_lo": 1.5933,
+     "ctr_hi": 3.3277,
+     "cpm": 17.901,
+     "cpc": 0.777
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.9925,
+      "ctr_lo": 0.6868,
+      "ctr_hi": 1.4344,
+      "cpm": 9.539,
+      "cpc": 0.961
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.2082,
+      "ctr_lo": 0.836,
+      "ctr_hi": 1.7461,
+      "cpm": 9.461,
+      "cpc": 0.783
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.1381,
+      "ctr_lo": 0.7875,
+      "ctr_hi": 1.6447,
+      "cpm": 9.612,
+      "cpc": 0.845
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.3026,
+      "ctr_lo": 1.5933,
+      "ctr_hi": 3.3277,
+      "cpm": 17.901,
+      "cpc": 0.777
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.57,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32537740-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: fino al -35% su tutto",
+    "testo_principale": "Crocchette, snack e cucce Black Friday. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Cane che scarta una scatola Black Friday, primi 2 secondi zoom sul logo, proprietario sorride.",
+    "rationale_en": "Leverages Black Friday discount and free shipping threshold from brief.",
+    "rationale_it": "Sfrutta lo sconto Black Friday e la spedizione gratis sopra 29€ dal brief.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-B3",
+     "similarity": 0.784
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.2944,
+     "ctr_lo": 1.5876,
+     "ctr_hi": 3.3158,
+     "cpm": 17.326,
+     "cpc": 0.755
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 1.0453,
+      "ctr_lo": 0.7233,
+      "ctr_hi": 1.5106,
+      "cpm": 9.371,
+      "cpc": 0.896
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.3248,
+      "ctr_lo": 0.9167,
+      "ctr_hi": 1.9146,
+      "cpm": 9.211,
+      "cpc": 0.695
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.2478,
+      "ctr_lo": 0.8634,
+      "ctr_hi": 1.8034,
+      "cpm": 9.4,
+      "cpc": 0.753
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.2944,
+      "ctr_lo": 1.5876,
+      "ctr_hi": 3.3158,
+      "cpm": 17.326,
+      "cpc": 0.755
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.567,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32537740-2",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Friday: box cani e gatti -35%",
+    "testo_principale": "Il box più amato a prezzo Black Friday. Spedizione gratis sopra 29€.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello: 1) box chiuso, 2) cane che lo apre, 3) gatto che esplora, testo 'BLACK FRIDAY' in alto.",
+    "rationale_en": "Shows the best-selling box at Black Friday price with free shipping.",
+    "rationale_it": "Mostra il box best-seller al prezzo Black Friday con spedizione gratis.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.734
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.1043,
+     "ctr_lo": 1.456,
+     "ctr_hi": 3.0411,
+     "cpm": 17.872,
+     "cpc": 0.849
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.9967,
+      "ctr_lo": 0.6897,
+      "ctr_hi": 1.4405,
+      "cpm": 9.61,
+      "cpc": 0.964
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.2537,
+      "ctr_lo": 0.8675,
+      "ctr_hi": 1.8119,
+      "cpm": 9.488,
+      "cpc": 0.757
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 1.1809,
+      "ctr_lo": 0.8171,
+      "ctr_hi": 1.7066,
+      "cpm": 9.639,
+      "cpc": 0.816
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.1043,
+      "ctr_lo": 1.456,
+      "ctr_hi": 3.0411,
+      "cpm": 17.872,
+      "cpc": 0.849
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.52,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "CDF-G32537740-3",
+    "leva": "scarcity",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Cucce invernali: pochi pezzi per taglia",
+    "testo_principale": "Tre taglie, scorte ridotte. Spedizione gratis sopra 29€.",
+    "call_to_action": "Scopri di più",
+    "descrizione_visual": "Immagine: cuccia invernale in casa, cane accoccolato, badge 'POCHI PEZZI' in alto a destra.",
+    "rationale_en": "Highlights limited stock of winter beds per size, using free shipping threshold.",
+    "rationale_it": "Evidenzia la disponibilità limitata delle cucce per taglia, con spedizione gratis sopra 29€.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-S3",
+     "similarity": 0.74
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.0348,
+     "ctr_lo": 1.408,
+     "ctr_hi": 2.9407,
+     "cpm": 17.691,
+     "cpc": 0.869
+    },
+    "by_audience": [
+     {
+      "audience": "CDF-AS1",
+      "ctr": 0.891,
+      "ctr_lo": 0.6165,
+      "ctr_hi": 1.2877,
+      "cpm": 9.49,
+      "cpc": 1.065
+     },
+     {
+      "audience": "CDF-AS2",
+      "ctr": 1.0126,
+      "ctr_lo": 0.7006,
+      "ctr_hi": 1.4634,
+      "cpm": 9.63,
+      "cpc": 0.951
+     },
+     {
+      "audience": "CDF-AS3",
+      "ctr": 0.9537,
+      "ctr_lo": 0.6599,
+      "ctr_hi": 1.3783,
+      "cpm": 9.783,
+      "cpc": 1.026
+     },
+     {
+      "audience": "CDF-AS4",
+      "ctr": 2.0348,
+      "ctr_lo": 1.408,
+      "ctr_hi": 2.9407,
+      "cpm": 17.691,
+      "cpc": 0.869
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.503,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1861,
+   "output_tokens": 7293,
+   "request_id": "gen-1794732354-VA4CL8ul2teLrIwz3v8o",
+   "backend": "openai_compat",
+   "seconds": 183.3,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:48:57",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "FGR-AS1": {
+  "brand": "FGR",
+  "audience": "FGR-AS1",
+  "brief": {
+   "product": "Collezione autunno-inverno uomo e donna: cappotto, piumino leggero, maglieria, capsule numerata.",
+   "offer": "Black Friday: fino al -50%; spedizione e reso gratis.",
+   "max_discount_pct": 50,
+   "notes": "Fascia di prezzo media, tono sobrio."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 20-35",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.41,
+    "mean_age": 32.7,
+    "confidence": "partly data-led"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.237,
+    "urgency": 1.06,
+    "black_friday": 0.936
+   },
+   "format_forecast_ctr": {
+    "video": 1.209,
+    "carosello": 1.052,
+    "immagine": 0.842
+   },
+   "best_existing": [
+    {
+     "creative_id": "FGR-S2",
+     "ctr": 1.6872,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Il cappotto che va a ruba",
+     "testo_principale": "La prima produzione è quasi finita. Taglie S e M in esaurimento.",
+     "descrizione_visual": "Ragazza in camera da letto prova il cappotto davanti allo specchio, parla in camera; apre sul cartellino 'ultimi pezzi'."
+    },
+    {
+     "creative_id": "FGR-S3",
+     "ctr": 1.2255,
+     "leva": "scarcity",
+     "formato": "carosello",
+     "headline": "Capsule limitata: 5 look, 300 pezzi",
+     "testo_principale": "Una capsule numerata, quando finisce non torna.",
+     "descrizione_visual": "Carosello di 5 look completi indossati da modelli in strada, foto editoriali."
+    },
+    {
+     "creative_id": "FGR-U4",
+     "ctr": 1.1958,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Scade stanotte: 1 maglia, 4 look",
+     "testo_principale": "Solo fino a mezzanotte: la maglia a -25%.",
+     "descrizione_visual": "Transizioni a tempo di musica, ogni taglio un look diverso, scritta 'scade stanotte' nei primi 2 secondi."
+    }
+   ],
+   "benchmark_ctr": 1.6872
+  },
+  "candidates": [
+   {
+    "creative_id": "FGR-G32575364-2",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "5 look capsule, 300 pezzi totali",
+    "testo_principale": "Ogni look della capsule numerata è unico; scorte limitate, non riassortite.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello di 5 foto editoriali: cappotto, piumino, maglione, cardigan, accessorio; ogni slide mostra numero progressivo 1/300.",
+    "rationale_en": "Combines scarcity lever with carousel format to showcase multiple limited looks, matching the brand's editorial style.",
+    "rationale_it": "Combina la leva scarcity con il carosello per mostrare più look limitati, in linea con lo stile editoriale del brand.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "5",
+       "300"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.866
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1588,
+     "ctr_lo": 0.8018,
+     "ctr_hi": 1.6747,
+     "cpm": 10.303,
+     "cpc": 0.889
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.1588,
+      "ctr_lo": 0.8018,
+      "ctr_hi": 1.6747,
+      "cpm": 10.303,
+      "cpc": 0.889
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3417,
+      "ctr_lo": 0.9284,
+      "ctr_hi": 1.939,
+      "cpm": 11.239,
+      "cpc": 0.838
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.3314,
+      "ctr_lo": 0.9213,
+      "ctr_hi": 1.9242,
+      "cpm": 15.469,
+      "cpc": 1.162
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.4484,
+      "ctr_lo": 1.6942,
+      "ctr_hi": 3.5385,
+      "cpm": 20.972,
+      "cpc": 0.857
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.687,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32575364-1",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Capsule numerata: ultimi 300 pezzi",
+    "testo_principale": "La capsule autunno-inverno è limitata a 300 capi, quando finisce non torna.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Modello indossa il cappotto della capsule in strada, zoom sul cartellino '300/300', testo 'ultimi pezzi' appare nei primi 2 secondi.",
+    "rationale_en": "Leverages scarcity with a numbered capsule and video format, both top‑performing levers and formats for this audience.",
+    "rationale_it": "Sfrutta la scarsità con una capsule numerata e il formato video, le leve e i formati più performanti per questo pubblico.",
+    "flags": [
+     {
+      "code": "claim",
+      "nums": [
+       "300"
+      ]
+     }
+    ],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.761
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1318,
+     "ctr_lo": 0.7831,
+     "ctr_hi": 1.6356,
+     "cpm": 10.069,
+     "cpc": 0.89
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.1318,
+      "ctr_lo": 0.7831,
+      "ctr_hi": 1.6356,
+      "cpm": 10.069,
+      "cpc": 0.89
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3204,
+      "ctr_lo": 0.9136,
+      "ctr_hi": 1.9082,
+      "cpm": 10.726,
+      "cpc": 0.812
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.2308,
+      "ctr_lo": 0.8517,
+      "ctr_hi": 1.7788,
+      "cpm": 15.227,
+      "cpc": 1.237
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.4863,
+      "ctr_lo": 1.7204,
+      "ctr_hi": 3.5932,
+      "cpm": 20.459,
+      "cpc": 0.823
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.671,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32575364-6",
+    "leva": "urgency",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Ultimi giorni: -50% su maglieria",
+    "testo_principale": "Maglioni e cardigan a metà prezzo fino a esaurimento scorte, reso gratuito.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 4 slide: ogni slide un maglione diverso indossato, badge 'ultimi giorni' e icona reso gratis costante.",
+    "rationale_en": "Urgency lever in carousel emphasizes limited‑time knitwear discount, using the brand's sober tone.",
+    "rationale_it": "Leva urgency in carosello enfatizza lo sconto a tempo limitato sulla maglieria, mantenendo il tono sobrio del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-U4",
+     "similarity": 0.667
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0374,
+     "ctr_lo": 0.7178,
+     "ctr_hi": 1.4993,
+     "cpm": 10.3,
+     "cpc": 0.993
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.0374,
+      "ctr_lo": 0.7178,
+      "ctr_hi": 1.4993,
+      "cpm": 10.3,
+      "cpc": 0.993
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.2495,
+      "ctr_lo": 0.8646,
+      "ctr_hi": 1.8058,
+      "cpm": 11.243,
+      "cpc": 0.9
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.1958,
+      "ctr_lo": 0.8274,
+      "ctr_hi": 1.7282,
+      "cpm": 15.58,
+      "cpc": 1.303
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.2718,
+      "ctr_lo": 1.572,
+      "ctr_hi": 3.2832,
+      "cpm": 20.99,
+      "cpc": 0.924
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.615,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32575364-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Offerta Black Friday a tempo limitato",
+    "testo_principale": "Sconti fino al -50% solo per pochi giorni; spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Countdown timer animato 3 giorni in alto, modelli sfoggiano maglieria e cappotto, scritta 'ultimi giorni' nei primi 2 secondi.",
+    "rationale_en": "Urgency lever with a short video countdown creates time pressure without inventing a specific deadline.",
+    "rationale_it": "Leva urgency con video breve e countdown crea pressione temporale senza inventare una scadenza precisa.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-U3",
+     "similarity": 0.713
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.0212,
+     "ctr_lo": 0.7066,
+     "ctr_hi": 1.4758,
+     "cpm": 10.09,
+     "cpc": 0.988
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.0212,
+      "ctr_lo": 0.7066,
+      "ctr_hi": 1.4758,
+      "cpm": 10.09,
+      "cpc": 0.988
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.2394,
+      "ctr_lo": 0.8576,
+      "ctr_hi": 1.7912,
+      "cpm": 10.714,
+      "cpc": 0.864
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.1142,
+      "ctr_lo": 0.771,
+      "ctr_hi": 1.6102,
+      "cpm": 15.319,
+      "cpc": 1.375
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.3251,
+      "ctr_lo": 1.6089,
+      "ctr_hi": 3.3603,
+      "cpm": 20.465,
+      "cpc": 0.88
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.605,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32575364-3",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 20,
+    "headline": "Black Friday: fino al -50% su collezione",
+    "testo_principale": "Cappotti, piumini leggeri e maglieria a metà prezzo, spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Split screen: prima il prezzo intero, poi prezzo barrato -50%; modello gira in città indossando cappotto, testo 'spedizione e reso gratis' fisso.",
+    "rationale_en": "Uses black_friday lever and video format, highlighting the max discount and free shipping to attract cold prospects.",
+    "rationale_it": "Usa la leva black_friday e il formato video, evidenziando lo sconto massimo e la spedizione gratuita per attrarre prospect freddi.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.83
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.8752,
+     "ctr_lo": 0.6056,
+     "ctr_hi": 1.2648,
+     "cpm": 10.244,
+     "cpc": 1.171
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.8752,
+      "ctr_lo": 0.6056,
+      "ctr_hi": 1.2648,
+      "cpm": 10.244,
+      "cpc": 1.171
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.0975,
+      "ctr_lo": 0.7594,
+      "ctr_hi": 1.5861,
+      "cpm": 10.794,
+      "cpc": 0.984
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.8865,
+      "ctr_lo": 0.6134,
+      "ctr_hi": 1.2812,
+      "cpm": 15.397,
+      "cpc": 1.737
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.8133,
+      "ctr_lo": 1.2547,
+      "ctr_hi": 2.6206,
+      "cpm": 20.527,
+      "cpc": 1.132
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.519,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32575364-4",
+    "leva": "black_friday",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Black Friday -50%: cappotto e piumino",
+    "testo_principale": "Offerta Black Friday su capispalla selezionati, consegna e reso senza costi.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Immagine statica: cappotto e piumino affiancati su sfondo neutro, badge '-50%' e icona spedizione gratuita in alto a destra.",
+    "rationale_en": "Black_friday lever in static image keeps production simple while communicating discount and free returns.",
+    "rationale_it": "Leva black_friday in immagine statica mantiene la produzione semplice comunicando sconto e reso gratuito.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.747
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.7822,
+     "ctr_lo": 0.5412,
+     "ctr_hi": 1.1304,
+     "cpm": 10.469,
+     "cpc": 1.338
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.7822,
+      "ctr_lo": 0.5412,
+      "ctr_hi": 1.1304,
+      "cpm": 10.469,
+      "cpc": 1.338
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.0057,
+      "ctr_lo": 0.6959,
+      "ctr_hi": 1.4534,
+      "cpm": 11.359,
+      "cpc": 1.129
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.8298,
+      "ctr_lo": 0.5742,
+      "ctr_hi": 1.1992,
+      "cpm": 15.809,
+      "cpc": 1.905
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.6163,
+      "ctr_lo": 1.1184,
+      "ctr_hi": 2.3359,
+      "cpm": 21.04,
+      "cpc": 1.302
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.464,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1848,
+   "output_tokens": 3036,
+   "request_id": "gen-1794732538-mC3CcUWX2IObQoWb9Pri",
+   "backend": "openai_compat",
+   "seconds": 37.3,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:49:35",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "FGR-AS2": {
+  "brand": "FGR",
+  "audience": "FGR-AS2",
+  "brief": {
+   "product": "Collezione autunno-inverno uomo e donna: cappotto, piumino leggero, maglieria, capsule numerata.",
+   "offer": "Black Friday: fino al -50%; spedizione e reso gratis.",
+   "max_discount_pct": 50,
+   "notes": "Fascia di prezzo media, tono sobrio."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 25-40",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.514,
+    "mean_age": 36.7,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.447,
+    "urgency": 1.292,
+    "black_friday": 1.177
+   },
+   "format_forecast_ctr": {
+    "video": 1.46,
+    "carosello": 1.26,
+    "immagine": 1.042
+   },
+   "best_existing": [
+    {
+     "creative_id": "FGR-S2",
+     "ctr": 1.9683,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Il cappotto che va a ruba",
+     "testo_principale": "La prima produzione è quasi finita. Taglie S e M in esaurimento.",
+     "descrizione_visual": "Ragazza in camera da letto prova il cappotto davanti allo specchio, parla in camera; apre sul cartellino 'ultimi pezzi'."
+    },
+    {
+     "creative_id": "FGR-U4",
+     "ctr": 1.4513,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Scade stanotte: 1 maglia, 4 look",
+     "testo_principale": "Solo fino a mezzanotte: la maglia a -25%.",
+     "descrizione_visual": "Transizioni a tempo di musica, ogni taglio un look diverso, scritta 'scade stanotte' nei primi 2 secondi."
+    },
+    {
+     "creative_id": "FGR-S3",
+     "ctr": 1.4189,
+     "leva": "scarcity",
+     "formato": "carosello",
+     "headline": "Capsule limitata: 5 look, 300 pezzi",
+     "testo_principale": "Una capsule numerata, quando finisce non torna.",
+     "descrizione_visual": "Carosello di 5 look completi indossati da modelli in strada, foto editoriali."
+    }
+   ],
+   "benchmark_ctr": 1.9683
+  },
+  "candidates": [
+   {
+    "creative_id": "FGR-G32651492-6",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Capsula numerata: ultimi pezzi disponibili",
+    "testo_principale": "La capsule autunno-inverno è numerata; acquista prima che finisca.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video 12s: primo piano dell'etichetta numerata, poi modella indossa il capo, sovrapposizione \"Ultimissimi\" appare nei primi 2 secondi.",
+    "rationale_en": "Focuses on the numbered label to signal limited availability, using a concise video that matches the brand's sober style.",
+    "rationale_it": "Si concentra sull'etichetta numerata per segnalare la disponibilità limitata, con un video conciso che rispetta lo stile sobrio del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.68
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.4176,
+     "ctr_lo": 0.9809,
+     "ctr_hi": 2.0487,
+     "cpm": 10.686,
+     "cpc": 0.754
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.2151,
+      "ctr_lo": 0.8408,
+      "ctr_hi": 1.7561,
+      "cpm": 10.057,
+      "cpc": 0.828
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.4176,
+      "ctr_lo": 0.9809,
+      "ctr_hi": 2.0487,
+      "cpm": 10.686,
+      "cpc": 0.754
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.3214,
+      "ctr_lo": 0.9144,
+      "ctr_hi": 1.9097,
+      "cpm": 15.228,
+      "cpc": 1.152
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.6693,
+      "ctr_lo": 1.847,
+      "ctr_hi": 3.8577,
+      "cpm": 20.455,
+      "cpc": 0.766
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.72,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32651492-4",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Edizione limitata: capsule numerata",
+    "testo_principale": "Pochi capi numerati disponibili; una volta esauriti non tornano.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello: dettaglio dell'etichetta numerata, poi modelli in città indossano i capi, con testo \"Edizione limitata\" su ogni slide.",
+    "rationale_en": "Combines product detail of the numbered tag with lifestyle shots to reinforce scarcity in a carousel format.",
+    "rationale_it": "Combina il dettaglio dell'etichetta numerata con scatti lifestyle per rafforzare la scarsità nel formato carosello.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.738
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.3684,
+     "ctr_lo": 0.9468,
+     "ctr_hi": 1.9775,
+     "cpm": 11.232,
+     "cpc": 0.821
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.1818,
+      "ctr_lo": 0.8178,
+      "ctr_hi": 1.708,
+      "cpm": 10.305,
+      "cpc": 0.872
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3684,
+      "ctr_lo": 0.9468,
+      "ctr_hi": 1.9775,
+      "cpm": 11.232,
+      "cpc": 0.821
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.3579,
+      "ctr_lo": 0.9396,
+      "ctr_hi": 1.9624,
+      "cpm": 15.471,
+      "cpc": 1.139
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.4971,
+      "ctr_lo": 1.7278,
+      "ctr_hi": 3.6088,
+      "cpm": 20.967,
+      "cpc": 0.84
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.695,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32651492-2",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Capsula numerata: edizione limitata",
+    "testo_principale": "La capsule autunno-inverno è numerata; quando finisce non torna.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello di 5 look completi indossati in strada, foto editoriali, con il tag numerato ben visibile su ogni capo.",
+    "rationale_en": "Highlights the numbered limited‑edition capsule to trigger scarcity without inventing stock numbers.",
+    "rationale_it": "Evidenzia la capsule numerata in edizione limitata per attivare la scarsità senza inventare quantità.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.827
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.3683,
+     "ctr_lo": 0.9468,
+     "ctr_hi": 1.9774,
+     "cpm": 11.241,
+     "cpc": 0.822
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.1818,
+      "ctr_lo": 0.8177,
+      "ctr_hi": 1.7079,
+      "cpm": 10.312,
+      "cpc": 0.873
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3683,
+      "ctr_lo": 0.9468,
+      "ctr_hi": 1.9774,
+      "cpm": 11.241,
+      "cpc": 0.822
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.3578,
+      "ctr_lo": 0.9395,
+      "ctr_hi": 1.9623,
+      "cpm": 15.483,
+      "cpc": 1.14
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.4969,
+      "ctr_lo": 1.7277,
+      "ctr_hi": 3.6085,
+      "cpm": 20.991,
+      "cpc": 0.841
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.695,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32651492-5",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: -50% su cappotti e piumini",
+    "testo_principale": "Metà prezzo sulla collezione autunno-inverno; spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Video 15s: apertura su cappotto in passerella, tag \"-50%\" appare a 2s, segue montaggio rapido di piumino e maglieria con logo spedizione gratuita.",
+    "rationale_en": "Short dynamic video leads with the hero coat and instantly shows the discount, aligning with the forecaster's higher CTR for video.",
+    "rationale_it": "Video breve e dinamico apre con il cappotto protagonista e mostra subito lo sconco, allineato al CTR più alto previsto per i video.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.767
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1625,
+     "ctr_lo": 0.8044,
+     "ctr_hi": 1.6801,
+     "cpm": 10.763,
+     "cpc": 0.926
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.9271,
+      "ctr_lo": 0.6415,
+      "ctr_hi": 1.3398,
+      "cpm": 10.236,
+      "cpc": 1.104
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.1625,
+      "ctr_lo": 0.8044,
+      "ctr_hi": 1.6801,
+      "cpm": 10.763,
+      "cpc": 0.926
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.939,
+      "ctr_lo": 0.6497,
+      "ctr_hi": 1.3571,
+      "cpm": 15.373,
+      "cpc": 1.637
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.9208,
+      "ctr_lo": 1.3291,
+      "ctr_hi": 2.7759,
+      "cpm": 20.52,
+      "cpc": 1.068
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.591,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32651492-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: -50% su collezione",
+    "testo_principale": "Fino al -50% su cappotti, piumini e maglieria. Spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Modella cammina in centro città indossando il cappotto; nei primi 2 secondi appare sovrapposto \"Black Friday -50%\" e il logo della spedizione gratuita.",
+    "rationale_en": "Leverages the high‑interest Black Friday discount with a short video that shows the product in a realistic setting, matching the brand's sober tone.",
+    "rationale_it": "Sfrutta lo sconto Black Friday ad alto interesse con un video breve che mostra il capo in un contesto reale, rispettando il tono sobrio del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.753
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1278,
+     "ctr_lo": 0.7804,
+     "ctr_hi": 1.6299,
+     "cpm": 10.767,
+     "cpc": 0.955
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.8994,
+      "ctr_lo": 0.6223,
+      "ctr_hi": 1.2998,
+      "cpm": 10.244,
+      "cpc": 1.139
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.1278,
+      "ctr_lo": 0.7804,
+      "ctr_hi": 1.6299,
+      "cpm": 10.767,
+      "cpc": 0.955
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.911,
+      "ctr_lo": 0.6303,
+      "ctr_hi": 1.3166,
+      "cpm": 15.4,
+      "cpc": 1.691
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.8634,
+      "ctr_lo": 1.2894,
+      "ctr_hi": 2.693,
+      "cpm": 20.541,
+      "cpc": 1.102
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.573,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G32651492-3",
+    "leva": "black_friday",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Black Friday: fino al -50% su tutto",
+    "testo_principale": "Cappotti, piumini leggeri e maglieria al prezzo più basso dell'anno.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Immagine statica: cappotto, piumino e maglione affiancati, con sovrapposizione \"-50%\" e la dicitura \"spedizione e reso gratis\".",
+    "rationale_en": "Uses a clean single image to communicate the maximum discount and free shipping, fitting the brand's minimalist aesthetic.",
+    "rationale_it": "Usa un'immagine pulita per comunicare lo sconto massimo e la spedizione gratis, in linea con l'estetica minimalista del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.862
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.9817,
+     "ctr_lo": 0.6793,
+     "ctr_hi": 1.4188,
+     "cpm": 11.384,
+     "cpc": 1.16
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.7635,
+      "ctr_lo": 0.5283,
+      "ctr_hi": 1.1035,
+      "cpm": 10.47,
+      "cpc": 1.371
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 0.9817,
+      "ctr_lo": 0.6793,
+      "ctr_hi": 1.4188,
+      "cpm": 11.384,
+      "cpc": 1.16
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.81,
+      "ctr_lo": 0.5605,
+      "ctr_hi": 1.1707,
+      "cpm": 15.827,
+      "cpc": 1.954
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.5778,
+      "ctr_lo": 1.0917,
+      "ctr_hi": 2.2802,
+      "cpm": 21.057,
+      "cpc": 1.335
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.499,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1848,
+   "output_tokens": 3438,
+   "request_id": "gen-1794732575-bCE8eOnzVAaOIxkkWWV3",
+   "backend": "openai_compat",
+   "seconds": 75.8,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T09:50:51",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "FGR-AS3": {
+  "brand": "FGR",
+  "audience": "FGR-AS3",
+  "brief": {
+   "product": "Collezione autunno-inverno uomo e donna: cappotto, piumino leggero, maglieria, capsule numerata.",
+   "offer": "Black Friday: fino al -50%; spedizione e reso gratis.",
+   "max_discount_pct": 50,
+   "notes": "Fascia di prezzo media, tono sobrio."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 30-45",
+    "temperature": "cold (prospecting)",
+    "share_female": 0.573,
+    "mean_age": 41.9,
+    "confidence": "data-led"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 1.376,
+    "urgency": 1.185,
+    "black_friday": 0.969
+   },
+   "format_forecast_ctr": {
+    "video": 1.289,
+    "carosello": 1.187,
+    "immagine": 0.942
+   },
+   "best_existing": [
+    {
+     "creative_id": "FGR-S2",
+     "ctr": 1.8348,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Il cappotto che va a ruba",
+     "testo_principale": "La prima produzione è quasi finita. Taglie S e M in esaurimento.",
+     "descrizione_visual": "Ragazza in camera da letto prova il cappotto davanti allo specchio, parla in camera; apre sul cartellino 'ultimi pezzi'."
+    },
+    {
+     "creative_id": "FGR-S3",
+     "ctr": 1.408,
+     "leva": "scarcity",
+     "formato": "carosello",
+     "headline": "Capsule limitata: 5 look, 300 pezzi",
+     "testo_principale": "Una capsule numerata, quando finisce non torna.",
+     "descrizione_visual": "Carosello di 5 look completi indossati da modelli in strada, foto editoriali."
+    },
+    {
+     "creative_id": "FGR-U4",
+     "ctr": 1.3047,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Scade stanotte: 1 maglia, 4 look",
+     "testo_principale": "Solo fino a mezzanotte: la maglia a -25%.",
+     "descrizione_visual": "Transizioni a tempo di musica, ogni taglio un look diverso, scritta 'scade stanotte' nei primi 2 secondi."
+    }
+   ],
+   "benchmark_ctr": 1.8348
+  },
+  "candidates": [
+   {
+    "creative_id": "FGR-G36220265-4",
+    "leva": "scarcity",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Capsule limitata: look esclusivi",
+    "testo_principale": "Edizione numerata, disponibilità limitata. Spedizione e reso gratuiti.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 3 slide: outfit completo con cappotto, piumino, maglia; ogni slide mostra etichetta numerata.",
+    "rationale_en": "Scarcity on numbered capsule via carousel highlights exclusivity; carousel format has solid CTR.",
+    "rationale_it": "Scarcity su capsule numerata in carosello evidenzia esclusività; carosello ha CTR solido.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.675
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.3297,
+     "ctr_lo": 0.9201,
+     "ctr_hi": 1.9217,
+     "cpm": 15.475,
+     "cpc": 1.164
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.1574,
+      "ctr_lo": 0.8008,
+      "ctr_hi": 1.6726,
+      "cpm": 10.309,
+      "cpc": 0.891
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.34,
+      "ctr_lo": 0.9272,
+      "ctr_hi": 1.9366,
+      "cpm": 11.239,
+      "cpc": 0.839
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.3297,
+      "ctr_lo": 0.9201,
+      "ctr_hi": 1.9217,
+      "cpm": 15.475,
+      "cpc": 1.164
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.4454,
+      "ctr_lo": 1.692,
+      "ctr_hi": 3.534,
+      "cpm": 20.988,
+      "cpc": 0.858
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.725,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36220265-3",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Capsule numerata: ultime taglie disponibili",
+    "testo_principale": "La capsule numerata sta per finire. Spedizione e reso gratis su acquisto.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Modello indossa capsule numerata in studio, zoom su etichetta numerata, testo 'Ultimi pezzi' appare a 2s.",
+    "rationale_en": "Scarcity lever with numbered capsule drives urgency; video format yields higher forecast CTR.",
+    "rationale_it": "Leva scarcity su capsule numerata spinge urgenza; formato video ha CTR previsto più alto.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.709
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.2713,
+     "ctr_lo": 0.8797,
+     "ctr_hi": 1.8373,
+     "cpm": 15.208,
+     "cpc": 1.196
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.169,
+      "ctr_lo": 0.8089,
+      "ctr_hi": 1.6895,
+      "cpm": 10.046,
+      "cpc": 0.859
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3638,
+      "ctr_lo": 0.9437,
+      "ctr_hi": 1.971,
+      "cpm": 10.708,
+      "cpc": 0.785
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.2713,
+      "ctr_lo": 0.8797,
+      "ctr_hi": 1.8373,
+      "cpm": 15.208,
+      "cpc": 1.196
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.5681,
+      "ctr_lo": 1.777,
+      "ctr_hi": 3.7115,
+      "cpm": 20.423,
+      "cpc": 0.795
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.693,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36220265-6",
+    "leva": "scarcity",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Capsule numerata: ultime disponibilità",
+    "testo_principale": "Edizione limitata, spedizione e reso gratis. Non lasciartela scappare.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Immagine: primo piano etichetta numerata su cappotto, sfondo neutro, testo 'Ultimi pezzi' in basso.",
+    "rationale_en": "Scarcity lever on numbered capsule via static image reinforces exclusivity; image format has baseline CTR.",
+    "rationale_it": "Leva scarcity su capsule numerata in immagine statica rafforza esclusività; formato immagine ha CTR base.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.735
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.1317,
+     "ctr_lo": 0.783,
+     "ctr_hi": 1.6355,
+     "cpm": 15.658,
+     "cpc": 1.384
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.9935,
+      "ctr_lo": 0.6875,
+      "ctr_hi": 1.4358,
+      "cpm": 10.328,
+      "cpc": 1.04
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.1885,
+      "ctr_lo": 0.8223,
+      "ctr_hi": 1.7176,
+      "cpm": 11.304,
+      "cpc": 0.951
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.1317,
+      "ctr_lo": 0.783,
+      "ctr_hi": 1.6355,
+      "cpm": 15.658,
+      "cpc": 1.384
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.1768,
+      "ctr_lo": 1.5062,
+      "ctr_hi": 3.1459,
+      "cpm": 20.987,
+      "cpc": 0.964
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.617,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36220265-2",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Friday: -50% su cappotti e maglieria",
+    "testo_principale": "Fino al 50% su capi selezionati. Spedizione e reso gratuiti per ordine.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 4 slide: look completo cappotto, piumino, maglione, accessori; ogni slide con prezzo barrato e -50%.",
+    "rationale_en": "Carousel showcases multiple products with Black Friday discount, matching forecaster's higher CTR for carousel.",
+    "rationale_it": "Il carosello mostra più prodotti con sconto Black Friday, in linea con CTR più alto previsto per carosello.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B3",
+     "similarity": 0.795
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.9614,
+     "ctr_lo": 0.6653,
+     "ctr_hi": 1.3895,
+     "cpm": 15.658,
+     "cpc": 1.629
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.8984,
+      "ctr_lo": 0.6217,
+      "ctr_hi": 1.2984,
+      "cpm": 10.467,
+      "cpc": 1.165
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.1181,
+      "ctr_lo": 0.7737,
+      "ctr_hi": 1.6159,
+      "cpm": 11.328,
+      "cpc": 1.013
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.9614,
+      "ctr_lo": 0.6653,
+      "ctr_hi": 1.3895,
+      "cpm": 15.658,
+      "cpc": 1.629
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.7904,
+      "ctr_lo": 1.2388,
+      "ctr_hi": 2.5874,
+      "cpm": 21.074,
+      "cpc": 1.177
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.524,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36220265-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: -50% su collezione AI",
+    "testo_principale": "Fino al -50% su cappotti, piumini e maglieria. Spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Modella cammina in strada invernale indossando cappotto, taglio a primo piano su etichetta 'Black Friday -50%'.",
+    "rationale_en": "Leverages Black Friday discount highlight with video format, which forecaster expects higher CTR.",
+    "rationale_it": "Sfrutta lo sconto Black Friday in formato video, che il forecaster prevede CTR più alto.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.723
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.916,
+     "ctr_lo": 0.6338,
+     "ctr_hi": 1.3238,
+     "cpm": 15.366,
+     "cpc": 1.678
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.9043,
+      "ctr_lo": 0.6257,
+      "ctr_hi": 1.3069,
+      "cpm": 10.243,
+      "cpc": 1.133
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.134,
+      "ctr_lo": 0.7847,
+      "ctr_hi": 1.6389,
+      "cpm": 10.764,
+      "cpc": 0.949
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.916,
+      "ctr_lo": 0.6338,
+      "ctr_hi": 1.3238,
+      "cpm": 15.366,
+      "cpc": 1.678
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.8737,
+      "ctr_lo": 1.2965,
+      "ctr_hi": 2.7078,
+      "cpm": 20.513,
+      "cpc": 1.095
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.499,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36220265-5",
+    "leva": "black_friday",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Black Friday: -50% su tutta la collezione",
+    "testo_principale": "Fino al 50% su cappotti, piumini, maglieria. Spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Immagine statica: modello in cappotto invernale su sfondo urbano, badge '-50% Black Friday' in alto a destra.",
+    "rationale_en": "Static image with clear Black Friday discount and free shipping aligns with brand's sober tone.",
+    "rationale_it": "Immagine statica con sconto Black Friday chiaro e spedizione gratis rispecchia tono sobrio del brand.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "CDF-B1",
+     "similarity": 0.807
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 0.8032,
+     "ctr_lo": 0.5557,
+     "ctr_hi": 1.1607,
+     "cpm": 15.88,
+     "cpc": 1.977
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.7571,
+      "ctr_lo": 0.5238,
+      "ctr_hi": 1.0941,
+      "cpm": 10.478,
+      "cpc": 1.384
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 0.9734,
+      "ctr_lo": 0.6735,
+      "ctr_hi": 1.4068,
+      "cpm": 11.395,
+      "cpc": 1.171
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.8032,
+      "ctr_lo": 0.5557,
+      "ctr_hi": 1.1607,
+      "cpm": 15.88,
+      "cpc": 1.977
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.5644,
+      "ctr_lo": 1.0825,
+      "ctr_hi": 2.2608,
+      "cpm": 21.131,
+      "cpc": 1.351
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.438,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1847,
+   "output_tokens": 10771,
+   "request_id": "gen-1794736018-TbntS79MMT51oUSkmtqV",
+   "backend": "openai_compat",
+   "seconds": 3568.5,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T10:50:20",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ },
+ "FGR-AS4": {
+  "brand": "FGR",
+  "audience": "FGR-AS4",
+  "brief": {
+   "product": "Collezione autunno-inverno uomo e donna: cappotto, piumino leggero, maglieria, capsule numerata.",
+   "offer": "Black Friday: fino al -50%; spedizione e reso gratis.",
+   "max_discount_pct": 50,
+   "notes": "Fascia di prezzo media, tono sobrio."
+  },
+  "evidence": {
+   "audience_profile": {
+    "headline": "women and men, around 25-40",
+    "temperature": "warm (retargeting-like)",
+    "share_female": 0.522,
+    "mean_age": 36.9,
+    "confidence": "mostly the vertical prior"
+   },
+   "lever_forecast_ctr": {
+    "scarcity": 2.691,
+    "urgency": 2.39,
+    "black_friday": 1.922
+   },
+   "format_forecast_ctr": {
+    "video": 2.64,
+    "carosello": 2.215,
+    "immagine": 1.842
+   },
+   "best_existing": [
+    {
+     "creative_id": "FGR-S2",
+     "ctr": 3.7064,
+     "leva": "scarcity",
+     "formato": "video",
+     "headline": "Il cappotto che va a ruba",
+     "testo_principale": "La prima produzione è quasi finita. Taglie S e M in esaurimento.",
+     "descrizione_visual": "Ragazza in camera da letto prova il cappotto davanti allo specchio, parla in camera; apre sul cartellino 'ultimi pezzi'."
+    },
+    {
+     "creative_id": "FGR-U4",
+     "ctr": 2.7227,
+     "leva": "urgency",
+     "formato": "video",
+     "headline": "Scade stanotte: 1 maglia, 4 look",
+     "testo_principale": "Solo fino a mezzanotte: la maglia a -25%.",
+     "descrizione_visual": "Transizioni a tempo di musica, ogni taglio un look diverso, scritta 'scade stanotte' nei primi 2 secondi."
+    },
+    {
+     "creative_id": "FGR-S3",
+     "ctr": 2.5893,
+     "leva": "scarcity",
+     "formato": "carosello",
+     "headline": "Capsule limitata: 5 look, 300 pezzi",
+     "testo_principale": "Una capsule numerata, quando finisce non torna.",
+     "descrizione_visual": "Carosello di 5 look completi indossati da modelli in strada, foto editoriali."
+    }
+   ],
+   "benchmark_ctr": 3.7064
+  },
+  "candidates": [
+   {
+    "creative_id": "FGR-G36281234-3",
+    "leva": "scarcity",
+    "formato": "video",
+    "durata_video_s": 12,
+    "headline": "Capsule numerata: pezzi limitati",
+    "testo_principale": "Edizione limitata della capsule autunno-inverno, non verrà riassortita.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Modella indossa capo della capsule in atelier, sovrapposizione 'Edizione limitata' nei primi 2 secondi, zoom su etichetta numerata.",
+    "rationale_en": "Highlights limited‑edition capsule to trigger fear of missing out.",
+    "rationale_it": "Evidenzia la capsule in edizione limitata per attivare la paura di perdere l'occasione.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.73
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.5995,
+     "ctr_lo": 1.7987,
+     "ctr_hi": 3.7568,
+     "cpm": 20.453,
+     "cpc": 0.787
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.1833,
+      "ctr_lo": 0.8188,
+      "ctr_hi": 1.7101,
+      "cpm": 10.119,
+      "cpc": 0.855
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3805,
+      "ctr_lo": 0.9552,
+      "ctr_hi": 1.9951,
+      "cpm": 10.723,
+      "cpc": 0.777
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.2868,
+      "ctr_lo": 0.8904,
+      "ctr_hi": 1.8598,
+      "cpm": 15.217,
+      "cpc": 1.182
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.5995,
+      "ctr_lo": 1.7987,
+      "ctr_hi": 3.7568,
+      "cpm": 20.453,
+      "cpc": 0.787
+     }
+    ],
+    "rank": 1,
+    "vs_best_existing": 0.701,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36281234-5",
+    "leva": "urgency",
+    "formato": "video",
+    "durata_video_s": 18,
+    "headline": "Ultimi giorni per il -50%",
+    "testo_principale": "Offerta Black Friday valida fino a esaurimento scorte, spedizione e reso gratis.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Countdown visivo '3 giorni' appare nei primi 2 secondi, poi sequenza rapida di look uomo/donna con sovrapposizione '-50%'.",
+    "rationale_en": "Urgency countdown combined with free shipping pushes immediate purchase.",
+    "rationale_it": "Countdown di urgenza unito a spedizione gratuita spinge all'acquisto immediato.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "NDL-B4",
+     "similarity": 0.711
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.4047,
+     "ctr_lo": 1.6639,
+     "ctr_hi": 3.4752,
+     "cpm": 20.435,
+     "cpc": 0.85
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.0561,
+      "ctr_lo": 0.7308,
+      "ctr_hi": 1.5263,
+      "cpm": 10.077,
+      "cpc": 0.954
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.2818,
+      "ctr_lo": 0.8869,
+      "ctr_hi": 1.8524,
+      "cpm": 10.657,
+      "cpc": 0.831
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.1523,
+      "ctr_lo": 0.7973,
+      "ctr_hi": 1.6653,
+      "cpm": 15.302,
+      "cpc": 1.328
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.4047,
+      "ctr_lo": 1.6639,
+      "ctr_hi": 3.4752,
+      "cpm": 20.435,
+      "cpc": 0.85
+     }
+    ],
+    "rank": 2,
+    "vs_best_existing": 0.649,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36281234-6",
+    "leva": "urgency",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Spedizione e reso gratis: ultimi giorni",
+    "testo_principale": "Approfitta della consegna gratuita prima che l'offerta termini.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello 4 slide: ogni slide mostra un capo con timer 'Ultimi 2 giorni' in alto, prezzo barrato e nuovo prezzo, CTA 'Acquista ora'.",
+    "rationale_en": "Combines urgency of ending free shipping with product showcase in carousel.",
+    "rationale_it": "Unisce l'urgenza della fine della spedizione gratuita alla vetrina prodotti in carosello.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "within",
+    "nearest_training": {
+     "creative_id": "NDL-U4",
+     "similarity": 0.615
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.3665,
+     "ctr_lo": 1.6375,
+     "ctr_hi": 3.4201,
+     "cpm": 20.932,
+     "cpc": 0.885
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.0807,
+      "ctr_lo": 0.7478,
+      "ctr_hi": 1.5618,
+      "cpm": 10.286,
+      "cpc": 0.952
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.3016,
+      "ctr_lo": 0.9007,
+      "ctr_hi": 1.8811,
+      "cpm": 11.193,
+      "cpc": 0.86
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.2457,
+      "ctr_lo": 0.8619,
+      "ctr_hi": 1.8002,
+      "cpm": 15.534,
+      "cpc": 1.247
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.3665,
+      "ctr_lo": 1.6375,
+      "ctr_hi": 3.4201,
+      "cpm": 20.932,
+      "cpc": 0.885
+     }
+    ],
+    "rank": 3,
+    "vs_best_existing": 0.638,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36281234-4",
+    "leva": "scarcity",
+    "formato": "immagine",
+    "durata_video_s": null,
+    "headline": "Ultimi pezzi della capsule numerata",
+    "testo_principale": "Pochi capi rimasti, spedizione e reso gratis per ordinare subito.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Foto still life di maglione e cappotto su sfondo neutro, badge 'Ultimi pezzi' in alto a destra, logo Filo Grigio in basso.",
+    "rationale_en": "Static image with scarcity badge drives quick clicks from retargeted users.",
+    "rationale_it": "Immagine statica con badge di scarsità spinge clic rapidi dagli utenti in retargeting.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-S3",
+     "similarity": 0.769
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 2.2299,
+     "ctr_lo": 1.5429,
+     "ctr_hi": 3.2226,
+     "cpm": 20.954,
+     "cpc": 0.94
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 1.0178,
+      "ctr_lo": 0.7042,
+      "ctr_hi": 1.4709,
+      "cpm": 10.281,
+      "cpc": 1.01
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.2175,
+      "ctr_lo": 0.8424,
+      "ctr_hi": 1.7595,
+      "cpm": 11.302,
+      "cpc": 0.928
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 1.1593,
+      "ctr_lo": 0.8021,
+      "ctr_hi": 1.6754,
+      "cpm": 15.636,
+      "cpc": 1.349
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 2.2299,
+      "ctr_lo": 1.5429,
+      "ctr_hi": 3.2226,
+      "cpm": 20.954,
+      "cpc": 0.94
+     }
+    ],
+    "rank": 4,
+    "vs_best_existing": 0.602,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36281234-1",
+    "leva": "black_friday",
+    "formato": "video",
+    "durata_video_s": 15,
+    "headline": "Black Friday: fino al -50%",
+    "testo_principale": "Spedizione e reso gratis su tutta la collezione autunno-inverno.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Apertura su modello che indossa cappotto in strada, testo 'Black Friday -50%' appare nei primi 2 secondi, poi taglio su dettagli tessuto.",
+    "rationale_en": "Leverages Black Friday discount and free shipping to attract price-sensitive shoppers.",
+    "rationale_it": "Sfrutta lo sconto Black Friday e la spedizione gratuita per attirare acquirenti sensibili al prezzo.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-B1",
+     "similarity": 0.789
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.8932,
+     "ctr_lo": 1.31,
+     "ctr_hi": 2.7361,
+     "cpm": 20.515,
+     "cpc": 1.084
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.9138,
+      "ctr_lo": 0.6323,
+      "ctr_hi": 1.3206,
+      "cpm": 10.226,
+      "cpc": 1.119
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.1459,
+      "ctr_lo": 0.7929,
+      "ctr_hi": 1.656,
+      "cpm": 10.766,
+      "cpc": 0.94
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.9255,
+      "ctr_lo": 0.6404,
+      "ctr_hi": 1.3376,
+      "cpm": 15.383,
+      "cpc": 1.662
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.8932,
+      "ctr_lo": 1.31,
+      "ctr_hi": 2.7361,
+      "cpm": 20.515,
+      "cpc": 1.084
+     }
+    ],
+    "rank": 5,
+    "vs_best_existing": 0.511,
+    "clearly_better": false
+   },
+   {
+    "creative_id": "FGR-G36281234-2",
+    "leva": "black_friday",
+    "formato": "carosello",
+    "durata_video_s": null,
+    "headline": "Black Friday: fino al -50% su tutti i capi",
+    "testo_principale": "Cappotti, piumini e maglieria a metà prezzo, spedizione e reso gratuiti.",
+    "call_to_action": "Acquista ora",
+    "descrizione_visual": "Carosello di 5 card: ogni slide mostra un look completo con prezzo barrato e nuovo prezzo, testo 'Spedizione e reso gratis' fisso in basso.",
+    "rationale_en": "Carousel lets users swipe through multiple discounted items, reinforcing value.",
+    "rationale_it": "Il carosello permette di scorrere più capi scontati, rafforzando il valore percepito.",
+    "flags": [],
+    "rejected": false,
+    "novelty": "typical",
+    "nearest_training": {
+     "creative_id": "FGR-B3",
+     "similarity": 0.867
+    },
+    "duplicate_of": null,
+    "target": {
+     "ctr": 1.7804,
+     "ctr_lo": 1.2319,
+     "ctr_hi": 2.573,
+     "cpm": 21.095,
+     "cpc": 1.185
+    },
+    "by_audience": [
+     {
+      "audience": "FGR-AS1",
+      "ctr": 0.8934,
+      "ctr_lo": 0.6182,
+      "ctr_hi": 1.2912,
+      "cpm": 10.468,
+      "cpc": 1.172
+     },
+     {
+      "audience": "FGR-AS2",
+      "ctr": 1.1119,
+      "ctr_lo": 0.7694,
+      "ctr_hi": 1.6069,
+      "cpm": 11.335,
+      "cpc": 1.019
+     },
+     {
+      "audience": "FGR-AS3",
+      "ctr": 0.9561,
+      "ctr_lo": 0.6616,
+      "ctr_hi": 1.3817,
+      "cpm": 15.689,
+      "cpc": 1.641
+     },
+     {
+      "audience": "FGR-AS4",
+      "ctr": 1.7804,
+      "ctr_lo": 1.2319,
+      "ctr_hi": 2.573,
+      "cpm": 21.095,
+      "cpc": 1.185
+     }
+    ],
+    "rank": 6,
+    "vs_best_existing": 0.48,
+    "clearly_better": false
+   }
+  ],
+  "meta": {
+   "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "input_tokens": 1849,
+   "output_tokens": 3016,
+   "request_id": "gen-1794736220-M88xLCgWtsmVJm3JJjq2",
+   "backend": "openai_compat",
+   "seconds": 60.7,
+   "dropped_invalid": 0
+  },
+  "generated_at": "2026-11-15T10:51:21",
+  "levers_allowed": [
+   "black_friday",
+   "scarcity",
+   "urgency"
+  ],
+  "formats_allowed": [
+   "carosello",
+   "immagine",
+   "video"
+  ]
+ }
+}

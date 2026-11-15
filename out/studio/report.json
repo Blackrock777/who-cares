@@ -1,0 +1,42 @@
+{
+ "runs": 12,
+ "candidates": 72,
+ "rejected": 0,
+ "dropped_malformed": 0,
+ "flagged_invented_numbers": 13,
+ "beyond_training": 1,
+ "clearly_better_than_best_existing": 0,
+ "best_new_vs_best_existing": {
+  "NDL-AS1": 0.91,
+  "NDL-AS2": 0.914,
+  "NDL-AS3": 0.871,
+  "NDL-AS4": 0.886,
+  "CDF-AS1": 0.765,
+  "CDF-AS2": 0.82,
+  "CDF-AS3": 0.847,
+  "CDF-AS4": 0.853,
+  "FGR-AS1": 0.687,
+  "FGR-AS2": 0.72,
+  "FGR-AS3": 0.725,
+  "FGR-AS4": 0.701
+ },
+ "targeting_lift_in_own_audience": {
+  "NDL-AS1": 0.003,
+  "NDL-AS2": -0.002,
+  "NDL-AS3": -0.035,
+  "NDL-AS4": 0.038,
+  "CDF-AS1": 0.027,
+  "CDF-AS2": -0.058,
+  "CDF-AS3": 0.026,
+  "CDF-AS4": 0.015,
+  "FGR-AS1": -0.01,
+  "FGR-AS2": 0.021,
+  "FGR-AS3": -0.039,
+  "FGR-AS4": 0.037
+ },
+ "targeting_lift_mean": 0.002,
+ "models": [
+  "nvidia/nemotron-3-ultra-550b-a55b:free"
+ ],
+ "tokens": 85048
+}

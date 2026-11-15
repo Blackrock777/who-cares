@@ -5,6 +5,7 @@
   whatif --audience ID      budget response curve for one audience over the future window
   simulate                  Monte Carlo outcomes and probability of being the best ad per audience
   creative --json FILE      score a creative that does not exist yet against every audience
+  validate                  rolling-origin errors and interval coverage on later data (zero-click days scored)
 """
 import argparse
 import json
@@ -47,15 +48,29 @@ def score_creative(b, e, creative, advertiser_id=None):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("config"); ap.add_argument("command", choices=["forecast", "audiences", "whatif", "simulate", "creative"])
+    ap.add_argument("config"); ap.add_argument("command", choices=["forecast", "audiences", "whatif", "simulate", "creative", "validate"])
     ap.add_argument("--audience"); ap.add_argument("--advertiser"); ap.add_argument("--json"); ap.add_argument("--out", default="out/adsim")
     a = ap.parse_args()
-    b, e = build(a.config)
     out = Path(a.out); out.mkdir(parents=True, exist_ok=True)
+    if a.command == "validate":
+        from .evaluate import backtest
+        res = backtest(load(a.config))
+        res.to_json(out / "validate.json", orient="records", indent=2)
+        with pd.option_context("display.width", 200, "display.max_colwidth", 80):
+            print(res.T.to_string())
+        return
+    b, e = build(a.config)
     meta = {"customer": b["cfg"]["name"], "encoder": e.space.used, "trained_through": str(e.trained_through.date()),
             "budget_elasticity": e.k, "budget_elasticity_prior": e.k0, "share_of_rows_with_budget_change": e.budget_variation,
-            "bands_log_width": e.sigma, "missing_optional_inputs": b["missing_optional_inputs"],
-            "anomalies_excluded": int((b["history"]["quality"] != "").sum())}
+            "budget_change_rows_in_training": e.budget_change_rows,
+            "ctr_model": e.ctr_mode, "zero_click_rows": e.zero_click_rows,
+            "intervals": {"status": e.interval_status, "refers_to": e.interval_kind, "observed_value_log_width": e.sigma,
+                          "rate_error_sd": e.tau, "calibration": getattr(e, "calibration", None)},
+            "creative_protocol": e.creative_protocol + (" (text projection fitted on %d training creatives)" % e.space.n_fit_creatives if getattr(e.space, "n_fit_creatives", None) else ""),
+            "tree_inputs_left_to_linear_model": e.tree_dropped,
+            "missing_optional_inputs": b["missing_optional_inputs"], "rows_excluded_from_training": e.excluded,
+            "limitations": ["budget and season flags mark extrapolation beyond the training range",
+                            "interval coverage is only known from `adsim validate`", "no conversion, revenue or ROAS is modelled"]}
     if a.command == "forecast":
         res = e.predict(b["future"])
     elif a.command == "audiences":

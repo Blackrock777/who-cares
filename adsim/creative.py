@@ -37,7 +37,8 @@ class CreativeSpace:
         self.spec, self.n, self.encoder = cfg.get("creatives") or {}, n_components, cfg.get("encoder", "auto")
 
     def fit(self, creatives):
-        """Unsupervised: uses creative text only, so future creatives may be included."""
+        """Fit the text projection on the creatives passed in. The engine passes only creatives
+        present in the training rows unless the config asks for the transductive protocol."""
         from sklearn.decomposition import PCA, TruncatedSVD
         self.prior = None
         if not self.spec.get("text"):                     # customer supplied no creative text
@@ -45,13 +46,18 @@ class CreativeSpace:
             return self
         texts = _texts(creatives, self.spec["text"])
         vecs, self.used = embed(texts, self.encoder)
+        k = min(self.n, len(texts) - 1)                 # components that the data can support
         if vecs is None:
             from sklearn.feature_extraction.text import TfidfVectorizer
             self.tfidf = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 4), sublinear_tf=True).fit(texts)
             vecs = self.tfidf.transform(texts)
-            self.proj = TruncatedSVD(min(self.n, len(texts) - 1), random_state=0).fit(vecs)
-        else:
-            self.proj = PCA(min(self.n, len(texts) - 1), random_state=0).fit(vecs)
+            k = min(k, vecs.shape[1] - 1)
+        # With one creative there is no variation to project: carry no text components at all
+        # instead of asking for a zero-dimensional projection.
+        self.proj = None
+        if k >= 1:
+            self.proj = (PCA(k, random_state=0) if self.used.startswith("hf") else TruncatedSVD(k, random_state=0)).fit(vecs)
+        self.n_fit_creatives = len(texts)
         self.prior = None
         ev = self.spec.get("external_evidence")
         if ev:
@@ -63,7 +69,7 @@ class CreativeSpace:
             return pd.DataFrame(index=creatives["creative_id"].values)
         texts = _texts(creatives, self.spec["text"])
         vecs = embed(texts, "hf")[0] if self.used.startswith("hf") else self.tfidf.transform(texts)
-        z = self.proj.transform(vecs)
+        z = self.proj.transform(vecs) if self.proj is not None else np.zeros((len(texts), 0))
         out = pd.DataFrame(z, columns=[f"emb{i}" for i in range(z.shape[1])], index=creatives["creative_id"].values)
         for c in self.spec.get("numeric", []):
             out["num_" + c] = pd.to_numeric(creatives[c], errors="coerce").fillna(0).values

@@ -4,3 +4,14 @@ __pycache__/
 .DS_Store
 out/model.pkl
 out/adsim/
+.env.tabpfn
+.venv312/
+data/external/
+.env.meta
+.env.apify
+out/world/companies/
+out/world_run.log
+.env.anthropic
+out/studio/live/
+.env.openrouter
+out/studio_run.log

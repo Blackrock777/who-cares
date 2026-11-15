@@ -1,0 +1,10 @@
+{
+  "name": "kaggle_sales_conversion_optimization",
+  "note": "Real anonymised Facebook campaign data (Kaggle: loveall/clicks-conversion-tracking). One row per ad = campaign x age x gender x interest. No dates, no creative text, no budgets. Audience = age|gender; the interest code stands in for the creative slot. Files are not committed: run scripts/fetch_kaggle_sales_conversion.sh.",
+  "root": "data/external/kaggle_sales_conversion",
+  "history": {"file": "canonical.csv", "columns": {
+    "date": "date", "ad_id": "ad_id", "audience_id": "audience", "creative_id": "creative",
+    "advertiser_id": "xyz_campaign_id", "impressions": "Impressions", "clicks": "Clicks", "spend": "Spent"}},
+  "blend": {"ctr": ["hier"], "cpm": ["hier"]},
+  "archetypes": 3
+}
