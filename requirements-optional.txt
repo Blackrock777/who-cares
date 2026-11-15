@@ -1,1 +1,2 @@
 fastembed>=0.7   # optional: multilingual creative encoder for adsim (falls back to TF-IDF without it)
+anthropic>=0.125   # optional: creative studio (Claude proposes, the forecaster scores)

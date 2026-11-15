@@ -1,0 +1,390 @@
+{
+ "cells": [
+  "F|18-24",
+  "F|25-34",
+  "F|35-44",
+  "F|45-54",
+  "F|55+",
+  "M|18-24",
+  "M|25-34",
+  "M|35-44",
+  "M|45-54",
+  "M|55+"
+ ],
+ "ages": [
+  "18-24",
+  "25-34",
+  "35-44",
+  "45-54",
+  "55+"
+ ],
+ "genders": [
+  "F",
+  "M"
+ ],
+ "age_centre": {
+  "18-24": 21.0,
+  "25-34": 29.5,
+  "35-44": 39.5,
+  "45-54": 49.5,
+  "55+": 62.0
+ },
+ "population_it_millions": {
+  "F|18-24": 2.9,
+  "F|25-34": 4.3,
+  "F|35-44": 3.3,
+  "F|45-54": 3.6,
+  "F|55+": 5.8,
+  "M|18-24": 2.6,
+  "M|25-34": 4.8,
+  "M|35-44": 3.4,
+  "M|45-54": 3.3,
+  "M|55+": 5.4
+ },
+ "verticals": {
+  "beauty_skincare": {
+   "mean": {
+    "F|18-24": 0.2559,
+    "F|25-34": 0.34426,
+    "F|35-44": 0.14086,
+    "F|45-54": 0.0686,
+    "F|55+": 0.04162,
+    "M|18-24": 0.04661,
+    "M|25-34": 0.0608,
+    "M|35-44": 0.0213,
+    "M|45-54": 0.00981,
+    "M|55+": 0.01023
+   },
+   "kappa": 10.65,
+   "n_ads": 567,
+   "countries": [
+    "IT"
+   ],
+   "total_reach": 695842187.0,
+   "source_brand": "Sephora Italia / France",
+   "wordstream_ctr_2025": 1.81
+  },
+  "pet_ecommerce": {
+   "mean": {
+    "F|18-24": 0.01198,
+    "F|25-34": 0.074,
+    "F|35-44": 0.07476,
+    "F|45-54": 0.1066,
+    "F|55+": 0.2277,
+    "M|18-24": 0.01452,
+    "M|25-34": 0.10754,
+    "M|35-44": 0.09897,
+    "M|45-54": 0.10786,
+    "M|55+": 0.17609
+   },
+   "kappa": 31.43,
+   "n_ads": 245,
+   "countries": [
+    "IT"
+   ],
+   "total_reach": 257932438.0,
+   "source_brand": "Arcaplanet",
+   "wordstream_ctr_2025": 1.64
+  },
+  "abbigliamento": {
+   "mean": {
+    "F|18-24": 0.06801,
+    "F|25-34": 0.18029,
+    "F|35-44": 0.1055,
+    "F|45-54": 0.0893,
+    "F|55+": 0.05885,
+    "M|18-24": 0.0699,
+    "M|25-34": 0.22517,
+    "M|35-44": 0.09891,
+    "M|45-54": 0.07545,
+    "M|55+": 0.02861
+   },
+   "kappa": 6.18,
+   "n_ads": 153,
+   "countries": [
+    "IT"
+   ],
+   "total_reach": 150308259.0,
+   "source_brand": "OVS",
+   "wordstream_ctr_2025": 1.29
+  }
+ },
+ "kaggle_effects": {
+  "ctr_log_female": {
+   "estimate": 0.3552,
+   "bootstrap_sd": 0.0148
+  },
+  "ctr_log_per_5y": {
+   "estimate": 0.141,
+   "bootstrap_sd": 0.0063
+  },
+  "cpm_log_female": {
+   "estimate": 0.2147,
+   "bootstrap_sd": 0.0124
+  },
+  "cpm_log_per_5y": {
+   "estimate": 0.1274,
+   "bootstrap_sd": 0.0052
+  }
+ },
+ "kaggle_rows": 1143,
+ "cell_effects": {
+  "ctr": {
+   "log_mult": {
+    "F|18-24": -0.346,
+    "F|25-34": -0.2262,
+    "F|35-44": 0.0488,
+    "F|45-54": 0.3237,
+    "F|55+": 0.5,
+    "M|18-24": -0.7012,
+    "M|25-34": -0.5814,
+    "M|35-44": -0.3064,
+    "M|45-54": -0.0315,
+    "M|55+": 0.1448
+   },
+   "log_sd": {
+    "F|18-24": 0.1689,
+    "F|25-34": 0.1014,
+    "F|35-44": 0.1015,
+    "F|45-54": 0.1037,
+    "F|55+": 0.2216,
+    "M|18-24": 0.1682,
+    "M|25-34": 0.1003,
+    "M|35-44": 0.1004,
+    "M|45-54": 0.1026,
+    "M|55+": 0.2211
+   }
+  },
+  "cpm": {
+   "log_mult": {
+    "F|18-24": -0.352,
+    "F|25-34": -0.2437,
+    "F|35-44": 0.0048,
+    "F|45-54": 0.2532,
+    "F|55+": 0.4124,
+    "M|18-24": -0.5667,
+    "M|25-34": -0.4584,
+    "M|35-44": -0.2099,
+    "M|45-54": 0.0385,
+    "M|55+": 0.1977
+   },
+   "log_sd": {
+    "F|18-24": 0.1686,
+    "F|25-34": 0.1011,
+    "F|35-44": 0.1011,
+    "F|45-54": 0.1026,
+    "F|55+": 0.2209,
+    "M|18-24": 0.1681,
+    "M|25-34": 0.1003,
+    "M|35-44": 0.1003,
+    "M|45-54": 0.1019,
+    "M|55+": 0.2205
+   }
+  }
+ },
+ "cpm_it_sales_monthly": [
+  {
+   "mese": "2025-01",
+   "cpm_mediano": 5.94,
+   "cpm_q1": 4.23,
+   "cpm_q3": 8.42,
+   "n_campagne": 1324
+  },
+  {
+   "mese": "2025-02",
+   "cpm_mediano": 5.96,
+   "cpm_q1": 4.33,
+   "cpm_q3": 8.04,
+   "n_campagne": 612
+  },
+  {
+   "mese": "2025-03",
+   "cpm_mediano": 6.58,
+   "cpm_q1": 4.54,
+   "cpm_q3": 9.41,
+   "n_campagne": 1054
+  },
+  {
+   "mese": "2025-04",
+   "cpm_mediano": 6.58,
+   "cpm_q1": 4.67,
+   "cpm_q3": 9.51,
+   "n_campagne": 1094
+  },
+  {
+   "mese": "2025-05",
+   "cpm_mediano": 6.71,
+   "cpm_q1": 4.82,
+   "cpm_q3": 8.91,
+   "n_campagne": 669
+  },
+  {
+   "mese": "2025-06",
+   "cpm_mediano": 6.74,
+   "cpm_q1": 4.77,
+   "cpm_q3": 9.82,
+   "n_campagne": 1182
+  },
+  {
+   "mese": "2025-07",
+   "cpm_mediano": 6.51,
+   "cpm_q1": 4.43,
+   "cpm_q3": 8.79,
+   "n_campagne": 525
+  },
+  {
+   "mese": "2025-08",
+   "cpm_mediano": 6.14,
+   "cpm_q1": 4.09,
+   "cpm_q3": 8.25,
+   "n_campagne": 316
+  },
+  {
+   "mese": "2025-09",
+   "cpm_mediano": 7.07,
+   "cpm_q1": 4.96,
+   "cpm_q3": 10.27,
+   "n_campagne": 1038
+  },
+  {
+   "mese": "2025-10",
+   "cpm_mediano": 7.01,
+   "cpm_q1": 4.66,
+   "cpm_q3": 10.26,
+   "n_campagne": 456
+  },
+  {
+   "mese": "2025-11",
+   "cpm_mediano": 9.45,
+   "cpm_q1": 6.91,
+   "cpm_q3": 13.52,
+   "n_campagne": 1234
+  },
+  {
+   "mese": "2025-12",
+   "cpm_mediano": 8.89,
+   "cpm_q1": 5.88,
+   "cpm_q3": 11.76,
+   "n_campagne": 1340
+  },
+  {
+   "mese": "2026-01",
+   "cpm_mediano": 6.45,
+   "cpm_q1": 4.42,
+   "cpm_q3": 9.46,
+   "n_campagne": 1142
+  },
+  {
+   "mese": "2026-02",
+   "cpm_mediano": 6.27,
+   "cpm_q1": 4.34,
+   "cpm_q3": 9.02,
+   "n_campagne": 1450
+  },
+  {
+   "mese": "2026-03",
+   "cpm_mediano": 6.82,
+   "cpm_q1": 4.72,
+   "cpm_q3": 9.12,
+   "n_campagne": 601
+  },
+  {
+   "mese": "2026-04",
+   "cpm_mediano": 6.76,
+   "cpm_q1": 4.97,
+   "cpm_q3": 9.24,
+   "n_campagne": 1450
+  },
+  {
+   "mese": "2026-05",
+   "cpm_mediano": 7.34,
+   "cpm_q1": 5.04,
+   "cpm_q3": 10.72,
+   "n_campagne": 602
+  },
+  {
+   "mese": "2026-06",
+   "cpm_mediano": 7.55,
+   "cpm_q1": 5.48,
+   "cpm_q3": 10.44,
+   "n_campagne": 701
+  },
+  {
+   "mese": "2026-07",
+   "cpm_mediano": 6.65,
+   "cpm_q1": 4.85,
+   "cpm_q3": 9.64,
+   "n_campagne": 886
+  },
+  {
+   "mese": "2026-08",
+   "cpm_mediano": 6.34,
+   "cpm_q1": 4.66,
+   "cpm_q3": 8.88,
+   "n_campagne": 190
+  },
+  {
+   "mese": "2026-09",
+   "cpm_mediano": 7.31,
+   "cpm_q1": 5.14,
+   "cpm_q3": 10.2,
+   "n_campagne": 361
+  },
+  {
+   "mese": "2026-10",
+   "cpm_mediano": 7.55,
+   "cpm_q1": 5.35,
+   "cpm_q3": 11.17,
+   "n_campagne": 1581
+  }
+ ],
+ "bf_week_cpm_vs_september": {
+  "kit_2025_index": {
+   "abbigliamento": 1.644,
+   "beauty_skincare": 1.661,
+   "pet_ecommerce": 1.603
+  },
+  "lebesgue_2024": 1.8,
+  "lebesgue_2025": 1.59,
+  "nest_commerce_bf_day_yoy_2024": 1.21
+ },
+ "cross_checks": {
+  "cpm_female_over_male": {
+   "kaggle_adjusted": 1.239,
+   "lebesgue_2025": 1.222
+  }
+ },
+ "warm": {
+  "prior_probability": 0.2,
+  "ctr_log_effect": {
+   "mean": 0.0,
+   "sd": 0.5,
+   "source": "Lebesgue: retargeting CTR ~1.0% vs prospecting ~1.34%; Coinis: retargeting CTR higher. Sources disagree, so centred on no effect with a wide spread."
+  },
+  "cpm_log_effect": {
+   "mean": 0.5878,
+   "sd": 0.35,
+   "source": "Lebesgue 2022-23: retargeting CPM >100% above prospecting (~$13 vs ~$6-8). Centred on +80%, wide."
+  },
+  "log_frequency_excess": {
+   "cold": {
+    "mean": 0.0,
+    "sd": 0.04
+   },
+   "warm": {
+    "mean": 0.15,
+    "sd": 0.1
+   },
+   "source": "assumption: a retargeting pool is small, so the same budget reaches the same people more often. Tested on simulated companies, not on real data."
+  }
+ },
+ "assumptions": {
+  "external_sd": 0.1,
+  "extrapolation_slope_shrink": 0.5,
+  "extrapolation_sd_per_decade": 0.15,
+  "targeting_noise_log_sd": {
+   "ctr": 0.15,
+   "cpm": 0.1
+  }
+ }
+}

@@ -9,3 +9,9 @@ out/adsim/
 data/external/
 .env.meta
 .env.apify
+out/world/companies/
+out/world_run.log
+.env.anthropic
+out/studio/live/
+.env.openrouter
+out/studio_run.log

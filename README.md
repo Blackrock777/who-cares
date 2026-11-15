@@ -2,7 +2,73 @@
 
 Forecast an ad before launch, compare its response across 12 audience segments, and test where the same budget could buy more clicks. Built for Wevion BigHack 2026, “Clienti che non esistono”.
 
-All advertisers, creative descriptions and outcomes in the organisers' kit are **simulated**. The forecast window is 16–30 November 2026. No external advertising outcomes or persona datasets are used.
+All advertisers, creative descriptions and outcomes in the organisers' kit are **simulated**. The forecast window is 16–30 November 2026. The official forecasts in `out/predictions.csv` use only the kit. The audience model (who is behind each ad set) adds public sources: real reach by age and gender from the Meta Ad Library, a public Facebook ads dataset and published benchmarks. Each one is listed in `docs/SOURCES.md` and on the web app's Sources section. None of them are results for the kit's advertisers, which do not exist.
+
+## Web app (the demo)
+
+```bash
+.venv/bin/python scripts/export_web.py        # bundles outputs into web/data.js (already included)
+open web/index.html                            # or: python3 -m http.server -d web 8000
+```
+
+A single static page, no build step and no server. Sections:
+1. **Audience**: the inferred audience of each ad set, the real category mix it started from, how far the data moved it, and a crowd of 100 simulated viewers.
+2. **Forecast**: every ad's CTR and CPM for 16–30 November, with 80% ranges.
+3. **Decide**: a budget slider with live clicks, CPC and CPM, plus budget, creative and timing calls.
+4. **Creative lab**: any creative on any audience before launch, shown to 1,000 simulated people.
+5. **Proof**: results on 60 fictional companies.
+6. **Sources**: where every number comes from, and the limits.
+
+## Creative studio (brief → candidate ads → forecast → simulated crowd)
+
+```bash
+.venv/bin/python -m adsim.studio          # live: serves the web app plus /api/generate on http://127.0.0.1:8787
+.venv/bin/python scripts/run_studio.py    # pre-generates the 12 runs the static page shows (out/studio/runs.json)
+```
+
+A language model **proposes** and the forecaster **decides**:
+- **Evidence.** The model is given what the forecaster already knows about the target audience: which lever it expects to work, the best current creatives (the bar to beat), the inferred audience and the brand's voice.
+- **Proposal.** Candidates come back as JSON in exactly the kit's creative schema. Only the levers and formats seen in training are allowed, because the forecaster cannot score a lever it has never seen.
+- **Guards.** A discount above the brief's maximum is rejected. Any number in the copy that is not in the brief (stock counts, thresholds, deadlines) is flagged for a human to confirm, because language models add them even when told not to. Lengths outside the training range are flagged, and malformed candidates are dropped and counted.
+- **Scoring.** The same engine as the forecasts scores each candidate as a new ad in every audience, with its 80% range. Each one is compared with the best existing creative.
+- **Novelty.** The distance to the nearest training creative in the encoder space, calibrated on the training creatives themselves, flags extrapolation.
+
+The language model's opinion of its own ads is never used, so any proposer works. Configure one of:
+- `.env.openrouter` with `OPENROUTER_API_KEY=...`: free models, with OpenRouter fallback routing (Nemotron 3 Ultra → Gemma 4 31B → Ling 3.2).
+- `.env.anthropic` with `ANTHROPIC_API_KEY=...`: Claude Opus 5.5 with strict structured output.
+- `STUDIO_BASE_URL=http://localhost:11434/v1 STUDIO_MODEL=...`: a local model through Ollama or LM Studio, no key.
+
+Key files are git-ignored. The pre-generated runs record the model, tokens and request id.
+
+The page has an IT/EN switch. It follows the browser language and remembers the choice.
+
+## Audience model and the world of companies that don't exist
+
+```bash
+.venv/bin/python scripts/build_priors.py              # sourced priors -> data/priors/priors.json
+.venv/bin/python scripts/run_world.py --companies 60  # simulate companies, score engine + audience model vs truth
+```
+
+`adsim/population.py` treats each ad set's audience as an unknown mix over gender × five age bands, plus a warm/cold (retargeting) switch:
+- **Prior**: the real Meta Ad Library reach mix of Italian ads in the same category (Sephora, Arcaplanet, OVS).
+- **Evidence**: the ad set's CTR, CPM and frequency relative to its brand, after removing creative, ad age and season.
+- **Cell effects**: women click 1.43× and cost 1.24× as much as men. Both rise with age. Fitted on a public Facebook dataset; the CPM ratio matches Lebesgue's independent 1.22×.
+
+It reports the posterior mix, intervals, and how far the data moved the answer from the prior.
+
+`adsim/world.py` generates fictional advertisers from the same sources and writes each one in its own column names with a config file. `scripts/run_world.py` then runs the unchanged engine on them and compares against the truth (`out/world/report.json`). On 60 companies:
+
+| Check | Result |
+|---|---|
+| CTR vs last-7-days baseline | better on 58/60 |
+| CPM vs last-7-days baseline | better on 60/60 |
+| 80% ranges | cover 77–82% |
+| Budget elasticity, history with budget changes | error 0.028 (prior alone: 0.078) |
+| Retargeting detection | 98% correct, no false alarms |
+| Gender share and age | only modestly better than the category prior (13.4 vs 14.5 points; 3.1 vs 3.6 years) |
+
+The simulator shares the model's structure, so these figures are an upper bound, not proof on real advertisers.
+
 
 ## Run
 

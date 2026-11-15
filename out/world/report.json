@@ -1,0 +1,57 @@
+{
+ "companies": 60,
+ "audiences": 248,
+ "by_scale": {
+  "large": 18,
+  "medium": 27,
+  "small": 15
+ },
+ "by_vertical": {
+  "abbigliamento": 25,
+  "beauty_skincare": 17,
+  "pet_ecommerce": 18
+ },
+ "forecast": {
+  "ctr_log_err_engine": 0.24428666307706526,
+  "ctr_log_err_naive": 0.26446934892909346,
+  "cpm_log_err_engine": 0.049309669434047895,
+  "cpm_log_err_naive": 0.19423311431167267,
+  "engine_beats_naive_ctr": "58/60",
+  "engine_beats_naive_cpm": "60/60",
+  "cov80_cpm_known": 0.7925507319999525,
+  "cov80_cpm_new": 0.7714108618654073,
+  "cov80_ctr_known": 0.8217335876862911,
+  "cov80_ctr_new": 0.7633617897254261,
+  "ctr_by_scale": {
+   "large": {
+    "ctr_log_err_pos": 0.14,
+    "naive_ctr_log_err_pos": 0.179
+   },
+   "medium": {
+    "ctr_log_err_pos": 0.248,
+    "naive_ctr_log_err_pos": 0.274
+   },
+   "small": {
+    "ctr_log_err_pos": 0.46,
+    "naive_ctr_log_err_pos": 0.493
+   }
+  }
+ },
+ "budget_elasticity": {
+  "with_budget_changes_abs_err": 0.02841599447251364,
+  "without_budget_changes_abs_err": 0.0771258776283032,
+  "prior_only_abs_err": 0.07833443261183229
+ },
+ "audience": {
+  "warm_detection_accuracy": 0.9798387096774194,
+  "warm_recall": 0.9056603773584906,
+  "warm_false_alarm": 0.0,
+  "female_rmse_model": 0.1344592559783636,
+  "female_rmse_prior_only": 0.1447052907196611,
+  "age_rmse_model": 3.133221300609456,
+  "age_rmse_prior_only": 3.622897236944485,
+  "female_cov80": 0.7661290322580645,
+  "age_cov80": 0.7580645161290323
+ },
+ "errors": []
+}

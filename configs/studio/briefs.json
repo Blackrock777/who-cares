@@ -1,0 +1,12 @@
+{
+ "_note": "Product facts and maximum discounts are taken from the brands' own creatives in the organisers' kit, so the generator is never asked to invent an offer.",
+ "NDL": {"product": "Siero alla vitamina C e kit routine (detergente, siero, crema). Crema notte al retinolo. SPF 50 invisibile.",
+         "offer": "Black Week: fino al -40% sulla skincare; spedizione gratis; mini detergente in regalo sopra una soglia.",
+         "max_discount_pct": 40, "notes": "Tono diretto, niente promesse mediche."},
+ "CDF": {"product": "Crocchette monoproteiche grain free, snack senza cereali per gatti, cucce invernali, box cani e gatti.",
+         "offer": "Black Friday: fino al -35%; riordino automatico a -20%; spedizione gratis sopra 29 euro.",
+         "max_discount_pct": 35, "notes": "Tono caldo, il protagonista è l'animale."},
+ "FGR": {"product": "Collezione autunno-inverno uomo e donna: cappotto, piumino leggero, maglieria, capsule numerata.",
+         "offer": "Black Friday: fino al -50%; spedizione e reso gratis.",
+         "max_discount_pct": 50, "notes": "Fascia di prezzo media, tono sobrio."}
+}
