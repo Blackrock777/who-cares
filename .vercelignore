@@ -1,0 +1,7 @@
+# Vercel serves only the static dashboard in web/.
+# Everything else (Streamlit app.py, Python pipeline, models, data) runs locally and must not be
+# uploaded: a root app.py + requirements.txt makes Vercel treat the repo as a Python function
+# and fail with PYTHON_ENTRYPOINT_NOT_FOUND.
+/*
+!/web
+!/vercel.json
