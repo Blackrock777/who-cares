@@ -1,0 +1,45 @@
+/* v2: one screen. Inherits colour tokens and fonts from styles.css. */
+body.v2 { min-height: 100vh; display: flex; flex-direction: column; }
+.bar { display: flex; align-items: center; gap: 20px; padding: 18px clamp(16px, 4vw, 48px); }
+.bar .mark { display: flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: -.01em; }
+.bar .mark i { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); transition: background .4s; }
+.brands { display: flex; gap: 4px; margin: 0 auto; background: var(--paper-2); padding: 4px; border-radius: 999px; }
+.brands button { border: 0; background: transparent; border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 500; color: var(--ink-2); display: flex; align-items: center; gap: 8px; }
+.brands button i { width: 8px; height: 8px; border-radius: 50%; }
+.brands button.on { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+
+.one { flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 48px) 32px; display: flex; flex-direction: column; }
+.one h1 { font: 400 clamp(34px, 4.4vw, 60px)/1.05 var(--serif); letter-spacing: -.02em; margin: 8px 0 26px; max-width: 900px; }
+.targets { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.targets button { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 11px 20px; font-size: 15px; font-weight: 500; color: var(--ink-2); transition: all .2s; }
+.targets button.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.cols { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 18px; flex: 1; }
+.col { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow); }
+.step { font: 400 30px/1 var(--serif); font-style: italic; color: var(--accent); margin: 0; transition: color .4s; }
+.say { font-size: 17px; line-height: 1.5; color: var(--ink); margin: 0; }
+.say.small { font-size: 14px; color: var(--ink-2); }
+.big { font: 400 clamp(44px, 4.6vw, 64px)/1 var(--serif); letter-spacing: -.02em; margin: 4px 0 0; }
+
+.crowd { display: grid; grid-template-columns: repeat(40, 1fr); gap: 2.5px; margin-top: auto; }
+.crowd i { aspect-ratio: 1; border-radius: 50%; transition: opacity .3s, transform .3s; }
+.crowd i.dim { opacity: .18; }
+.crowd i.hit { transform: scale(1.9); box-shadow: 0 0 0 1px var(--ink); }
+.hint { font-size: 14px; color: var(--ink-2); min-height: 20px; margin: 0; }
+
+.ad { background: var(--paper-2); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.ad .tag { font-size: 12px; color: var(--ink-3); text-transform: lowercase; }
+.ad b { font: 400 24px/1.15 var(--serif); }
+.ad span:last-child { font-size: 14px; color: var(--ink-2); }
+.go { margin-top: auto; border: 0; background: var(--ink); color: var(--paper); border-radius: 999px; padding: 13px 18px; font: 500 14px var(--sans); cursor: pointer; }
+.go:active { transform: scale(.98); }
+
+.why { align-self: center; margin-top: 26px; font-size: 14px; color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.why:hover { color: var(--ink); }
+
+@media (max-width: 980px) {
+  .cols { grid-template-columns: 1fr; }
+  .brands button { padding: 7px 10px; font-size: 13px; }
+  .bar { flex-wrap: wrap; }
+  .brands { order: 3; width: 100%; justify-content: center; margin: 0; }
+}

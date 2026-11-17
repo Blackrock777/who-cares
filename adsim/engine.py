@@ -81,6 +81,8 @@ class Engine:
         self.prior_weight = cfg.get("priors", {}).get("prior_weight", 1.0)
         self.creative_cats = (cfg.get("creatives") or {}).get("categorical", [])
         self.creative_protocol = cfg.get("creative_protocol", "train_only")     # or "transductive"
+        ai = cfg.get("audience_interactions", 0.0)                               # penalty scale; 0 or false = off
+        self.audience_interactions = float(0.7 if ai is True else ai or 0.0)
         self.sigma = self.tau = None
         self.interval_status = "not calibrated: call calibrate() first"
 
@@ -130,6 +132,7 @@ class Engine:
             d["c_" + c] = cats[c].astype(str).values
             d["ax_" + c] = d["archetype"] + "|" + d["c_" + c]
             d["vx_" + c] = d["advertiser_id"] + "|" + d["c_" + c]
+            d["ux_" + c] = d["adv_aud"] + "|" + d["c_" + c]           # this audience's own response to the lever / format
         for a in self.arch_levels:
             d["fat_" + a] = d["weeks"] * (d["archetype"] == a)
         return d
@@ -142,6 +145,10 @@ class Engine:
             b += [("cat", "adv_aud", 1.5)]
         for c in self.creative_cats:
             b += [("cat", "c_" + c, 1.0), ("cat", "ax_" + c, 0.7), ("cat", "vx_" + c, 0.7)]
+            if self.audience_interactions:
+                # Each campaign targets a specific audience, and audiences respond differently to the same
+                # lever. Partially pooled: with little evidence it shrinks to the archetype and brand effect.
+                b += [("cat", "ux_" + c, self.audience_interactions)]
         if len(self.cfeat.columns):
             b += [("std", list(self.cfeat.columns), 0.5)]
         b += [("raw", ["weeks", "log_age", "wk0"] + ["fat_" + a for a in self.arch_levels], 1.0)]

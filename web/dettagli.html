@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dettagli · Who Cares</title>
+<meta name="description" content="Imagine the audience, forecast CTR and CPM through Black Friday, decide where the budget goes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="brandmark" href="index.html" title="←"><span class="dot"></span>Clienti<em>che non esistono</em></a>
+  <nav class="links">
+    <a href="#audience" data-i18n="nav.audience"></a><a href="#forecast" data-i18n="nav.forecast"></a><a href="#decide" data-i18n="nav.decide"></a><a href="#lab" data-i18n="nav.lab"></a><a href="#studio" data-i18n="nav.studio"></a><a href="#proof" data-i18n="nav.proof"></a><a href="#sources" data-i18n="nav.sources"></a>
+  </nav>
+  <div class="lang" id="lang" role="group" aria-label="Language"><button data-l="it">IT</button><button data-l="en">EN</button></div>
+  <button class="theme" id="theme" data-i18n-aria="theme"><span></span></button>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <canvas id="crowd" aria-hidden="true"></canvas>
+    <div class="hero-copy">
+      <p class="kicker" data-i18n="hero.kicker"></p>
+      <h1 data-i18n-html="hero.h1"></h1>
+      <p class="lede" data-i18n="hero.lede"></p>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+    <div class="scroll-hint" data-i18n="scroll"></div>
+  </section>
+
+  <div class="switcher-wrap" id="switcherWrap">
+    <div class="switcher" id="switcher" role="tablist"></div>
+  </div>
+
+  <section class="block" id="audience">
+    <div class="section-head">
+      <p class="kicker" data-i18n="aud.kicker"></p>
+      <h2 data-i18n-html="aud.h2"></h2>
+      <p class="sub" data-i18n="aud.sub"></p>
+    </div>
+    <div class="aud-grid" id="audGrid"></div>
+    <div class="crowd-panel" id="crowdPanel">
+      <div class="crowd-head">
+        <div>
+          <p class="kicker" id="crowdKicker"></p>
+          <h3 id="crowdTitle"></h3>
+          <p class="sub small" data-i18n="crowd.sub"></p>
+        </div>
+        <div class="crowd-legend" id="crowdLegend"></div>
+      </div>
+      <div class="crowd-grid" id="crowdGrid"></div>
+      <div class="persona" id="persona"></div>
+    </div>
+  </section>
+
+  <section class="block" id="forecast">
+    <div class="section-head">
+      <p class="kicker" data-i18n="fc.kicker"></p>
+      <h2 data-i18n-html="fc.h2"></h2>
+      <p class="sub" data-i18n="fc.sub"></p>
+    </div>
+    <div class="fc-controls">
+      <div class="pills" id="fcSets"></div>
+      <div class="seg" id="fcKpi"><button data-k="ctr" class="on">CTR</button><button data-k="cpm">CPM</button></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-legend" id="fcLegend"></div>
+      <svg id="fcChart" class="chart" role="img" aria-label="Forecast chart"></svg>
+      <div class="tip" id="fcTip"></div>
+    </div>
+    <div class="ad-table" id="fcTable"></div>
+  </section>
+
+  <section class="block" id="decide">
+    <div class="section-head">
+      <p class="kicker" data-i18n="de.kicker"></p>
+      <h2 data-i18n-html="de.h2"></h2>
+      <p class="sub" data-i18n="de.sub"></p>
+    </div>
+    <div class="decide-grid">
+      <div class="card whatif" id="whatif"></div>
+      <div class="card moves" id="moves"></div>
+    </div>
+    <div class="timing card" id="timing"></div>
+  </section>
+
+  <section class="block" id="lab">
+    <div class="section-head">
+      <p class="kicker" data-i18n="lab.kicker"></p>
+      <h2 data-i18n-html="lab.h2"></h2>
+      <p class="sub" data-i18n="lab.sub"></p>
+    </div>
+    <div class="lab-wrap">
+      <div class="heat" id="heat"></div>
+      <div class="card lab-detail" id="labDetail"></div>
+    </div>
+  </section>
+
+  <section class="block" id="studio">
+    <div class="section-head">
+      <p class="kicker" data-i18n="st.kicker"></p>
+      <h2 data-i18n-html="st.h2"></h2>
+      <p class="sub" data-i18n="st.sub"></p>
+    </div>
+    <ol class="steps" id="stSteps"></ol>
+    <div class="studio-grid">
+      <form class="card brief" id="brief" autocomplete="off"></form>
+      <div class="studio-out">
+        <div class="ev card" id="stEvidence"></div>
+        <div class="cands" id="stCands"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="proof">
+    <div class="section-head">
+      <p class="kicker" data-i18n="pf.kicker"></p>
+      <h2 data-i18n-html="pf.h2"></h2>
+      <p class="sub" data-i18n="pf.sub"></p>
+    </div>
+    <div class="proof-grid" id="proofGrid"></div>
+    <div class="proof-charts">
+      <div class="card"><h4 data-i18n="pf.sf"></h4><svg id="scatterF" class="chart sq"></svg><p class="note" id="scatterFNote"></p></div>
+      <div class="card"><h4 data-i18n="pf.sa"></h4><svg id="scatterA" class="chart sq"></svg><p class="note" id="scatterANote"></p></div>
+    </div>
+    <div class="card valid" id="validTable"></div>
+  </section>
+
+  <section class="block" id="sources">
+    <div class="section-head">
+      <p class="kicker" data-i18n="so.kicker"></p>
+      <h2 data-i18n-html="so.h2"></h2>
+    </div>
+    <div class="sources" id="sourceList"></div>
+    <div class="limits card" id="limits"></div>
+  </section>
+</main>
+
+<footer class="foot"><p data-i18n-html="foot"></p></footer>
+
+<script src="i18n.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

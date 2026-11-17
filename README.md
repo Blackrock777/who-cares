@@ -4,7 +4,18 @@ Forecast an ad before launch, compare its response across 12 audience segments, 
 
 All advertisers, creative descriptions and outcomes in the organisers' kit are **simulated**. The forecast window is 16–30 November 2026. The official forecasts in `out/predictions.csv` use only the kit. The audience model (who is behind each ad set) adds public sources: real reach by age and gender from the Meta Ad Library, a public Facebook ads dataset and published benchmarks. Each one is listed in `docs/SOURCES.md` and on the web app's Sources section. None of them are results for the kit's advertisers, which do not exist.
 
-## Web app (the demo)
+## Version 2: one screen (after the jury's feedback)
+
+The jury's feedback: the technical work was full marks, but the first dashboard showed too many numbers. So version 2 removes rather than adds. `web/index.html` is now a single screen that answers three questions for the target you pick:
+- **Chi?** Who the target audience is, in one sentence and as a crowd of 1,000 simulated people.
+- **Cosa?** The ad forecast to work best for them, with the runner-up.
+- **Quanto?** Their daily budget within the same campaign total, and the cheapest day.
+
+It shows four numbers in total. Everything else (ranges, validation, sources, the studio) sits behind *Perché questi numeri?* in `web/dettagli.html`.
+
+We also tested whether audiences respond differently to each lever, which would make the best ad change with the target. A per-audience lever effect (`audience_interactions` in the config) made rolling-window accuracy slightly worse, and an F-test on the raw data found no such effect (p = 0.74–0.99 across the three brands). So the option stays off, and the page says what the data supports: one message wins for every audience of a brand, and what changes by target is the price and the budget.
+
+## Web app (the full dashboard, now `dettagli.html`)
 
 ```bash
 .venv/bin/python scripts/export_web.py        # bundles outputs into web/data.js (already included)
